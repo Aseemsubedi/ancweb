@@ -1,5 +1,40 @@
-# Robots.txt for anc.com.np (Aseem and Consulting Pvt Ltd)
+# Robots.txt for anc.com.np — Aseem and Consulting Pvt Ltd (ANC)
+# Nepal tech agency owned by Aseem Subedi
+
 User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://anc.com.np/sitemap.xml

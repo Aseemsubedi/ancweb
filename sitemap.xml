@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://anc.com.np/</loc>
     <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://anc.com.np/assets/og-image.png</image:loc>
+      <image:title>Aseem and Consulting Pvt Ltd (ANC) — Nepal Tech Agency</image:title>
+      <image:caption>Official site of Aseem and Consulting Pvt Ltd, a Nepal tech agency owned by Aseem Subedi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://anc.com.np/assets/logo-light.png</image:loc>
+      <image:title>Aseem and Consulting official logo</image:title>
+    </image:image>
   </url>
 </urlset>
