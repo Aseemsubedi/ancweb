@@ -1,16 +1,120 @@
 /**
- * ANC (Aseem and Consulting Pvt Ltd) - Futuristic Minimal Script
+ * ANC (Aseem and Consulting Pvt Ltd) - Adaptive Theme & Interactive Engine
  * Domain: anc.com.np | info@anc.com.np | Kushma 05 Parbat, Gandaki Nepal
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initSpotlight();
+  initPipelineSimulator();
   initCopyEmail();
   initContactForm();
   initMobileMenu();
 });
 
-/* 1. Bento Card Mouse Spotlight Effect */
+/* 1. Theme Switcher (Light / Dark Mode) */
+function initTheme() {
+  const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  const html = document.documentElement;
+
+  // Check saved preference or default to system/light
+  const savedTheme = localStorage.getItem('anc-theme');
+  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+  }
+
+  updateToggleIcons();
+
+  toggleBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('anc-theme', 'light');
+        showMinimalToast('Switched to Light Mode');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('anc-theme', 'dark');
+        showMinimalToast('Switched to Dark Mode');
+      }
+      updateToggleIcons();
+    });
+  });
+
+  function updateToggleIcons() {
+    const isDark = html.classList.contains('dark');
+    toggleBtns.forEach((btn) => {
+      btn.innerHTML = isDark
+        ? `<svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>`
+        : `<svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>`;
+    });
+  }
+}
+
+/* 2. Interactive Live Architecture Pipeline Simulator */
+function initPipelineSimulator() {
+  const triggerBtn = document.getElementById('run-simulation-btn');
+  const nodes = [
+    document.getElementById('sim-node-aml'),
+    document.getElementById('sim-node-remit'),
+    document.getElementById('sim-node-travel')
+  ];
+  const logsContainer = document.getElementById('sim-log-feed');
+
+  if (!triggerBtn || !logsContainer) return;
+
+  const mockEvents = [
+    { type: 'AML', title: 'Sanctions & PEP Screening', detail: 'Checked 4.2M global blacklist records. Fuzzy score: 0.00 (Clear)', time: '12ms' },
+    { type: 'REMIT', title: 'Ledger Settlement & Switch', detail: 'Routed via secure API gateway. Double-entry balanced.', time: '24ms' },
+    { type: 'TRAVEL', title: 'GDS Inventory Sync', detail: 'Real-time booking confirmed & seat inventory reserved.', time: '38ms' }
+  ];
+
+  let isRunning = false;
+
+  triggerBtn.addEventListener('click', () => {
+    if (isRunning) return;
+    isRunning = true;
+    triggerBtn.disabled = true;
+    triggerBtn.innerHTML = `<span>Processing Stream...</span>`;
+
+    // Clear previous highlights
+    nodes.forEach(n => n?.classList.remove('active-pulse'));
+    logsContainer.innerHTML = `<div class="text-[11px] font-mono text-cyan-500">Initializing transaction test sequence...</div>`;
+
+    let step = 0;
+    const interval = setInterval(() => {
+      if (step < nodes.length) {
+        // Highlight active node
+        nodes.forEach(n => n?.classList.remove('active-pulse'));
+        nodes[step]?.classList.add('active-pulse');
+
+        const ev = mockEvents[step];
+        const logItem = document.createElement('div');
+        logItem.className = 'text-xs font-mono py-1.5 border-b border-white/5 flex justify-between items-center';
+        logItem.innerHTML = `
+          <div>
+            <span class="text-cyan-500 font-bold">[${ev.type}]</span>
+            <span class="text-slate-200">${ev.title}</span>
+            <div class="text-[11px] text-slate-400">${ev.detail}</div>
+          </div>
+          <span class="text-emerald-400 text-[10px] bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">${ev.time}</span>
+        `;
+        logsContainer.appendChild(logItem);
+        step++;
+      } else {
+        clearInterval(interval);
+        nodes.forEach(n => n?.classList.remove('active-pulse'));
+        isRunning = false;
+        triggerBtn.disabled = false;
+        triggerBtn.innerHTML = `<span>Simulate Next Pipeline Event ⚡</span>`;
+        showMinimalToast('Pipeline simulation finished successfully.');
+      }
+    }, 600);
+  });
+}
+
+/* 3. Bento Card Mouse Spotlight */
 function initSpotlight() {
   const cards = document.querySelectorAll('.bento-card');
   cards.forEach((card) => {
@@ -24,7 +128,7 @@ function initSpotlight() {
   });
 }
 
-/* 2. 1-Click Email Copy */
+/* 4. 1-Click Email Copy */
 function initCopyEmail() {
   const copyBtns = document.querySelectorAll('.copy-email-trigger');
   copyBtns.forEach((btn) => {
@@ -46,7 +150,7 @@ function initCopyEmail() {
   });
 }
 
-/* 3. Direct Minimal Inquiry Form */
+/* 5. Direct Inquiry Form */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -59,20 +163,20 @@ function initContactForm() {
     const message = form.querySelector('[name="message"]')?.value.trim();
 
     if (!name || !email || !message) {
-      showMinimalToast('Please complete all required fields.');
+      showMinimalToast('Please fill in all required fields.');
       return;
     }
 
-    const subject = encodeURIComponent(`Consultation Inquiry: ${name} [${service}]`);
+    const subject = encodeURIComponent(`Inquiry from ${name} [${service}]`);
     const body = encodeURIComponent(
       `Name: ${name}\n` +
       `Email: ${email}\n` +
-      `Focus Area: ${service}\n\n` +
+      `Area of Interest: ${service}\n\n` +
       `Message:\n${message}\n\n` +
       `Sent via anc.com.np`
     );
 
-    showMinimalToast('Opening your email client to send inquiry...');
+    showMinimalToast('Opening your email client to send message...');
     setTimeout(() => {
       window.location.href = `mailto:info@anc.com.np?subject=${subject}&body=${body}`;
       form.reset();
@@ -80,19 +184,14 @@ function initContactForm() {
   });
 }
 
-/* 4. Mobile Menu */
+/* 6. Mobile Menu */
 function initMobileMenu() {
   const toggleBtn = document.getElementById('mobile-toggle');
   const menu = document.getElementById('mobile-menu');
   if (!toggleBtn || !menu) return;
 
   toggleBtn.addEventListener('click', () => {
-    const isHidden = menu.classList.contains('hidden');
-    if (isHidden) {
-      menu.classList.remove('hidden');
-    } else {
-      menu.classList.add('hidden');
-    }
+    menu.classList.toggle('hidden');
   });
 
   document.querySelectorAll('.mobile-link').forEach((link) => {
@@ -102,7 +201,7 @@ function initMobileMenu() {
   });
 }
 
-/* 5. Minimal Toast Notification */
+/* 7. Toast Notification */
 function showMinimalToast(msg) {
   let toast = document.getElementById('minimal-toast');
   if (!toast) {
@@ -118,7 +217,7 @@ function showMinimalToast(msg) {
 
   toast.innerHTML = `
     <div class="toast-futuristic">
-      <span style="color: #38bdf8;">✦</span>
+      <span style="color: #06b6d4;">✦</span>
       <span>${msg}</span>
     </div>
   `;
