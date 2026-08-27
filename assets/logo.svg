@@ -1,48 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none" class="h-10 w-auto">
-  <defs>
-    <linearGradient id="ancGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06b6d4" />
-      <stop offset="50%" stop-color="#3b82f6" />
-      <stop offset="100%" stop-color="#8b5cf6" />
-    </linearGradient>
-    <linearGradient id="ancAccent" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#10b981" />
-      <stop offset="100%" stop-color="#06b6d4" />
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#06b6d4" flood-opacity="0.4"/>
-    </filter>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- Minimalist Geometric Emblem (Apple / Linear style) -->
+  <g transform="translate(4, 8)">
+    <!-- Sleek Precision Chevron / Modern A & C Node -->
+    <path d="M16 2L30 28H23L16 13.5L9 28H2L16 2Z" fill="url(#brandGrad)"/>
+    <circle cx="16" cy="20" r="2.5" fill="#06b6d4"/>
+  </g>
   
-  <!-- Icon Mark -->
-  <g transform="translate(6, 6)" filter="url(#shadow)">
-    <!-- Hexagonal Tech Shield -->
-    <path d="M26 2 L48 15 L48 39 L26 50 L4 39 L4 15 Z" stroke="url(#ancGlow)" stroke-width="2.5" fill="#0b132b" fill-opacity="0.8"/>
-    
-    <!-- Central 'A' & Circuit Geometric Path -->
-    <path d="M26 12 L14 36 L20 36 L23 30 L29 30 L32 36 L38 36 Z M26 19 L28 26 L24 26 Z" fill="url(#ancGlow)"/>
-    
-    <!-- Connected Technology Nodes -->
-    <circle cx="26" cy="2" r="3" fill="#06b6d4"/>
-    <circle cx="48" cy="15" r="2.5" fill="#3b82f6"/>
-    <circle cx="48" cy="39" r="2.5" fill="#8b5cf6"/>
-    <circle cx="26" cy="50" r="3" fill="#10b981"/>
-    <circle cx="4" cy="39" r="2.5" fill="#06b6d4"/>
-    <circle cx="4" cy="15" r="2.5" fill="#3b82f6"/>
-    
-    <!-- Pulse Node -->
-    <line x1="26" y1="2" x2="26" y2="12" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="2 2"/>
-    <circle cx="26" cy="23" r="1.5" fill="#ffffff"/>
-  </g>
+  <!-- Clean Apple-style Typography -->
+  <text x="44" y="29" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif" font-weight="700" font-size="20" letter-spacing="-0.03em" fill="#ffffff">anc</text>
+  <text x="80" y="29" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif" font-weight="300" font-size="13" letter-spacing="0.08em" fill="#64748b">|</text>
+  <text x="92" y="29" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif" font-weight="500" font-size="12" letter-spacing="0.06em" fill="#94a3b8">ASEEM &amp; CONSULTING</text>
 
-  <!-- Typography -->
-  <g transform="translate(68, 14)">
-    <!-- Primary Brand Monogram -->
-    <text x="0" y="24" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="26" fill="#ffffff" letter-spacing="0.08em">ANC</text>
-    <circle cx="64" cy="16" r="3" fill="url(#ancAccent)"/>
-    
-    <!-- Company Name & Services -->
-    <text x="0" y="39" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="9" fill="#94a3b8" letter-spacing="0.18em">ASEEM &amp; CONSULTING PVT LTD</text>
-    <text x="0" y="49" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="400" font-size="8" fill="#06b6d4" letter-spacing="0.22em">TECH • AML • REMIT • TRAVEL</text>
-  </g>
+  <defs>
+    <linearGradient id="brandGrad" x1="2" y1="2" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
 </svg>
