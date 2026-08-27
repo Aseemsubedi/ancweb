@@ -1,11 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <rect width="48" height="48" rx="12" fill="#030712"/>
-  <path d="M24 8L39 38H30L24 23L18 38H9L24 8Z" fill="url(#favBrandGrad)"/>
-  <circle cx="24" cy="30" r="3" fill="#06b6d4"/>
   <defs>
-    <linearGradient id="favBrandGrad" x1="9" y1="8" x2="39" y2="38" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#2563eb"/>
+    <linearGradient id="favIconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="60%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#4f46e5" />
     </linearGradient>
   </defs>
+  <rect width="48" height="48" rx="12" fill="#0f172a"/>
+  <path d="M24 6L40 38H30.5L24 22.5L17.5 38H8L24 6Z" fill="url(#favIconGrad)"/>
+  <circle cx="24" cy="30" r="3.5" fill="#06b6d4"/>
+  <circle cx="24" cy="30" r="1.5" fill="#ffffff"/>
 </svg>
