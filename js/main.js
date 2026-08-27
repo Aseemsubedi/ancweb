@@ -1,5 +1,5 @@
 /**
- * ANC (Aseem and Consulting Pvt Ltd) - Adaptive Theme & Interactive Engine
+ * Aseem and Consulting Pvt Ltd — Adaptive Theme & Interactive Engine
  * Domain: anc.com.np | info@anc.com.np | Kushma 05 Parbat, Gandaki Nepal
  * WhatsApp: +977 9802840041
  */

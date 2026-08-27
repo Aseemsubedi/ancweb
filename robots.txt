@@ -1,4 +1,4 @@
-# Robots.txt for anc.com.np — Aseem and Consulting Pvt Ltd (ANC)
+# Robots.txt for anc.com.np — Aseem and Consulting Pvt Ltd
 # Technology consulting and software engineering firm owned by Aseem Subedi
 
 User-agent: *
