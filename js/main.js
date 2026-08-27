@@ -1,6 +1,7 @@
 /**
  * ANC (Aseem and Consulting Pvt Ltd) - Adaptive Theme & Interactive Engine
  * Domain: anc.com.np | info@anc.com.np | Kushma 05 Parbat, Gandaki Nepal
+ * Phones: +977 9802840041, +977 9806195800
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyEmail();
   initContactForm();
   initMobileMenu();
+  initLegalModal();
 });
 
 /* 1. Theme Switcher (Light / Dark Mode) */
@@ -17,7 +19,6 @@ function initTheme() {
   const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
   const html = document.documentElement;
 
-  // Check saved preference or default to system/light
   const savedTheme = localStorage.getItem('anc-theme');
   if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     html.classList.add('dark');
@@ -78,27 +79,25 @@ function initPipelineSimulator() {
     triggerBtn.disabled = true;
     triggerBtn.innerHTML = `<span>Processing Stream...</span>`;
 
-    // Clear previous highlights
     nodes.forEach(n => n?.classList.remove('active-pulse'));
     logsContainer.innerHTML = `<div class="text-[11px] font-mono text-cyan-500">Initializing transaction test sequence...</div>`;
 
     let step = 0;
     const interval = setInterval(() => {
       if (step < nodes.length) {
-        // Highlight active node
         nodes.forEach(n => n?.classList.remove('active-pulse'));
         nodes[step]?.classList.add('active-pulse');
 
         const ev = mockEvents[step];
         const logItem = document.createElement('div');
-        logItem.className = 'text-xs font-mono py-1.5 border-b border-white/5 flex justify-between items-center';
+        logItem.className = 'text-xs font-mono py-1.5 border-b border-black/5 dark:border-white/5 flex justify-between items-center';
         logItem.innerHTML = `
           <div>
             <span class="text-cyan-500 font-bold">[${ev.type}]</span>
-            <span class="text-slate-200">${ev.title}</span>
-            <div class="text-[11px] text-slate-400">${ev.detail}</div>
+            <span class="font-semibold">${ev.title}</span>
+            <div class="text-[11px] opacity-70">${ev.detail}</div>
           </div>
-          <span class="text-emerald-400 text-[10px] bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">${ev.time}</span>
+          <span class="text-emerald-500 text-[10px] bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">${ev.time}</span>
         `;
         logsContainer.appendChild(logItem);
         step++;
@@ -201,7 +200,89 @@ function initMobileMenu() {
   });
 }
 
-/* 7. Toast Notification */
+/* 7. Legal & Compliance Modal (Privacy, Meta Data Policy, Terms, Google & Cookies) */
+function initLegalModal() {
+  const modal = document.getElementById('legal-modal');
+  const openTriggers = document.querySelectorAll('.open-legal-modal');
+  const closeBtn = document.getElementById('close-legal-modal');
+  const tabBtns = document.querySelectorAll('.legal-tab-btn');
+  const tabPanes = document.querySelectorAll('.legal-tab-pane');
+
+  if (!modal) return;
+
+  function openModal(tabTarget = 'privacy') {
+    modal.classList.add('active');
+    document.body.classList.add('overflow-hidden');
+    switchTab(tabTarget);
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  function switchTab(targetId) {
+    tabBtns.forEach((btn) => {
+      if (btn.getAttribute('data-target') === targetId) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    tabPanes.forEach((pane) => {
+      if (pane.id === `legal-pane-${targetId}`) {
+        pane.classList.remove('hidden');
+      } else {
+        pane.classList.add('hidden');
+      }
+    });
+  }
+
+  openTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tab = trigger.getAttribute('data-legal-tab') || 'privacy';
+      openModal(tab);
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+      switchTab(target);
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Handle direct hash navigation (e.g. #privacy, #terms, #cookies)
+  function checkHash() {
+    const hash = window.location.hash;
+    if (hash === '#privacy' || hash === '#privacy-policy' || hash === '#data-policy') {
+      openModal('privacy');
+    } else if (hash === '#terms' || hash === '#terms-and-conditions') {
+      openModal('terms');
+    } else if (hash === '#cookies' || hash === '#google-policy') {
+      openModal('cookies');
+    }
+  }
+
+  window.addEventListener('hashchange', checkHash);
+  checkHash();
+}
+
+/* 8. Minimal Toast Notification */
 function showMinimalToast(msg) {
   let toast = document.getElementById('minimal-toast');
   if (!toast) {
