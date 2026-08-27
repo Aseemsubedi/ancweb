@@ -1,5 +1,5 @@
 # Robots.txt for anc.com.np — Aseem and Consulting Pvt Ltd (ANC)
-# Nepal tech agency owned by Aseem Subedi
+# Technology consulting and software engineering firm owned by Aseem Subedi
 
 User-agent: *
 Allow: /
