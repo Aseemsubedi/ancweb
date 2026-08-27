@@ -1,7 +1,7 @@
 /**
  * ANC (Aseem and Consulting Pvt Ltd) - Adaptive Theme & Interactive Engine
  * Domain: anc.com.np | info@anc.com.np | Kushma 05 Parbat, Gandaki Nepal
- * Phones: +977 9802840041, +977 9806195800
+ * WhatsApp: +977 9802840041
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +27,7 @@ function initTheme() {
   }
 
   updateToggleIcons();
+  syncThemeColor();
 
   toggleBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -40,15 +41,24 @@ function initTheme() {
         showMinimalToast('Switched to Dark Mode');
       }
       updateToggleIcons();
+      syncThemeColor();
     });
   });
 
   function updateToggleIcons() {
     const isDark = html.classList.contains('dark');
     toggleBtns.forEach((btn) => {
+      btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
       btn.innerHTML = isDark
         ? `<svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>`
         : `<svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>`;
+    });
+  }
+
+  function syncThemeColor() {
+    const isDark = html.classList.contains('dark');
+    document.querySelectorAll('meta[name="theme-color"]').forEach((el) => {
+      el.setAttribute('content', isDark ? '#05070d' : '#fbfbfd');
     });
   }
 }
@@ -189,14 +199,41 @@ function initMobileMenu() {
   const menu = document.getElementById('mobile-menu');
   if (!toggleBtn || !menu) return;
 
-  toggleBtn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+  const iconOpen = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
+  const iconClose = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+
+  function isOpen() {
+    return !menu.classList.contains('hidden');
+  }
+
+  function setOpen(open) {
+    menu.classList.toggle('hidden', !open);
+    toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggleBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggleBtn.innerHTML = open ? iconClose : iconOpen;
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setOpen(!isOpen());
   });
 
   document.querySelectorAll('.mobile-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-    });
+    link.addEventListener('click', () => setOpen(false));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!isOpen()) return;
+    if (menu.contains(e.target) || toggleBtn.contains(e.target)) return;
+    setOpen(false);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen()) setOpen(false);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && isOpen()) setOpen(false);
   });
 }
 

@@ -75,6 +75,9 @@ html.dark {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body, .floating-nav, .bento-card, .theme-toggle-btn, .btn-futuristic, .btn-futuristic-secondary {
   transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
 }
 
@@ -85,6 +88,7 @@ html {
   color: var(--text-title);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-padding-top: 6.5rem;
 }
 
 body {
@@ -114,6 +118,77 @@ body {
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--card-shadow);
+  gap: 1rem 1.75rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.nav-brand img,
+.footer-brand img {
+  height: auto;
+  width: auto;
+}
+
+.nav-brand img {
+  height: 2.35rem;
+  max-width: 168px;
+}
+
+@media (min-width: 640px) {
+  .nav-brand img {
+    height: 2.75rem;
+    max-width: 200px;
+  }
+}
+
+/* Theme-aware logos: do not set display on all imgs or Tailwind
+   hidden/dark:block gets overridden and both marks stack. */
+.logo-on-light { display: block; }
+.logo-on-dark { display: none; }
+html.dark .logo-on-light { display: none; }
+html.dark .logo-on-dark { display: block; }
+
+.site-footer {
+  padding-top: 4.25rem;
+  padding-bottom: 3.25rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo-link {
+  display: block;
+  overflow: hidden;
+  max-width: 248px;
+  max-height: 3.5rem;
+  line-height: 0;
+}
+
+.footer-brand img {
+  height: 2.85rem;
+  max-width: 220px;
+}
+
+@media (min-width: 640px) {
+  .footer-brand img {
+    height: 3.25rem;
+    max-width: 248px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-brand {
+    align-items: flex-start;
+  }
 }
 
 .floating-nav:hover {
@@ -361,6 +436,19 @@ html.dark .cyan-gradient-text {
   box-shadow: var(--card-shadow);
 }
 
+/* Official IRD PAN verification links */
+.ird-pan-link,
+.ocr-reg-link {
+  color: var(--text-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.ird-pan-link:hover,
+.ocr-reg-link:hover {
+  text-decoration: underline;
+  color: var(--accent-cyan);
+}
+
 /* Toast */
 .toast-futuristic {
   padding: 0.85rem 1.5rem;
@@ -392,4 +480,37 @@ html.dark .cyan-gradient-text {
 ::-webkit-scrollbar-thumb {
   background: rgba(100, 116, 139, 0.3);
   border-radius: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 1000;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -2,11 +2,13 @@
 # Hostinger Apache Configuration - Aseem and Consulting Pvt Ltd (anc.com.np)
 # ==============================================================================
 
-# 1. Force HTTPS
+# 1. Force HTTPS and canonical host
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^www\.anc\.com\.np$ [NC]
+  RewriteRule ^(.*)$ https://anc.com.np/$1 [L,R=301]
 </IfModule>
 
 # 2. Enable Gzip / Brotli Compression
@@ -44,7 +46,12 @@
   Header set X-Frame-Options "SAMEORIGIN"
   Header set X-XSS-Protection "1; mode=block"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
 # 5. Prevent Directory Browsing
 Options -Indexes
+
+# 6. Custom error pages
+ErrorDocument 404 /404.html

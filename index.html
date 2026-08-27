@@ -3,32 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('anc-theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
   
   <!-- Primary Meta Tags -->
   <title>Aseem and Consulting Pvt Ltd (ANC) | Tech, App &amp; Web Development</title>
   <meta name="title" content="Aseem and Consulting Pvt Ltd (ANC) | Tech, App &amp; Web Development">
-  <meta name="description" content="Aseem and Consulting Pvt Ltd (ANC) - Web Development, Mobile Apps, IT Consulting, Digital Strategy, Business Consulting, AML Compliance, Remittance & Travel Tech. Registered in Nepal. Phone: 9802840041, 9806195800.">
+  <meta name="description" content="Aseem and Consulting Pvt Ltd (ANC) - Web Development, Mobile Apps, IT Consulting, Digital Strategy, Business Consulting, AML Compliance, Remittance & Travel Tech. Registered in Nepal. WhatsApp: +977 9802840041.">
   <meta name="author" content="Aseem Subedi">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://anc.com.np/">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05070d" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-title" content="ANC">
+  <link rel="preload" as="image" href="assets/logo-light.png">
   
   <!-- Open Graph -->
   <meta property="og:title" content="Aseem and Consulting Pvt Ltd (ANC)">
   <meta property="og:description" content="Web Development, App Development, IT Consulting, Digital Strategy, AML & Remittance Tech.">
-  <meta property="og:url" content="https://anc.com.np">
+  <meta property="og:url" content="https://anc.com.np/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aseem and Consulting Pvt Ltd">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://anc.com.np/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aseem &amp; Consulting official logo">
 
-  <!-- Favicon -->
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aseem and Consulting Pvt Ltd (ANC)">
+  <meta name="twitter:description" content="Web Development, App Development, IT Consulting, Digital Strategy, AML & Remittance Tech.">
+  <meta name="twitter:image" content="https://anc.com.np/assets/og-image.png">
+
+  <!-- Favicon & App Icons -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <!-- Fonts & Tailwind CSS CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class'
     }
   </script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom Adaptive Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
@@ -42,10 +71,34 @@
     "alternateName": "ANC",
     "url": "https://anc.com.np",
     "logo": "https://anc.com.np/assets/logo.svg",
+    "image": "https://anc.com.np/assets/og-image.png",
     "email": "info@anc.com.np",
-    "telephone": ["+977-9802840041", "+977-9806195800"],
+    "telephone": "+977-9802840041",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+977-9802840041",
+        "contactType": "customer service",
+        "areaServed": "NP",
+        "availableLanguage": ["en", "ne"],
+        "url": "https://wa.me/9779802840041"
+      }
+    ],
     "taxID": "620866943",
-    "identifier": "326626/080/081",
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "name": "Company Registration Number",
+        "value": "326626",
+        "url": "https://camis.ocr.gov.np/search-company"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "PAN",
+        "value": "620866943",
+        "url": "https://ird.gov.np/pan-search/?pan=620866943"
+      }
+    ],
     "founder": {
       "@type": "Person",
       "name": "Aseem Subedi"
@@ -73,6 +126,8 @@
 
 <body class="min-h-screen relative selection:bg-cyan-500 selection:text-white">
 
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
   <!-- Ambient Top Aurora Glow -->
   <div class="aurora-bg"></div>
 
@@ -80,20 +135,20 @@
        FLOATING LUXURY APPLE NAVBAR (WITH THEME TOGGLE)
        ==================================================================== -->
   <div class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4 sm:px-6">
-    <header class="floating-nav rounded-2xl md:rounded-full px-6 sm:px-8 py-3.5 max-w-6xl w-full flex items-center justify-between">
+    <header class="floating-nav rounded-2xl md:rounded-full px-5 sm:px-8 py-3.5 max-w-6xl w-full flex items-center justify-between">
       
       <!-- Brand Logo (Official Authorized Logo) -->
-      <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Aseem and Consulting Home">
-        <img src="assets/logo-official-light.png" alt="Aseem and Consulting Logo" class="h-8 sm:h-9 w-auto block dark:hidden transition-transform duration-200 group-hover:scale-105">
-        <img src="assets/logo-official-dark.png" alt="Aseem and Consulting Logo" class="h-8 sm:h-9 w-auto hidden dark:block transition-transform duration-200 group-hover:scale-105">
+      <a href="/" class="nav-brand group focus:outline-none" aria-label="Aseem and Consulting Home">
+        <img src="assets/logo-light.png" alt="Aseem &amp; Consulting" class="logo-on-light transition-transform duration-200 group-hover:scale-105" width="200" height="83">
+        <img src="assets/logo-dark.png" alt="Aseem &amp; Consulting" class="logo-on-dark transition-transform duration-200 group-hover:scale-105" width="200" height="83">
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium opacity-80 hover:opacity-100 transition-opacity">
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium opacity-80 hover:opacity-100 transition-opacity shrink min-w-0">
         <a href="#services" class="hover:text-cyan-500 transition-colors">Services</a>
-        <a href="#specialization" class="hover:text-cyan-500 transition-colors">Specialized Tech</a>
-        <a href="#engine" class="hover:text-cyan-500 transition-colors">Live Architecture</a>
-        <a href="#about" class="hover:text-cyan-500 transition-colors">About Us</a>
+        <a href="#specialization" class="hover:text-cyan-500 transition-colors">Specialized</a>
+        <a href="#engine" class="hover:text-cyan-500 transition-colors">Architecture</a>
+        <a href="#about" class="hover:text-cyan-500 transition-colors">About</a>
         <a href="#contact" class="hover:text-cyan-500 transition-colors">Contact</a>
       </nav>
 
@@ -101,21 +156,20 @@
       <div class="flex items-center gap-3">
         
         <!-- Theme Toggle Button -->
-        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Theme">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Theme">
           <!-- Populated by JS -->
         </button>
 
-        <a href="tel:+9779802840041" class="hidden lg:inline-flex text-xs font-mono opacity-80 hover:opacity-100 hover:text-cyan-500 px-3.5 py-1.5 rounded-full border border-black/10 dark:border-white/10 transition-all items-center gap-1.5" title="Call Us in Nepal">
-          <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-          <span>9802840041</span>
-        </a>
+        <button type="button" class="copy-email-trigger hidden lg:inline-flex text-xs font-mono opacity-80 hover:opacity-100 hover:text-cyan-500 px-3.5 py-1.5 rounded-full border border-black/10 dark:border-white/10 transition-all items-center gap-1.5" title="Click to copy email">
+          <span>info@anc.com.np</span>
+        </button>
 
         <a href="#contact" class="btn-futuristic text-xs sm:text-sm py-2 px-5 shadow-sm">
           <span>Get in Touch</span>
         </a>
 
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-toggle" class="md:hidden p-2 opacity-70 hover:opacity-100 focus:outline-none" aria-label="Menu">
+        <button type="button" id="mobile-toggle" class="lg:hidden p-2 opacity-70 hover:opacity-100 focus:outline-none" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
 
@@ -125,7 +179,7 @@
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden fixed top-24 inset-x-4 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-2xl border border-black/10 dark:border-slate-800 rounded-3xl p-6 md:hidden shadow-2xl">
+  <div id="mobile-menu" class="hidden fixed top-24 inset-x-4 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-2xl border border-black/10 dark:border-slate-800 rounded-3xl p-6 lg:hidden shadow-2xl">
     <nav class="flex flex-col gap-5 text-base font-medium">
       <a href="#services" class="mobile-link hover:text-cyan-500">Services (Web, Apps, Consulting)</a>
       <a href="#specialization" class="mobile-link hover:text-cyan-500">Specialized Verticals (AML / Remit / Travel)</a>
@@ -134,18 +188,14 @@
       <a href="#contact" class="mobile-link hover:text-cyan-500">Contact ANC</a>
       
       <div class="pt-4 border-t border-black/10 dark:border-slate-800 space-y-2">
-        <div class="flex justify-between items-center text-xs font-mono">
-          <span class="opacity-60">Nepal Phones:</span>
-          <div class="space-x-2 text-cyan-600 dark:text-cyan-400">
-            <a href="tel:+9779802840041" class="font-bold">9802840041</a>
-            <span>&bull;</span>
-            <a href="tel:+9779806195800" class="font-bold">9806195800</a>
-          </div>
-        </div>
-        <div class="flex justify-between items-center text-xs font-mono opacity-80 copy-email-trigger cursor-pointer text-cyan-600 dark:text-cyan-400">
+        <a href="https://wa.me/9779802840041" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center text-xs font-mono text-emerald-600 dark:text-emerald-400">
+          <span>WhatsApp</span>
+          <span class="font-bold">9802840041 ↗</span>
+        </a>
+        <button type="button" class="w-full flex justify-between items-center text-xs font-mono opacity-80 copy-email-trigger cursor-pointer text-cyan-600 dark:text-cyan-400">
           <span>info@anc.com.np</span>
           <span>Copy ↗</span>
-        </div>
+        </button>
       </div>
     </nav>
   </div>
@@ -154,14 +204,14 @@
   <!-- ====================================================================
        GRAND HERO SECTION
        ==================================================================== -->
-  <main class="relative z-10 pt-40 pb-24 md:pt-56 md:pb-36 max-w-6xl mx-auto px-4 sm:px-6 text-center">
+  <main id="main-content" class="relative z-10 pt-40 pb-24 md:pt-56 md:pb-36 max-w-6xl mx-auto px-4 sm:px-6 text-center">
     
     <!-- Status Badge -->
-    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/5 dark:bg-slate-900/90 border border-black/10 dark:border-slate-800 text-xs sm:text-sm mb-8 shadow-sm">
+    <div class="inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 px-4 py-2 rounded-full bg-black/5 dark:bg-slate-900/90 border border-black/10 dark:border-slate-800 text-xs sm:text-sm mb-8 shadow-sm">
       <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
       <span class="font-semibold">Aseem and Consulting Pvt Ltd</span>
       <span class="opacity-40">&bull;</span>
-      <span class="opacity-80 font-mono text-xs">Reg: 326626/080/081 &bull; PAN: 620866943</span>
+      <span class="opacity-80 font-mono text-xs">Reg: <a href="https://camis.ocr.gov.np/search-company" target="_blank" rel="noopener noreferrer" class="ocr-reg-link" title="Search company name or registration 326626 on OCR CAMIS">326626</a> &bull; PAN: <a href="https://ird.gov.np/pan-search/?pan=620866943" target="_blank" rel="noopener noreferrer" class="ird-pan-link" title="Verify PAN 620866943 on Nepal Inland Revenue Department">620866943</a></span>
     </div>
 
     <!-- Massive Clean Headline -->
@@ -192,7 +242,7 @@
   <!-- ====================================================================
        SERVICES SECTION (CLEAR & SIMPLE TERMS)
        ==================================================================== -->
-  <section id="services" class="relative z-10 py-20 max-w-6xl mx-auto px-4 sm:px-6">
+  <section id="services" class="relative z-10 py-20 max-w-6xl mx-auto px-4 sm:px-6 scroll-mt-28">
     
     <div class="text-center mb-16">
       <div class="badge-minimal mb-3">Core Solutions</div>
@@ -328,7 +378,7 @@
   <!-- ====================================================================
        SPECIALIZED VERTICALS (AML, REMITTANCE, TRAVEL TECH)
        ==================================================================== -->
-  <section id="specialization" class="relative z-10 py-16 max-w-6xl mx-auto px-4 sm:px-6">
+  <section id="specialization" class="relative z-10 py-16 max-w-6xl mx-auto px-4 sm:px-6 scroll-mt-28">
     
     <div class="text-center mb-16">
       <div class="badge-minimal mb-3">Specialized Mission-Critical Verticals</div>
@@ -408,7 +458,7 @@
   <!-- ====================================================================
        LIVE ARCHITECTURE PIPELINE SIMULATOR
        ==================================================================== -->
-  <section id="engine" class="relative z-10 py-16 max-w-6xl mx-auto px-4 sm:px-6">
+  <section id="engine" class="relative z-10 py-16 max-w-6xl mx-auto px-4 sm:px-6 scroll-mt-28">
     
     <div class="bento-card p-8 sm:p-12 border-2 border-cyan-500/20">
       
@@ -485,7 +535,7 @@
   <!-- ====================================================================
        ABOUT US (EXPANDED & COMPREHENSIVE)
        ==================================================================== -->
-  <section id="about" class="relative z-10 py-20 max-w-6xl mx-auto px-4 sm:px-6">
+  <section id="about" class="relative z-10 py-20 max-w-6xl mx-auto px-4 sm:px-6 scroll-mt-28">
     
     <div class="text-center mb-16">
       <div class="badge-minimal mb-3">About Our Firm</div>
@@ -507,8 +557,8 @@
           <!-- Monogram & Founder Visual -->
           <div class="lg:col-span-4 flex flex-col items-center text-center">
             <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center shadow-xl mb-4 relative p-4">
-              <img src="assets/logo-official-light.png" alt="ANC Authorized Logo" class="h-12 w-auto block dark:hidden">
-              <img src="assets/logo-official-dark.png" alt="ANC Authorized Logo" class="h-12 w-auto hidden dark:block">
+              <img src="assets/emblem-light.png" alt="Aseem &amp; Consulting Authorized Emblem" class="logo-on-light h-16 w-auto">
+              <img src="assets/emblem-dark.png" alt="Aseem &amp; Consulting Authorized Emblem" class="logo-on-dark h-16 w-auto">
               <div class="absolute -bottom-2.5 px-3 py-0.5 rounded-full bg-cyan-500 text-slate-950 font-bold text-[10px] tracking-wider uppercase shadow">
                 Founder
               </div>
@@ -535,15 +585,12 @@
               <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10">
                 <span class="text-cyan-500">📍</span> Kushma 05 Parbat, Gandaki Province, Nepal
               </span>
-              <a href="tel:+9779802840041" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-cyan-500 transition-colors">
-                <span class="text-emerald-500">📞</span> +977 9802840041
+              <a href="https://wa.me/9779802840041" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-emerald-500 transition-colors">
+                <span class="text-emerald-500">WhatsApp</span> +977 9802840041
               </a>
-              <a href="tel:+9779806195800" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-cyan-500 transition-colors">
-                <span class="text-emerald-500">📞</span> +977 9806195800
-              </a>
-              <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10">
+              <a href="mailto:info@anc.com.np" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-cyan-500 transition-colors">
                 <span class="text-cyan-500">✉️</span> info@anc.com.np
-              </span>
+              </a>
             </div>
           </div>
 
@@ -604,15 +651,17 @@
 
           <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-mono">
             
-            <div class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 space-y-0.5">
+            <a href="https://camis.ocr.gov.np/search-company" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-cyan-500 space-y-0.5 transition-colors" title="Search company name or registration 326626 on OCR CAMIS">
               <div class="opacity-60 text-[10px] uppercase tracking-wider">Business Registration</div>
-              <div class="text-sm font-bold text-cyan-600 dark:text-cyan-400">326626/080/081</div>
-            </div>
+              <div class="text-sm font-bold text-cyan-600 dark:text-cyan-400">326626</div>
+              <div class="text-[10px] text-cyan-600 dark:text-cyan-400 pt-0.5">Verify on OCR ↗</div>
+            </a>
 
-            <div class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 space-y-0.5">
+            <a href="https://ird.gov.np/pan-search/?pan=620866943" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-cyan-500 space-y-0.5 transition-colors" title="Verify PAN 620866943 on Nepal Inland Revenue Department">
               <div class="opacity-60 text-[10px] uppercase tracking-wider">Permanent Account Number (PAN)</div>
               <div class="text-sm font-bold text-cyan-600 dark:text-cyan-400">620866943</div>
-            </div>
+              <div class="text-[10px] text-cyan-600 dark:text-cyan-400 pt-0.5">Verify on IRD ↗</div>
+            </a>
 
             <div class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 space-y-0.5">
               <div class="opacity-60 text-[10px] uppercase tracking-wider">Registered Office</div>
@@ -632,7 +681,7 @@
   <!-- ====================================================================
        DIRECT INQUIRY & CONTACT SECTION (WITH PHONES & DIRECT CHANNELS)
        ==================================================================== -->
-  <section id="contact" class="relative z-10 py-24 max-w-6xl mx-auto px-4 sm:px-6">
+  <section id="contact" class="relative z-10 py-24 max-w-6xl mx-auto px-4 sm:px-6 scroll-mt-28">
     
     <div class="text-center mb-16">
       <div class="badge-minimal mb-3">Initiate Contact</div>
@@ -640,7 +689,7 @@
         Let’s Build Your Next System.
       </h2>
       <p class="opacity-75 text-base mt-3 max-w-2xl mx-auto">
-        Speak directly with our team in Nepal or submit your technical requirements below.
+        Speak with us on WhatsApp or submit your technical requirements below.
       </p>
     </div>
 
@@ -649,34 +698,6 @@
       <!-- Direct Contact Channels Card -->
       <div class="lg:col-span-5 space-y-4">
         
-        <!-- Phone 1 Card -->
-        <a href="tel:+9779802840041" class="bento-card p-6 flex items-center justify-between group hover:border-cyan-500 transition-colors">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-            </div>
-            <div>
-              <div class="text-xs font-mono opacity-60 uppercase">Primary Phone / Nepal</div>
-              <div class="text-lg font-bold font-mono group-hover:text-cyan-500 transition-colors">+977 9802840041</div>
-            </div>
-          </div>
-          <span class="text-xs font-mono text-cyan-500">Call Now ↗</span>
-        </a>
-
-        <!-- Phone 2 Card -->
-        <a href="tel:+9779806195800" class="bento-card p-6 flex items-center justify-between group hover:border-cyan-500 transition-colors">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-            </div>
-            <div>
-              <div class="text-xs font-mono opacity-60 uppercase">Secondary Phone / Nepal</div>
-              <div class="text-lg font-bold font-mono group-hover:text-cyan-500 transition-colors">+977 9806195800</div>
-            </div>
-          </div>
-          <span class="text-xs font-mono text-cyan-500">Call Now ↗</span>
-        </a>
-
         <!-- WhatsApp Direct Card -->
         <a href="https://wa.me/9779802840041" target="_blank" rel="noopener noreferrer" class="bento-card p-6 flex items-center justify-between group hover:border-emerald-500 transition-colors">
           <div class="flex items-center gap-4">
@@ -702,7 +723,7 @@
               <div class="text-base font-bold font-mono">info@anc.com.np</div>
             </div>
           </div>
-          <button class="copy-email-trigger text-xs font-mono text-cyan-500 hover:underline">Copy ↗</button>
+          <button type="button" class="copy-email-trigger text-xs font-mono text-cyan-500 hover:underline">Copy ↗</button>
         </div>
 
       </div>
@@ -717,18 +738,18 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-medium opacity-75 mb-1">Your Name *</label>
-                <input type="text" name="name" required placeholder="Aseem Subedi" class="minimal-input">
+                <label for="inquiry-name" class="block text-xs font-medium opacity-75 mb-1">Your Name *</label>
+                <input id="inquiry-name" type="text" name="name" required autocomplete="name" placeholder="Aseem Subedi" class="minimal-input">
               </div>
               <div>
-                <label class="block text-xs font-medium opacity-75 mb-1">Your Email *</label>
-                <input type="email" name="email" required placeholder="name@company.com" class="minimal-input">
+                <label for="inquiry-email" class="block text-xs font-medium opacity-75 mb-1">Your Email *</label>
+                <input id="inquiry-email" type="email" name="email" required autocomplete="email" placeholder="name@company.com" class="minimal-input">
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-medium opacity-75 mb-1">Service of Interest</label>
-              <select name="service" class="minimal-input cursor-pointer">
+              <label for="inquiry-service" class="block text-xs font-medium opacity-75 mb-1">Service of Interest</label>
+              <select id="inquiry-service" name="service" class="minimal-input cursor-pointer">
                 <option value="Web Development">Web Development (Websites / Web Apps)</option>
                 <option value="Mobile App Development">Mobile App Development (iOS / Android)</option>
                 <option value="IT Consulting & Architecture">IT Consulting &amp; Infrastructure</option>
@@ -741,8 +762,8 @@
             </div>
 
             <div>
-              <label class="block text-xs font-medium opacity-75 mb-1">Brief Description *</label>
-              <textarea name="message" rows="3" required placeholder="Tell us about your project or consulting requirements..." class="minimal-input"></textarea>
+              <label for="inquiry-message" class="block text-xs font-medium opacity-75 mb-1">Brief Description *</label>
+              <textarea id="inquiry-message" name="message" rows="3" required placeholder="Tell us about your project or consulting requirements..." class="minimal-input"></textarea>
             </div>
 
             <button type="submit" class="btn-futuristic w-full justify-center py-3.5 text-base">
@@ -751,7 +772,7 @@
             </button>
 
             <div class="text-center text-[11px] opacity-60 pt-2 font-mono">
-              Aseem and Consulting Pvt Ltd &bull; Kushma 05 Parbat &bull; Reg: 326626/080/081
+              Aseem and Consulting Pvt Ltd &bull; Kushma 05 Parbat &bull; Reg: 326626
             </div>
 
           </form>
@@ -766,39 +787,41 @@
   <!-- ====================================================================
        FOOTER & COMPLIANCE / LEGAL LINKS
        ==================================================================== -->
-  <footer class="relative z-10 border-t border-black/10 dark:border-white/5 py-14 text-xs opacity-80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
+  <footer class="site-footer relative z-10 border-t border-black/10 dark:border-white/5 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-10">
       
-      <!-- Top Row: Logo & Corporate Details -->
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-black/10 dark:border-white/10">
+      <!-- Top Row: Official Logo & Corporate Details -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12 pb-10 border-b border-black/10 dark:border-white/10">
         
-        <div class="flex items-center gap-3">
-          <img src="assets/logo-official-light.png" alt="Aseem and Consulting Logo" class="h-7 w-auto block dark:hidden">
-          <img src="assets/logo-official-dark.png" alt="Aseem and Consulting Logo" class="h-7 w-auto hidden dark:block">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo-link focus:outline-none" aria-label="Aseem and Consulting Home">
+            <img src="assets/logo-light.png" alt="Aseem &amp; Consulting" class="logo-on-light" width="248" height="103">
+            <img src="assets/logo-dark.png" alt="Aseem &amp; Consulting" class="logo-on-dark" width="248" height="103">
+          </a>
           <span class="opacity-70">&copy; 2026 Aseem and Consulting Pvt Ltd.</span>
         </div>
 
-        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 font-mono text-[11px]">
-          <span>Reg No: <strong>326626/080/081</strong></span>
-          <span class="opacity-30">&bull;</span>
-          <span>PAN: <strong>620866943</strong></span>
-          <span class="opacity-30">&bull;</span>
-          <a href="tel:+9779802840041" class="text-cyan-600 dark:text-cyan-400 hover:underline">9802840041</a>
-          <span class="opacity-30">&bull;</span>
-          <a href="tel:+9779806195800" class="text-cyan-600 dark:text-cyan-400 hover:underline">9806195800</a>
+        <div class="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
+          <div class="flex flex-wrap items-center justify-center md:justify-end gap-x-5 gap-y-2.5 font-mono text-[11px] opacity-80">
+            <span>Reg: <a href="https://camis.ocr.gov.np/search-company" target="_blank" rel="noopener noreferrer" class="ocr-reg-link font-bold" title="Search company name or registration 326626 on OCR CAMIS">326626</a></span>
+            <span class="opacity-30">&bull;</span>
+            <span>PAN: <a href="https://ird.gov.np/pan-search/?pan=620866943" target="_blank" rel="noopener noreferrer" class="ird-pan-link font-bold" title="Verify PAN 620866943 on Nepal Inland Revenue Department">620866943</a></span>
+            <span class="opacity-30">&bull;</span>
+            <a href="https://wa.me/9779802840041" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:underline">WhatsApp 9802840041</a>
+          </div>
         </div>
 
       </div>
 
       <!-- Bottom Row: Legal & Policy Navigation (Privacy, Meta Data Policy, Terms, Google) -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] opacity-75">
-        <div class="flex flex-wrap items-center justify-center gap-5">
-          <button class="open-legal-modal hover:text-cyan-500 transition-colors" data-legal-tab="privacy">Privacy &amp; Meta Data Policy</button>
-          <button class="open-legal-modal hover:text-cyan-500 transition-colors" data-legal-tab="terms">Terms &amp; Conditions</button>
-          <button class="open-legal-modal hover:text-cyan-500 transition-colors" data-legal-tab="cookies">Google &amp; Cookie Policy</button>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-[11px] opacity-75">
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <button type="button" class="open-legal-modal hover:text-cyan-500 transition-colors" data-legal-tab="privacy">Privacy &amp; Meta Data Policy</button>
+          <button type="button" class="open-legal-modal hover:text-cyan-500 transition-colors" data-legal-tab="terms">Terms &amp; Conditions</button>
+          <button type="button" class="open-legal-modal hover:text-cyan-500 transition-colors" data-legal-tab="cookies">Google &amp; Cookie Policy</button>
         </div>
         <div class="font-mono text-center sm:text-right">
-          <span>Kushma 05 Parbat, Gandaki Province, Nepal &bull; <button class="copy-email-trigger text-cyan-600 dark:text-cyan-400 hover:underline">info@anc.com.np</button></span>
+          <span>Kushma 05 Parbat, Gandaki Province, Nepal &bull; <button type="button" class="copy-email-trigger text-cyan-600 dark:text-cyan-400 hover:underline">info@anc.com.np</button></span>
         </div>
       </div>
 
@@ -818,16 +841,16 @@
           <div class="text-xs font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-wider font-semibold">Legal &amp; Compliance Center</div>
           <h3 class="text-xl font-bold">Aseem and Consulting Pvt Ltd</h3>
         </div>
-        <button id="close-legal-modal" class="p-2 opacity-60 hover:opacity-100 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Close Modal">
+        <button type="button" id="close-legal-modal" class="p-2 opacity-60 hover:opacity-100 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Close Modal">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
       </div>
 
       <!-- Tab Switcher Header -->
       <div class="px-6 py-3 border-b border-black/10 dark:border-white/10 flex gap-2 overflow-x-auto bg-black/[0.02] dark:bg-white/[0.02]">
-        <button class="legal-tab-btn active" data-target="privacy">Privacy &amp; Meta Policy</button>
-        <button class="legal-tab-btn" data-target="terms">Terms &amp; Conditions</button>
-        <button class="legal-tab-btn" data-target="cookies">Google &amp; Cookie Policy</button>
+        <button type="button" class="legal-tab-btn active" data-target="privacy">Privacy &amp; Meta Policy</button>
+        <button type="button" class="legal-tab-btn" data-target="terms">Terms &amp; Conditions</button>
+        <button type="button" class="legal-tab-btn" data-target="cookies">Google &amp; Cookie Policy</button>
       </div>
 
       <!-- Modal Body (Scrollable) -->
@@ -840,11 +863,11 @@
           
           <div class="space-y-3">
             <h5 class="font-semibold">1. Introduction &amp; Commitment</h5>
-            <p>Aseem and Consulting Pvt Ltd ("ANC", "we", "us", "our"), registered in Nepal under Registration No. 326626/080/081 and PAN 620866943, respects the privacy of our website visitors, clients, and partners. This policy outlines how we collect, process, and protect data in compliance with the Nepal Individual Privacy Act 2075, Meta (Facebook) Platform Terms &amp; Developer Policies, and global data privacy standards.</p>
+            <p>Aseem and Consulting Pvt Ltd ("ANC", "we", "us", "our"), registered in Nepal under Registration No. <a href="https://camis.ocr.gov.np/search-company" target="_blank" rel="noopener noreferrer" class="ocr-reg-link">326626</a> and PAN <a href="https://ird.gov.np/pan-search/?pan=620866943" target="_blank" rel="noopener noreferrer" class="ird-pan-link">620866943</a>, respects the privacy of our website visitors, clients, and partners. This policy outlines how we collect, process, and protect data in compliance with the Nepal Individual Privacy Act 2075, Meta (Facebook) Platform Terms &amp; Developer Policies, and global data privacy standards.</p>
             
             <h5 class="font-semibold">2. Information We Collect</h5>
             <p>We only collect information necessary to fulfill our technical consulting and software development services:
-              <br>&bull; <strong>Voluntary Contact Information:</strong> Name, business email address, phone number (e.g. Nepal 9802840041, 9806195800), and project requirements submitted via our inquiry form or direct communication.
+              <br>&bull; <strong>Voluntary Contact Information:</strong> Name, business email address, WhatsApp number, and project requirements submitted via our inquiry form or direct communication.
               <br>&bull; <strong>Technical Usage Data:</strong> Anonymized IP addresses, browser types, and standard telemetry collected via privacy-compliant analytics.
             </p>
 
@@ -852,7 +875,7 @@
             <p>In accordance with Meta Business and Platform Terms:
               <br>&bull; We do not sell, rent, or transfer personal data or Meta user data to third parties or data brokers.
               <br>&bull; Any data processed via Meta conversion tracking or Facebook Lead Ads is used solely for responding to legitimate business inquiries regarding ANC software engineering and consulting services.
-              <br>&bull; Users can request the deletion of any data associated with Meta interactions at any time by emailing <strong>info@anc.com.np</strong> or calling <strong>+977 9802840041</strong>.
+              <br>&bull; Users can request the deletion of any data associated with Meta interactions at any time by emailing <strong>info@anc.com.np</strong> or messaging us on WhatsApp at <strong>+977 9802840041</strong>.
             </p>
 
             <h5 class="font-semibold">4. Data Security &amp; Storage</h5>
@@ -905,7 +928,7 @@
             <p>You can configure your browser settings to block or delete cookies at any time. Our website remains fully functional even with third-party tracking cookies disabled.</p>
 
             <h5 class="font-semibold">4. Contact Information</h5>
-            <p>For any questions regarding our cookie or data practices, contact us at <strong>info@anc.com.np</strong> or <strong>+977 9802840041 / +977 9806195800</strong>.</p>
+            <p>For any questions regarding our cookie or data practices, contact us at <strong>info@anc.com.np</strong> or WhatsApp <strong>+977 9802840041</strong>.</p>
           </div>
         </div>
 
