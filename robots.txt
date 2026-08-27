@@ -1,0 +1,5 @@
+# Robots.txt for anc.com.np (Aseem and Consulting Pvt Ltd)
+User-agent: *
+Allow: /
+
+Sitemap: https://anc.com.np/sitemap.xml
