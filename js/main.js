@@ -1,6 +1,6 @@
 /**
  * Aseem and Consulting Pvt Ltd — Adaptive Theme & Interactive Engine
- * Domain: anc.com.np | info@anc.com.np | Kushma 05 Parbat, Gandaki Nepal
+ * Domain: anc.com.np | info@anc.com.np | Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal
  * WhatsApp: +977 9802840041
  */
 

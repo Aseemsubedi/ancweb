@@ -2,7 +2,7 @@
 
 **Live Domain**: [https://anc.com.np](https://anc.com.np)  
 **Official Email**: `info@anc.com.np`  
-**Headquarters**: Kushma 05 Parbat, Gandaki Province, Nepal  
+**Headquarters**: Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal  
 **Founder & Principal Consultant**: Aseem Subedi  
 
 ---

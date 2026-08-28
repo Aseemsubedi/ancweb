@@ -2,23 +2,27 @@
 # Hostinger Apache Configuration - Aseem and Consulting Pvt Ltd (anc.com.np)
 # ==============================================================================
 
-# 1. Force HTTPS and canonical host
+# 1. Serve the static homepage (Hostinger PHP plans often look for index.php first)
+DirectoryIndex index.html
+
+# 2. Force HTTPS and canonical host
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   RewriteCond %{HTTP_HOST} ^www\.anc\.com\.np$ [NC]
   RewriteRule ^(.*)$ https://anc.com.np/$1 [L,R=301]
+  RewriteRule ^$ index.html [L]
 </IfModule>
 
-# 2. Enable Gzip / Brotli Compression
+# 3. Enable Gzip / Brotli Compression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
   AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
   AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
-# 3. Leverage Browser Caching
+# 4. Leverage Browser Caching
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
@@ -40,7 +44,7 @@
   ExpiresByType image/webp "access plus 1 year"
 </IfModule>
 
-# 4. Security Headers
+# 5. Security Headers
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
@@ -49,9 +53,6 @@
   Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
-
-# 5. Prevent Directory Browsing
-Options -Indexes
 
 # 6. Custom error pages
 ErrorDocument 404 /404.html
