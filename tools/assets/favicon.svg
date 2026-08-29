@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Aseem and Consulting">
+  <rect width="48" height="48" rx="12" fill="#05070d"/>
+  <g fill="#38bdf8" transform="translate(13.5, 7.5)">
+    <!-- Official interlocking chevron mark -->
+    <path d="M8.5 0 L20.5 12.2 L14.2 18.4 L2.2 6.2 Z"/>
+    <path d="M0.8 16.6 L12.8 28.8 L19.1 22.6 L7.1 10.4 Z"/>
+  </g>
+</svg>

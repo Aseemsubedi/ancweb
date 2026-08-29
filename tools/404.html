@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | ANC Tools</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('anc-theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    .not-found {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.25rem;
+      gap: 1rem;
+    }
+    .not-found img { height: 2.75rem; width: auto; }
+    .not-found h1 { font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.03em; }
+    .not-found p { opacity: 0.7; max-width: 28rem; }
+  </style>
+</head>
+<body>
+  <main class="not-found">
+    <a href="./" aria-label="ANC Tools home">
+      <img src="assets/logo-light.png" alt="Aseem &amp; Consulting" class="logo-on-light">
+      <img src="assets/logo-dark.png" alt="Aseem &amp; Consulting" class="logo-on-dark">
+    </a>
+    <h1>Page not found</h1>
+    <p>That tool isn’t here. Open the ANC Tools catalog to keep working in the browser.</p>
+    <a href="./" class="btn-futuristic"><span>Back to ANC Tools</span></a>
+  </main>
+</body>
+</html>

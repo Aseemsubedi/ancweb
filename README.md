@@ -34,6 +34,7 @@ This repository contains the production-ready source code for **Aseem and Consul
 ├── robots.txt         # Search engine crawler instructions
 ├── sitemap.xml        # XML Sitemap for search engines
 ├── .gitignore         # Git ignore rules
+├── tools/             # ANC Tools workbench at tools.anc.com.np
 └── README.md          # Deployment & maintenance guide
 ```
 
@@ -134,6 +135,16 @@ For the `.com.np` domain registered at Mercantile (register.com.np):
 2. Log into your account at [https://register.com.np](https://register.com.np).
 3. Under your domain `anc.com.np`, update the **Primary Name Server** and **Secondary Name Server** with your Hostinger nameservers.
 4. DNS propagation usually takes 2 to 24 hours.
+
+---
+
+## 🧰 ANC Tools (`tools.anc.com.np`)
+
+This repo includes a separate browser workbench in the `tools/` folder. Live URL: **https://tools.anc.com.np**
+
+In Hostinger, create subdomain `tools` on `anc.com.np`, set document root to `public_html/tools`, and issue SSL.
+
+See `tools/README.md` for local preview commands.
 
 ---
 

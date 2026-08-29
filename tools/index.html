@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('anc-theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title>ANC Tools | Browser workbench by Aseem and Consulting</title>
+  <meta name="title" content="ANC Tools | Browser workbench by Aseem and Consulting">
+  <meta name="description" content="Free browser-side tools from Aseem and Consulting Pvt Ltd: JSON, JWT, hashes, timestamps, regex, contrast, project estimates, and more. Nothing is uploaded.">
+  <meta name="author" content="Aseem Subedi">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tools.anc.com.np/">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05070d" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="ANC Tools | Aseem and Consulting">
+  <meta property="og:description" content="A private, in-browser workbench for engineering and consulting work. JSON, JWT, hashes, estimates, and more.">
+  <meta property="og:url" content="https://tools.anc.com.np/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ANC Tools">
+  <meta property="og:image" content="https://anc.com.np/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ANC Tools",
+    "url": "https://tools.anc.com.np/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NPR" },
+    "description": "Browser-side engineering and consulting tools by Aseem and Consulting Pvt Ltd. Data stays on your device.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Aseem and Consulting Pvt Ltd",
+      "url": "https://anc.com.np/"
+    }
+  }
+  </script>
+</head>
+<body class="min-h-screen relative selection:bg-cyan-500 selection:text-white">
+  <a href="#app" class="skip-link">Skip to tools</a>
+  <div class="aurora-bg"></div>
+
+  <div class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4 sm:px-6">
+    <header class="floating-nav rounded-2xl md:rounded-full px-5 sm:px-8 py-3.5 max-w-6xl w-full flex items-center justify-between gap-3">
+      <a href="#/" class="nav-brand group" id="brand-home" aria-label="ANC Tools home">
+        <img src="assets/logo-light.png" alt="Aseem &amp; Consulting" class="logo-on-light transition-transform duration-200 group-hover:scale-105" width="184" height="76">
+        <img src="assets/logo-dark.png" alt="Aseem &amp; Consulting" class="logo-on-dark transition-transform duration-200 group-hover:scale-105" width="184" height="76">
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium opacity-80">
+        <a href="#/" class="hover:text-cyan-500 transition-colors">Catalog</a>
+        <a href="https://anc.com.np/" class="hover:text-cyan-500 transition-colors">anc.com.np</a>
+      </nav>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <span class="hidden sm:inline-flex text-[10px] font-mono uppercase tracking-wider opacity-60 px-2.5 py-1 rounded-full border border-black/10 dark:border-white/10">Local only</span>
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle theme"></button>
+        <a href="https://anc.com.np/#contact" class="btn-futuristic text-xs py-2 px-4 hidden sm:inline-flex"><span>Consult</span></a>
+        <button type="button" id="mobile-toggle" class="md:hidden p-2 opacity-70" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <div id="mobile-menu" class="hidden fixed top-24 inset-x-4 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-2xl border border-black/10 dark:border-slate-800 rounded-3xl p-6 md:hidden shadow-2xl">
+    <nav class="flex flex-col gap-4 text-base font-medium">
+      <a href="#/" class="mobile-link hover:text-cyan-500">Tool catalog</a>
+      <a href="https://anc.com.np/" class="mobile-link hover:text-cyan-500">Main website</a>
+      <a href="https://anc.com.np/#contact" class="mobile-link hover:text-cyan-500">Start a consultation</a>
+    </nav>
+  </div>
+
+  <div id="app" class="relative z-10 pt-32 pb-8 max-w-6xl mx-auto px-4 sm:px-6"></div>
+
+  <footer class="site-footer relative z-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row md:items-end justify-between gap-6 text-xs">
+      <div>
+        <p class="font-semibold">ANC Tools · Aseem and Consulting Pvt Ltd</p>
+        <p class="opacity-70 mt-1">Every tool runs in your browser. We do not upload, store, or log what you paste.</p>
+      </div>
+      <div class="font-mono opacity-70 text-center md:text-right">
+        <a href="https://anc.com.np/" class="text-cyan-600 dark:text-cyan-400 hover:underline">anc.com.np</a>
+        · info@anc.com.np
+        · Kushma, Gandaki, Nepal
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/tools.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
