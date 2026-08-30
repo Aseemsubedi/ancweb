@@ -1,0 +1,9 @@
+DirectoryIndex index.html
+
+<Files "config.json">
+  Require all denied
+</Files>
+
+<Files "server.py">
+  Require all denied
+</Files>

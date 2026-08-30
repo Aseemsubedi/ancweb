@@ -1,0 +1,527 @@
+{
+  "titan-mail": [
+    "Professional Plan",
+    "Business Plan",
+    "Enterprise Plan"
+  ],
+  "google-meet": [
+    "100 Participants, 1 Year",
+    "150 Participants, 1 Year",
+    "500 Participants, 1 Year"
+  ],
+  "microsoft-onedrive": [
+    "1 TB 1 Year Subscription"
+  ],
+  "google-one": [
+    "2TB | 1 Gmail | 1 Month",
+    "100GB | 1 Gmail | 1 Year",
+    "200GB | 1 Gmail | 1 Year",
+    "1TB | 1 Gmail | 1 Year",
+    "500GB | 1 Gmail | 1 Year"
+  ],
+  "zoom-pro": [
+    "100 Participants, 1 Month",
+    "300 Participants, 1 Month",
+    "100 Participants, 1 Year"
+  ],
+  "stealth-writer": [
+    "10 Days 1 Device Shared Plan"
+  ],
+  "hix-ai-bypass": [
+    "10 Days 1 Device Shared Plan",
+    "1 Month 1 Device Shared Plan",
+    "3 Months 1 Device Shared Plan",
+    "6 Months 1 Device Shared Plan"
+  ],
+  "chatgpt-plus": [
+    "1 Device 1 Month Shared",
+    "1 Device 3 Months Shared"
+  ],
+  "google-gemini-ai": [
+    "1 Months Gemini AI Only",
+    "1 Month (All Features)",
+    "4 Months Gemini AI Only"
+  ],
+  "paperpal-premium": [
+    "1 Month 1 Device Shared Account",
+    "1 Year 1 Device Shared Account"
+  ],
+  "jenni-ai": [
+    "Pro Plan (1 Device 1 Month Shared)",
+    "1 Month Plus Plan Private",
+    "Pro Plan (1 Device 1 Year Shared)"
+  ],
+  "ai-plagiarism-checker": [
+    "5 Submissions | 10 Days Validity",
+    "Student Plan (Similarity Reports Only)",
+    "10 Submissions | 10 Days Validity",
+    "15 Submissions | 10 Days Validity"
+  ],
+  "scribd-premium": [
+    "1 Month 1 Device",
+    "6 Months 1 Device"
+  ],
+  "quillbot-premium": [
+    "1 Month Shared Subscription",
+    "1 Year Shared Subscription"
+  ],
+  "grammarly": [
+    "1 Month 1 Device Plan",
+    "1 Device 1 Year Shared Plan"
+  ],
+  "visio-professional": [
+    "Visio Professional 2021 Standard",
+    "Visio Professional 2019 Lifetime"
+  ],
+  "windows-11-pro": [
+    "Windows 10 Pro Key",
+    "Windows 10 Home Key",
+    "Windows 11 Pro Key",
+    "Windows 11 Home Key"
+  ],
+  "microsoft-365-personal": [
+    "1 Year Subscription"
+  ],
+  "windows-server": [
+    "Server 2025 Datacenter",
+    "Server 2025 Standard",
+    "Server 2016 Datacenter",
+    "Server 2016 Standard",
+    "Server 2019 Datacenter",
+    "Server 2019 Standard",
+    "Server 2022 Datacenter",
+    "Server 2022 Standard",
+    "Server 2012 Datacenter",
+    "Server 2012 Standard"
+  ],
+  "microsoft-365-family": [
+    "1 Year Family Plan"
+  ],
+  "office-windows": [
+    "Office 2021 Standard Key",
+    "Office 2016 Pro | Email Bind Key",
+    "Office 2019 Pro | Email Bind Key",
+    "Office 365 1 Year Account",
+    "Office 2024 Standard Key",
+    "Micorosoft 365 Personal 1 Year",
+    "Office 2021 Pro | Email Bind Key"
+  ],
+  "office-mac": [
+    "Office 365 1 Year Account",
+    "Microsoft 365 Personal 1 Year"
+  ],
+  "project-professional": [
+    "2021 Standard Key",
+    "2019 Lifetime Key"
+  ],
+  "office-365-account": [
+    "1 Year Office 365 Account"
+  ],
+  "clipchamp": [
+    "1 Year Subscription"
+  ],
+  "coreldraw": [
+    "2025 (1 Windows Lifetime)",
+    "2025 (1 Mac Lifetime)"
+  ],
+  "canva-pro-edu": [
+    "1 Year"
+  ],
+  "canva-professional": [
+    "3 Months (Same Team)",
+    "1 Year Pro (Stable Team)"
+  ],
+  "adobe-photography": [
+    "1 Month Subscription",
+    "3 Months Subscription"
+  ],
+  "capcut-pro": [
+    "1  Month Account"
+  ],
+  "envato-elements": [
+    "1 Month Shared",
+    "1 Year Private",
+    "3 Months Shared"
+  ],
+  "adobe-creative-cloud": [
+    "1 Month Acount (Individual Plan)",
+    "4 Months",
+    "3 Months Plan with VPN"
+  ],
+  "kaspersky-vpn": [
+    "1 Device 1 Year",
+    "3 Devices 1 Year"
+  ],
+  "surfshark-vpn": [
+    "1 Year Private",
+    "2 Years Private"
+  ],
+  "hma-vpn": [
+    "1 Year Subscription"
+  ],
+  "nordvpn": [
+    "3 Months Subscription",
+    "1 Year Subscription"
+  ],
+  "avast-vpn": [
+    "1 Year License Key"
+  ],
+  "express-vpn": [
+    "30 days"
+  ],
+  "nitro-pdf-pro": [
+    "Nitro PDF Pro 10 Standard Key (Windows Only)"
+  ],
+  "notion": [
+    "1 Year Subscription"
+  ],
+  "cleanmymac-x": [
+    "1 Year Key",
+    "Lifetime Key"
+  ],
+  "easeus-data-recovery": [
+    "1 Year License (Windows)",
+    "1 Year License (Mac)"
+  ],
+  "ccleaner-professional": [
+    "1 Device 1 Year"
+  ],
+  "linkedin-premium": [
+    "1 Year Career Premium",
+    "1 Year Business Premium"
+  ],
+  "truecaller": [
+    "1 Year Subscription"
+  ],
+  "codedex-club": [
+    "6 Months Subscriptioon"
+  ],
+  "kids-worksheets": [
+    "6000+ Pages PDF (Lifetime Access)"
+  ],
+  "datacamp": [
+    "3 Months"
+  ],
+  "educative": [
+    "6 Months Course Access"
+  ],
+  "skillshare": [
+    "2 Months Subscription"
+  ],
+  "linkedin-learning": [
+    "3 Months Subscription"
+  ],
+  "udemy": [
+    "Udemy 1 Course Lifetime"
+  ],
+  "norton-security": [
+    "Mobile Security 1 Device 1 Year",
+    "Antivirus Plus 1 Device 1 Year",
+    "Antivirus Plus 1 Device 3 Years",
+    "360 Standard 1 Device 1 Year",
+    "360 Standard 1 Device 3 Years",
+    "360 Deluxe 3 Devices 1 Year",
+    "360 Deluxe 3 Devices 3 Years"
+  ],
+  "avg-internet-security": [
+    "1PC 1Year License"
+  ],
+  "eset-antivirus": [
+    "NOD 32 Antivirus 1PC 1Year",
+    "Internet Security 1PC 1Year"
+  ],
+  "bitdefender-antivirus": [
+    "Mobile Security 1 Android 1 Year",
+    "Antivirus Plus 1 PC 1 Year",
+    "Total Security 3 PC 1 Year",
+    "Total Security 1 PC 1 Year"
+  ],
+  "mcafee-internet-security": [
+    "1 Windows PC 1 Year"
+  ],
+  "mcafee-total-protection": [
+    "1 Device 1 Year",
+    "1 Device 3 Years",
+    "5 Devices 1 Year"
+  ],
+  "mcafee-antivirus": [
+    "1 Windows PC 1 Year",
+    "1 Windows PC 3 Years"
+  ],
+  "kaspersky": [
+    "Standard 1 Device 1 Year",
+    "Plus 1 Device 1 Year",
+    "Premium 1 Device 1 Year",
+    "Standard 3 Devices 1 Year",
+    "Plus 3 Devices 1 Year",
+    "Premium 3 Devices 1 Year"
+  ],
+  "speechelo-pro": [
+    "1 Year Subscription"
+  ],
+  "jetbrains-premium": [
+    "1 Year Subscription"
+  ],
+  "dashlane": [
+    "6 Months Subscription"
+  ],
+  "1password": [
+    "1 Year Subscription"
+  ],
+  "roboform": [
+    "1 Year Subscription"
+  ],
+  "github-student": [
+    "Account with 6 Months Support",
+    "Account with 12 Months Support"
+  ],
+  "idm": [
+    "1PC 1 Year Key",
+    "1PC Lifetime Key"
+  ],
+  "autodesk-apps": [
+    "1 Year Single App Subscription",
+    "1 Year Multiple Apps Subscription"
+  ],
+  "icloud": [
+    "2TB",
+    "50Gb",
+    "200GB"
+  ],
+  "claude-ai": [
+    "1 Month"
+  ],
+  "grok": [
+    "1 Month Private"
+  ],
+  "perplexity-ai": [
+    "1 Month Pro Plan",
+    "12 Month Pro Plan"
+  ],
+  "google-ai-ultra": [
+    "1 Month"
+  ],
+  "midjourney": [
+    "1 Month Basic",
+    "1 Month Pro",
+    "1 Month Standard"
+  ],
+  "elevenlabs": [
+    "1 Month Creator Plan",
+    "12 Month Creator Plan"
+  ],
+  "replit-core": [
+    "12 Month Private"
+  ],
+  "lovable-ai": [
+    "1 Month Plan",
+    "12 Month Plan"
+  ],
+  "originality-ai": [
+    "1 Month Plan"
+  ],
+  "semrush": [
+    "1 Month",
+    "12 Month"
+  ],
+  "descript-ai": [
+    "12 Month"
+  ],
+  "gamma-ai": [
+    "1 Month Pro",
+    "12 Month Pro"
+  ],
+  "devin-ai": [
+    "1 Month Plan"
+  ],
+  "suno-ai": [
+    "1 Month Pro"
+  ],
+  "bolt-ai": [
+    "1 Year Pro"
+  ],
+  "heygen-ai": [
+    "1 Month",
+    "12 Month"
+  ],
+  "invideo-ai": [
+    "1 Month Plus"
+  ],
+  "pollo-ai": [
+    "1 Month Private Lite"
+  ],
+  "gptzero": [
+    "1 Month Premium"
+  ],
+  "turnitin": [
+    "5 Submissions (10 Days)",
+    "10 Submissions (10 Days)",
+    "15 Submissions (10 Days)"
+  ],
+  "humanizeai-pro": [
+    "1 Month Lite",
+    "1 Month Standard",
+    "1 Month Unlimited"
+  ],
+  "humbot-ai": [
+    "1 Month Basic",
+    "1 Month Pro",
+    "1 Month Unlimited"
+  ],
+  "figma": [
+    "12 Month"
+  ],
+  "beautiful-ai": [
+    "12 Month"
+  ],
+  "freepik-premium": [
+    "1 Month",
+    "12 Month"
+  ],
+  "adobe-premiere-pro": [
+    "12 Month Team"
+  ],
+  "filmora": [
+    "1 (Lifetime Windows)",
+    "2 (Lifetime Mac)",
+    "12 Month"
+  ],
+  "mcafee-mobile-vpn": [
+    "1 Year"
+  ],
+  "iscanner": [
+    "(Lifetime) Support iPhone/iPad"
+  ],
+  "wps-office-pro": [
+    "12 Month"
+  ],
+  "cursor-ai": [
+    "1 Month Pro",
+    "12 Month Pro"
+  ],
+  "coursera-plus": [
+    "12 Month"
+  ],
+  "duolingo-super": [
+    "1 Month",
+    "12 Month"
+  ],
+  "epidemic-sound": [
+    "1 Month Creator",
+    "1 Month Pro",
+    "12 Month Pro",
+    "12 Months Creator"
+  ],
+  "mcafee-livesafe": [
+    "1 Year (1 Device)",
+    "1 Year (5 Device)"
+  ],
+  "netflix": [
+    "1 Month 1 Device",
+    "12 Month 1 Device"
+  ],
+  "spotify-premium": [
+    "12 Month"
+  ],
+  "youtube-premium": [
+    "3 Month",
+    "12 Month"
+  ],
+  "prime-video": [
+    "1 Month Private",
+    "5 Month Share 1 Device",
+    "6 Month Private"
+  ],
+  "crunchyroll": [
+    "1 Month",
+    "1 Year"
+  ],
+  "sony-liv": [
+    "1 Month",
+    "1 Year"
+  ],
+  "zee5": [
+    "1 Month Share 1 Device",
+    "12 Month Share 1 Device"
+  ],
+  "google-workspace": [
+    "Business Starter"
+  ],
+  "digitalocean": [
+    "Digital ocean Account"
+  ],
+  "remote-desktop": [
+    "Remote Desktop Services 50 Device (No Expiry)"
+  ],
+  "higgsfield": [
+    "1 Month Higgsfield Basic",
+    "1 Month Higgsfield Pro",
+    "1 Month Higgsfield Max"
+  ],
+  "kling-ai": [
+    "1 Month Standard"
+  ],
+  "github-copilot": [
+    "GitHub Copilot 1 Month (Private)"
+  ],
+  "microsoft-copilot": [
+    "1 Month Access"
+  ],
+  "writehuman": [
+    "1 Month Shared Account"
+  ],
+  "zerogpt": [
+    "1 Month Shared",
+    "3 Months Shared",
+    "6 Months Shared",
+    "12 Months Shared"
+  ],
+  "german-exam": [
+    "1 Month Pro",
+    "1 Month Pro max",
+    "1 Year Pro",
+    "1 Year Pro Max"
+  ],
+  "adobe-acrobat": [
+    "Adobe Acrobat Pro DC 2022 (lifetime)"
+  ],
+  "corel-videostudio": [
+    "Lifetime Plan"
+  ],
+  "parallels-desktop": [
+    "v20 Standard 1 Year",
+    "v20 Pro 1 Year"
+  ],
+  "camscanner": [
+    "1 Month",
+    "2 Month",
+    "3 Month",
+    "6 Month",
+    "1 Year"
+  ],
+  "ilovepdf": [
+    "1 Month",
+    "2 Month",
+    "3 Month",
+    "6 Month",
+    "1 Year"
+  ],
+  "aiseesoft-recovery": [
+    "1 PC 1 Year"
+  ],
+  "malwarebytes": [
+    "1 Device 6 Months",
+    "1 Device 1 Year"
+  ],
+  "mcafee-android": [
+    "1 Device 1 Year"
+  ],
+  "avg-secure-vpn": [
+    "10 Devices",
+    "5 Devices"
+  ],
+  "ullu": [
+    "1 Month",
+    "1 Year"
+  ]
+}

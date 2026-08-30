@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>ANC seller desk</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/seller.css?v=7" />
+</head>
+<body>
+  <div id="login" class="login-wrap">
+    <div class="login-card">
+      <img src="/assets/logo-white.png" alt="ANC" class="login-logo" />
+      <h1>Seller desk</h1>
+      <p>Internal price sheet. Not linked from the shop.</p>
+      <form id="login-form">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required />
+        <button type="submit">Enter</button>
+        <p id="login-err" class="err" hidden></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="desk" hidden>
+    <header class="bar">
+      <div class="bar-left">
+        <img src="/assets/logo-white.png" alt="" />
+        <div>
+          <strong>ANC seller desk</strong>
+          <span>Our NPR vs Toolsmandu, Keyshop Nepal, Cheapmandu, Keysewa</span>
+        </div>
+      </div>
+      <button type="button" id="logout" class="ghost">Log out</button>
+    </header>
+
+    <section class="toolbar">
+      <input id="q" type="search" placeholder="Search name or SKU…" />
+      <div class="chips" id="filters">
+        <button type="button" data-f="all" class="on">All</button>
+        <button type="button" data-f="high">We’re costlier</button>
+        <button type="button" data-f="low">We’re cheaper</button>
+        <button type="button" data-f="oos">Out of stock</button>
+        <button type="button" data-f="hidden">Hidden</button>
+        <button type="button" data-f="missing">Not fetched</button>
+      </div>
+      <button type="button" id="add-product" class="primary">Add product</button>
+      <button type="button" id="fetch-visible" class="ghost">Fetch rates</button>
+      <span id="status" class="status"></span>
+    </section>
+
+    <p class="hint">Add, hide, or delete products here. Hide keeps the row for Fetch but removes it from the public shop. Fetch updates stock from supplier sites.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Our NPR / stock</th>
+            <th>Toolsmandu</th>
+            <th>Keyshop Nepal</th>
+            <th>Cheapmandu</th>
+            <th>Keysewa</th>
+            <th>Vs market</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="add-modal" class="modal" hidden>
+    <form id="add-form" class="modal-card">
+      <h2>Add product</h2>
+      <p>Shows on the shop unless you hide it. Add at least one supplier page so Fetch can read duration.</p>
+      <label for="add-name">Name</label>
+      <input id="add-name" name="name" required placeholder="ChatGPT Plus" />
+      <label for="add-category">Category</label>
+      <select id="add-category" name="category" required></select>
+      <label for="add-blurb">Short description</label>
+      <textarea id="add-blurb" name="blurb" rows="2" placeholder="What the customer gets"></textarea>
+      <label>Supplier URLs</label>
+      <input id="add-tm" placeholder="Toolsmandu URL" />
+      <input id="add-ksn" placeholder="Keyshop Nepal URL" />
+      <input id="add-cm" placeholder="Cheapmandu URL" />
+      <input id="add-ks" placeholder="Keysewa URL" />
+      <p id="add-err" class="err" hidden></p>
+      <div class="modal-actions">
+        <button type="button" id="add-cancel" class="ghost">Cancel</button>
+        <button type="submit" class="primary">Add to shop</button>
+      </div>
+    </form>
+  </div>
+  <script src="js/seller.js?v=9"></script>
+</body>
+</html>

@@ -38,3 +38,4 @@ User-agent: Bingbot
 Allow: /
 
 Sitemap: https://anc.com.np/sitemap.xml
+Sitemap: https://tools.anc.com.np/sitemap.xml

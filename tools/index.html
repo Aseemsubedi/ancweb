@@ -1,109 +1,829 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-NP">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
     (function () {
-      try {
-        var theme = localStorage.getItem('anc-theme');
-        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
-        }
-      } catch (e) {}
+      var base = location.hostname === 'tools.anc.com.np'
+        ? 'https://tools.anc.com.np/'
+        : (location.pathname.indexOf('/tools/') === 0 ? location.origin + '/tools/' : location.origin + '/');
+      document.write('<base href="' + base + '">');
+      window.ANC_BASE = base;
     })();
   </script>
-  <title>ANC Tools | Browser workbench by Aseem and Consulting</title>
-  <meta name="title" content="ANC Tools | Browser workbench by Aseem and Consulting">
-  <meta name="description" content="Free browser-side tools from Aseem and Consulting Pvt Ltd: JSON, JWT, hashes, timestamps, regex, contrast, project estimates, and more. Nothing is uploaded.">
-  <meta name="author" content="Aseem Subedi">
-  <meta name="robots" content="index, follow">
+  <!--ANC_SEO-->
+  <title>Buy Digital Subscriptions in Nepal | ChatGPT, Canva, VPN | ANC Tools</title>
+  <meta name="title" content="Buy Digital Subscriptions in Nepal | ChatGPT, Canva, VPN | ANC Tools">
+  <meta name="description" content="Buy Titan Mail, Google Meet, Microsoft OneDrive, Google One, Zoom Pro, Stealth Writer and 100+ digital subscriptions in Nepal. Live NPR quote on WhatsApp from Kushma. Pay Khalti, eSewa, or connectIPS. Same-day delivery after payment — Kathmandu, Pokhara, and all Nepal.">
+  <meta name="author" content="Aseem and Consulting Pvt Ltd">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
   <link rel="canonical" href="https://tools.anc.com.np/">
-  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#05070d" media="(prefers-color-scheme: dark)">
-  <meta property="og:title" content="ANC Tools | Aseem and Consulting">
-  <meta property="og:description" content="A private, in-browser workbench for engineering and consulting work. JSON, JWT, hashes, estimates, and more.">
+  <link rel="alternate" hreflang="en-NP" href="https://tools.anc.com.np/">
+  <link rel="alternate" hreflang="x-default" href="https://tools.anc.com.np/">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="language" content="English">
+  <meta name="geo.region" content="NP-P4">
+  <meta name="geo.placename" content="Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal">
+  <meta name="geo.position" content="28.2294;83.689">
+  <meta name="ICBM" content="28.2294, 83.689">
+  <meta property="og:locale" content="en_NP">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Buy Digital Subscriptions in Nepal | ChatGPT, Canva, VPN | ANC Tools">
+  <meta property="og:description" content="Buy Titan Mail, Google Meet, Microsoft OneDrive, Google One, Zoom Pro, Stealth Writer and 100+ digital subscriptions in Nepal. Live NPR quote on WhatsApp from Kushma. Pay Khalti, eSewa, or connectIPS. Same-day delivery after payment — Kathmandu, Pokhara, and all Nepal.">
   <meta property="og:url" content="https://tools.anc.com.np/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ANC Tools">
-  <meta property="og:image" content="https://anc.com.np/assets/og-image.png">
+  <meta property="og:image" content="https://tools.anc.com.np/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Buy Digital Subscriptions in Nepal | ChatGPT, Canva, VPN | ANC Tools">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Buy Digital Subscriptions in Nepal | ChatGPT, Canva, VPN | ANC Tools">
+  <meta name="twitter:description" content="Buy Titan Mail, Google Meet, Microsoft OneDrive, Google One, Zoom Pro, Stealth Writer and 100+ digital subscriptions in Nepal. Live NPR quote on WhatsApp from Kushma. Pay Khalti, eSewa, or connectIPS. Same-day delivery after payment — Kathmandu, Pokhara, and all Nepal.">
+  <meta name="twitter:image" content="https://tools.anc.com.np/assets/og-image.png">
+  <meta name="twitter:image:alt" content="Buy Digital Subscriptions in Nepal | ChatGPT, Canva, VPN | ANC Tools">
+  <script type="application/ld+json" id="seo-jsonld">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://tools.anc.com.np/#organization",
+      "name": "ANC Tools",
+      "legalName": "Aseem and Consulting Pvt Ltd",
+      "alternateName": [
+        "ANC Tools Nepal",
+        "Aseem and Consulting Tools"
+      ],
+      "url": "https://tools.anc.com.np/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tools.anc.com.np/assets/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "image": "https://tools.anc.com.np/assets/og-image.png",
+      "email": "info@anc.com.np",
+      "telephone": "+977-9802840041",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Kushma, Gandaki, Nepal"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kushma 05 Parbat",
+        "addressLocality": "Kushma",
+        "addressRegion": "Gandaki",
+        "postalCode": "33400",
+        "addressCountry": "NP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.2294,
+        "longitude": 83.689
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Nepal"
+        },
+        {
+          "@type": "City",
+          "name": "Kathmandu"
+        },
+        {
+          "@type": "City",
+          "name": "Lalitpur"
+        },
+        {
+          "@type": "City",
+          "name": "Bhaktapur"
+        },
+        {
+          "@type": "City",
+          "name": "Pokhara"
+        },
+        {
+          "@type": "City",
+          "name": "Bharatpur"
+        },
+        {
+          "@type": "City",
+          "name": "Kushma"
+        }
+      ],
+      "knowsLanguage": [
+        "en",
+        "ne"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+977-9802840041",
+        "email": "info@anc.com.np",
+        "areaServed": "NP",
+        "availableLanguage": [
+          "en",
+          "ne"
+        ],
+        "url": "https://wa.me/9779802840041"
+      },
+      "sameAs": [
+        "https://anc.com.np/",
+        "https://github.com/Aseemsubedi/ancweb",
+        "https://wa.me/9779802840041"
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "@id": "https://anc.com.np/#organization",
+        "name": "Aseem and Consulting Pvt Ltd",
+        "url": "https://anc.com.np/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://tools.anc.com.np/#website",
+      "url": "https://tools.anc.com.np/",
+      "name": "ANC Tools",
+      "alternateName": "ANC Tools Nepal",
+      "inLanguage": [
+        "en-NP",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://tools.anc.com.np/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tools.anc.com.np/#webpage",
+      "url": "https://tools.anc.com.np/",
+      "name": "Buy Digital Subscriptions in Nepal | ChatGPT, Canva, VPN | ANC Tools",
+      "description": "Buy Titan Mail, Google Meet, Microsoft OneDrive, Google One, Zoom Pro, Stealth Writer and 100+ digital subscriptions in Nepal. Live NPR quote on WhatsApp from Kushma. Pay Khalti, eSewa, or connectIPS. Same-day delivery after payment — Kathmandu, Pokhara, and all Nepal.",
+      "isPartOf": {
+        "@id": "https://tools.anc.com.np/#website"
+      },
+      "about": {
+        "@id": "https://tools.anc.com.np/#organization"
+      },
+      "inLanguage": "en-NP",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://tools.anc.com.np/assets/og-image.png"
+      }
+    },
+    {
+      "@type": [
+        "OnlineStore",
+        "LocalBusiness"
+      ],
+      "@id": "https://tools.anc.com.np/#store",
+      "name": "ANC Tools",
+      "url": "https://tools.anc.com.np/",
+      "image": "https://tools.anc.com.np/assets/og-image.png",
+      "telephone": "+977-9802840041",
+      "email": "info@anc.com.np",
+      "currenciesAccepted": "NPR",
+      "paymentAccepted": "Khalti, eSewa, connectIPS, Mobile banking, Visa, Mastercard",
+      "priceRange": "Quoted on WhatsApp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kushma 05 Parbat",
+        "addressLocality": "Kushma",
+        "addressRegion": "Gandaki",
+        "postalCode": "33400",
+        "addressCountry": "NP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.2294,
+        "longitude": 83.689
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Nepal"
+        },
+        {
+          "@type": "City",
+          "name": "Kathmandu"
+        },
+        {
+          "@type": "City",
+          "name": "Lalitpur"
+        },
+        {
+          "@type": "City",
+          "name": "Bhaktapur"
+        },
+        {
+          "@type": "City",
+          "name": "Pokhara"
+        },
+        {
+          "@type": "City",
+          "name": "Bharatpur"
+        },
+        {
+          "@type": "City",
+          "name": "Kushma"
+        }
+      ],
+      "parentOrganization": {
+        "@id": "https://tools.anc.com.np/#organization"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Digital subscriptions in Nepal",
+      "numberOfItems": 139,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://tools.anc.com.np/p/titan-mail/",
+          "name": "Titan Mail"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://tools.anc.com.np/p/google-meet/",
+          "name": "Google Meet"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://tools.anc.com.np/p/microsoft-onedrive/",
+          "name": "Microsoft OneDrive"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://tools.anc.com.np/p/google-one/",
+          "name": "Google One"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://tools.anc.com.np/p/zoom-pro/",
+          "name": "Zoom Pro"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://tools.anc.com.np/p/stealth-writer/",
+          "name": "Stealth Writer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://tools.anc.com.np/p/hix-ai-bypass/",
+          "name": "HIX AI Bypass"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "url": "https://tools.anc.com.np/p/chatgpt-plus/",
+          "name": "ChatGPT Plus"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "url": "https://tools.anc.com.np/p/google-gemini-ai/",
+          "name": "Google Gemini AI"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "url": "https://tools.anc.com.np/p/paperpal-premium/",
+          "name": "Paperpal Premium"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "url": "https://tools.anc.com.np/p/jenni-ai/",
+          "name": "Jenni AI"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "url": "https://tools.anc.com.np/p/scribd-premium/",
+          "name": "Scribd Premium"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "url": "https://tools.anc.com.np/p/quillbot-premium/",
+          "name": "Quillbot Premium"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "url": "https://tools.anc.com.np/p/grammarly/",
+          "name": "Grammarly"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "url": "https://tools.anc.com.np/p/visio-professional/",
+          "name": "Visio Professional"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "url": "https://tools.anc.com.np/p/windows-11-pro/",
+          "name": "Windows 11 Pro"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "url": "https://tools.anc.com.np/p/microsoft-365-personal/",
+          "name": "Microsoft 365 Personal"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "url": "https://tools.anc.com.np/p/windows-server/",
+          "name": "Windows Server"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "url": "https://tools.anc.com.np/p/microsoft-365-family/",
+          "name": "Microsoft 365 Family"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "url": "https://tools.anc.com.np/p/office-windows/",
+          "name": "Office for Windows PC"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "url": "https://tools.anc.com.np/p/office-mac/",
+          "name": "Office for Mac"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "url": "https://tools.anc.com.np/p/project-professional/",
+          "name": "Project Professional"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "url": "https://tools.anc.com.np/p/office-365-account/",
+          "name": "Office 365 Account"
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "url": "https://tools.anc.com.np/p/clipchamp/",
+          "name": "Microsoft Clipchamp"
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "url": "https://tools.anc.com.np/p/coreldraw/",
+          "name": "CorelDRAW Software"
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "url": "https://tools.anc.com.np/p/canva-pro-edu/",
+          "name": "Canva Pro Edu"
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "url": "https://tools.anc.com.np/p/canva-professional/",
+          "name": "Canva Professional"
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "url": "https://tools.anc.com.np/p/adobe-photography/",
+          "name": "Adobe Photography Plan"
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "url": "https://tools.anc.com.np/p/capcut-pro/",
+          "name": "CapCut Pro"
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "url": "https://tools.anc.com.np/p/envato-elements/",
+          "name": "Envato Elements"
+        },
+        {
+          "@type": "ListItem",
+          "position": 31,
+          "url": "https://tools.anc.com.np/p/adobe-creative-cloud/",
+          "name": "Adobe Creative Cloud"
+        },
+        {
+          "@type": "ListItem",
+          "position": 32,
+          "url": "https://tools.anc.com.np/p/kaspersky-vpn/",
+          "name": "Kaspersky VPN"
+        },
+        {
+          "@type": "ListItem",
+          "position": 33,
+          "url": "https://tools.anc.com.np/p/surfshark-vpn/",
+          "name": "Surfshark VPN"
+        },
+        {
+          "@type": "ListItem",
+          "position": 34,
+          "url": "https://tools.anc.com.np/p/hma-vpn/",
+          "name": "HMA VPN"
+        },
+        {
+          "@type": "ListItem",
+          "position": 35,
+          "url": "https://tools.anc.com.np/p/nordvpn/",
+          "name": "NordVPN"
+        },
+        {
+          "@type": "ListItem",
+          "position": 36,
+          "url": "https://tools.anc.com.np/p/avast-vpn/",
+          "name": "Avast SecureLine VPN"
+        },
+        {
+          "@type": "ListItem",
+          "position": 37,
+          "url": "https://tools.anc.com.np/p/express-vpn/",
+          "name": "ExpressVPN"
+        },
+        {
+          "@type": "ListItem",
+          "position": 38,
+          "url": "https://tools.anc.com.np/p/nitro-pdf-pro/",
+          "name": "Nitro PDF Pro"
+        },
+        {
+          "@type": "ListItem",
+          "position": 39,
+          "url": "https://tools.anc.com.np/p/notion/",
+          "name": "Notion"
+        },
+        {
+          "@type": "ListItem",
+          "position": 40,
+          "url": "https://tools.anc.com.np/p/cleanmymac-x/",
+          "name": "CleanMyMac X"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I buy digital subscriptions in Nepal from ANC Tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Browse the catalog, tap Get a quote, and we send today’s NPR rate on WhatsApp. Pay after you agree. Access usually follows the same day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the price not on the website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rates change. ANC Tools quotes live NPR on WhatsApp so you never pay a stale catalog price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which payment methods work in Nepal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Khalti, eSewa, connectIPS, mobile banking, and cards, confirmed on WhatsApp for each order."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!--/ANC_SEO-->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+  <link rel="alternate" type="text/plain" href="llms.txt" title="ANC Tools facts for AI assistants">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <script>tailwind.config = { darkMode: 'class' }</script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "ANC Tools",
-    "url": "https://tools.anc.com.np/",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NPR" },
-    "description": "Browser-side engineering and consulting tools by Aseem and Consulting Pvt Ltd. Data stays on your device.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Aseem and Consulting Pvt Ltd",
-      "url": "https://anc.com.np/"
-    }
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=34">
 </head>
-<body class="min-h-screen relative selection:bg-cyan-500 selection:text-white">
-  <a href="#app" class="skip-link">Skip to tools</a>
-  <div class="aurora-bg"></div>
+<body>
+  <a class="skip-link" href="#app">Skip to catalog</a>
+  <!--ANC_NOSCRIPT-->
+  <noscript>
+    <div class="page">
+      <h1>Buy digital subscriptions in Nepal</h1>
+      <p>ANC Tools quotes live NPR rates on WhatsApp from Kushma. Catalog is public; price is in chat.</p>
+      <h2>Categories</h2>
+      <ul>
+      <li><a href="c/ai-tools/">AI Tools</a></li>
+      <li><a href="c/academic/">Academic Tools</a></li>
+      <li><a href="c/microsoft/">Microsoft</a></li>
+      <li><a href="c/graphics/">Design &amp; Video</a></li>
+      <li><a href="c/cloud/">Cloud</a></li>
+      <li><a href="c/antivirus/">Antivirus</a></li>
+      <li><a href="c/vpn/">VPN</a></li>
+      <li><a href="c/learning/">Learning</a></li>
+      <li><a href="c/streaming/">Streaming</a></li>
+      <li><a href="c/productivity/">Work tools</a></li>
+      </ul>
+      <h2>Products</h2>
+      <ul>
+      <li><a href="p/titan-mail/">Titan Mail</a></li>
+      <li><a href="p/google-meet/">Google Meet</a></li>
+      <li><a href="p/microsoft-onedrive/">Microsoft OneDrive</a></li>
+      <li><a href="p/google-one/">Google One</a></li>
+      <li><a href="p/zoom-pro/">Zoom Pro</a></li>
+      <li><a href="p/stealth-writer/">Stealth Writer</a></li>
+      <li><a href="p/hix-ai-bypass/">HIX AI Bypass</a></li>
+      <li><a href="p/chatgpt-plus/">ChatGPT Plus</a></li>
+      <li><a href="p/google-gemini-ai/">Google Gemini AI</a></li>
+      <li><a href="p/paperpal-premium/">Paperpal Premium</a></li>
+      <li><a href="p/jenni-ai/">Jenni AI</a></li>
+      <li><a href="p/scribd-premium/">Scribd Premium</a></li>
+      <li><a href="p/quillbot-premium/">Quillbot Premium</a></li>
+      <li><a href="p/grammarly/">Grammarly</a></li>
+      <li><a href="p/visio-professional/">Visio Professional</a></li>
+      <li><a href="p/windows-11-pro/">Windows 11 Pro</a></li>
+      <li><a href="p/microsoft-365-personal/">Microsoft 365 Personal</a></li>
+      <li><a href="p/windows-server/">Windows Server</a></li>
+      <li><a href="p/microsoft-365-family/">Microsoft 365 Family</a></li>
+      <li><a href="p/office-windows/">Office for Windows PC</a></li>
+      <li><a href="p/office-mac/">Office for Mac</a></li>
+      <li><a href="p/project-professional/">Project Professional</a></li>
+      <li><a href="p/office-365-account/">Office 365 Account</a></li>
+      <li><a href="p/clipchamp/">Microsoft Clipchamp</a></li>
+      <li><a href="p/coreldraw/">CorelDRAW Software</a></li>
+      <li><a href="p/canva-pro-edu/">Canva Pro Edu</a></li>
+      <li><a href="p/canva-professional/">Canva Professional</a></li>
+      <li><a href="p/adobe-photography/">Adobe Photography Plan</a></li>
+      <li><a href="p/capcut-pro/">CapCut Pro</a></li>
+      <li><a href="p/envato-elements/">Envato Elements</a></li>
+      <li><a href="p/adobe-creative-cloud/">Adobe Creative Cloud</a></li>
+      <li><a href="p/kaspersky-vpn/">Kaspersky VPN</a></li>
+      <li><a href="p/surfshark-vpn/">Surfshark VPN</a></li>
+      <li><a href="p/hma-vpn/">HMA VPN</a></li>
+      <li><a href="p/nordvpn/">NordVPN</a></li>
+      <li><a href="p/avast-vpn/">Avast SecureLine VPN</a></li>
+      <li><a href="p/express-vpn/">ExpressVPN</a></li>
+      <li><a href="p/nitro-pdf-pro/">Nitro PDF Pro</a></li>
+      <li><a href="p/notion/">Notion</a></li>
+      <li><a href="p/cleanmymac-x/">CleanMyMac X</a></li>
+      <li><a href="p/easeus-data-recovery/">EaseUS Data Recovery Pro</a></li>
+      <li><a href="p/ccleaner-professional/">CCleaner Professional</a></li>
+      <li><a href="p/linkedin-premium/">LinkedIn Premium</a></li>
+      <li><a href="p/truecaller/">Truecaller</a></li>
+      <li><a href="p/codedex-club/">Codedex Club</a></li>
+      <li><a href="p/kids-worksheets/">6000+ Kids Printable Worksheets</a></li>
+      <li><a href="p/datacamp/">DataCamp</a></li>
+      <li><a href="p/educative/">Educative</a></li>
+      <li><a href="p/skillshare/">Skillshare</a></li>
+      <li><a href="p/linkedin-learning/">LinkedIn Learning</a></li>
+      <li><a href="p/udemy/">Udemy</a></li>
+      <li><a href="p/norton-security/">Norton Security</a></li>
+      <li><a href="p/avg-internet-security/">AVG Internet Security</a></li>
+      <li><a href="p/eset-antivirus/">ESET Antivirus</a></li>
+      <li><a href="p/bitdefender-antivirus/">Bitdefender Antivirus</a></li>
+      <li><a href="p/mcafee-internet-security/">McAfee Internet Security</a></li>
+      <li><a href="p/mcafee-total-protection/">McAfee Total Protection</a></li>
+      <li><a href="p/mcafee-antivirus/">McAfee AntiVirus</a></li>
+      <li><a href="p/kaspersky/">Kaspersky</a></li>
+      <li><a href="p/speechelo-pro/">Speechelo Pro</a></li>
+      <li><a href="p/jetbrains-premium/">JetBrains Premium</a></li>
+      <li><a href="p/dashlane/">Dashlane Password Manager</a></li>
+      <li><a href="p/1password/">1Password Premium</a></li>
+      <li><a href="p/roboform/">RoboForm Password Manager</a></li>
+      <li><a href="p/github-student/">GitHub Student Developer Pack</a></li>
+      <li><a href="p/idm/">Internet Download Manager (IDM)</a></li>
+      <li><a href="p/autodesk-apps/">Autodesk Apps</a></li>
+      <li><a href="p/icloud/">iCloud Storage</a></li>
+      <li><a href="p/claude-ai/">Claude AI</a></li>
+      <li><a href="p/grok/">Grok</a></li>
+      <li><a href="p/perplexity-ai/">Perplexity AI</a></li>
+      <li><a href="p/google-ai-ultra/">Google AI Ultra</a></li>
+      <li><a href="p/midjourney/">Midjourney</a></li>
+      <li><a href="p/elevenlabs/">ElevenLabs</a></li>
+      <li><a href="p/replit-core/">Replit Core</a></li>
+      <li><a href="p/lovable-ai/">Lovable AI</a></li>
+      <li><a href="p/originality-ai/">Originality AI</a></li>
+      <li><a href="p/semrush/">Semrush</a></li>
+      <li><a href="p/descript-ai/">Descript</a></li>
+      <li><a href="p/gamma-ai/">Gamma</a></li>
+      <li><a href="p/devin-ai/">Devin AI</a></li>
+      <li><a href="p/suno-ai/">Suno AI</a></li>
+      <li><a href="p/bolt-ai/">Bolt</a></li>
+      <li><a href="p/heygen-ai/">HeyGen</a></li>
+      <li><a href="p/invideo-ai/">InVideo AI</a></li>
+      <li><a href="p/pollo-ai/">Pollo AI</a></li>
+      <li><a href="p/gptzero/">GPTZero</a></li>
+      <li><a href="p/turnitin/">Turnitin</a></li>
+      <li><a href="p/humanizeai-pro/">HumanizeAI Pro</a></li>
+      <li><a href="p/humbot-ai/">Humbot AI</a></li>
+      <li><a href="p/figma/">Figma</a></li>
+      <li><a href="p/beautiful-ai/">Beautiful.ai</a></li>
+      <li><a href="p/freepik-premium/">Freepik Premium</a></li>
+      <li><a href="p/adobe-premiere-pro/">Adobe Premiere Pro</a></li>
+      <li><a href="p/filmora/">Wondershare Filmora</a></li>
+      <li><a href="p/mcafee-mobile-vpn/">McAfee Mobile Security + VPN</a></li>
+      <li><a href="p/iscanner/">iScanner</a></li>
+      <li><a href="p/wps-office-pro/">WPS Office Pro</a></li>
+      <li><a href="p/cursor-ai/">Cursor</a></li>
+      <li><a href="p/coursera-plus/">Coursera Plus</a></li>
+      <li><a href="p/duolingo-super/">Super Duolingo</a></li>
+      <li><a href="p/epidemic-sound/">Epidemic Sound</a></li>
+      <li><a href="p/mcafee-livesafe/">McAfee LiveSafe</a></li>
+      <li><a href="p/netflix/">Netflix</a></li>
+      <li><a href="p/spotify-premium/">Spotify Premium</a></li>
+      <li><a href="p/youtube-premium/">YouTube Premium</a></li>
+      <li><a href="p/prime-video/">Prime Video</a></li>
+      <li><a href="p/crunchyroll/">Crunchyroll</a></li>
+      <li><a href="p/sony-liv/">SonyLIV</a></li>
+      <li><a href="p/zee5/">ZEE5</a></li>
+      <li><a href="p/google-workspace/">Google Workspace</a></li>
+      <li><a href="p/google-workspace-education/">Personal Google Workspace Education Plan - 1 Domain, 10 TB Drive, 5 Emails</a></li>
+      <li><a href="p/digitalocean/">DigitalOcean</a></li>
+      <li><a href="p/remote-desktop/">Remote Desktop</a></li>
+      <li><a href="p/higgsfield/">Higgsfield</a></li>
+      <li><a href="p/kling-ai/">Kling AI</a></li>
+      <li><a href="p/github-copilot/">GitHub Copilot</a></li>
+      <li><a href="p/microsoft-copilot/">Microsoft Copilot</a></li>
+      <li><a href="p/writehuman/">WriteHuman</a></li>
+      <li><a href="p/zerogpt/">ZeroGPT</a></li>
+      <li><a href="p/german-exam/">German Exam Preparation</a></li>
+      <li><a href="p/adobe-acrobat/">Adobe Acrobat</a></li>
+      <li><a href="p/corel-videostudio/">Corel VideoStudio Ultimate</a></li>
+      <li><a href="p/vmware-fusion/">VMware Fusion Pro</a></li>
+      <li><a href="p/parallels-desktop/">Parallels Desktop</a></li>
+      <li><a href="p/camscanner/">CamScanner Gold</a></li>
+      <li><a href="p/ilovepdf/">iLovePDF Premium</a></li>
+      <li><a href="p/aiseesoft-recovery/">Aiseesoft Data Recovery</a></li>
+      <li><a href="p/malwarebytes/">Malwarebytes Premium</a></li>
+      <li><a href="p/mcafee-android/">McAfee Mobile Security Android</a></li>
+      <li><a href="p/avg-secure-vpn/">AVG Secure VPN</a></li>
+      <li><a href="p/moz-pro/">Moz Pro</a></li>
+      <li><a href="p/ullu/">Ullu</a></li>
+      <li><a href="p/vmware-workstation/">VMware Workstation Pro</a></li>
+      <li><a href="p/autocad/">AutoCAD</a></li>
+      <li><a href="p/windows-10-home/">Windows 10 Home</a></li>
+      <li><a href="p/windows-10-pro/">Windows 10 Pro</a></li>
+      <li><a href="p/windows-11-home/">Windows 11 Home</a></li>
+      <li><a href="p/windows-pro-mak/">Windows Pro MAK 20 PC</a></li>
+      </ul>
+      <h2>Buying guides</h2>
+      <ul>
+      <li><a href="blog/buy-chatgpt-plus-in-nepal/">How to buy ChatGPT Plus in Nepal</a></li>
+      <li><a href="blog/buy-claude-ai-in-nepal/">How to buy Claude AI in Nepal</a></li>
+      <li><a href="blog/buy-cursor-in-nepal/">How to buy Cursor in Nepal</a></li>
+      <li><a href="blog/buy-lovable-in-nepal/">How to buy Lovable in Nepal</a></li>
+      <li><a href="blog/buy-capcut-pro-in-nepal/">How to buy CapCut Pro in Nepal</a></li>
+      <li><a href="blog/buy-adobe-in-nepal/">How to buy Adobe in Nepal</a></li>
+      <li><a href="blog/buy-microsoft-office-mac-windows-nepal/">How to buy Microsoft Office for Mac and Windows in Nepal</a></li>
+      <li><a href="blog/buy-google-workspace-in-nepal/">How to buy Google Workspace in Nepal</a></li>
+      <li><a href="blog/buy-gmail-storage-google-one-nepal/">How to buy Gmail storage in Nepal</a></li>
+      <li><a href="blog/buy-coursera-plus-in-nepal/">How to buy Coursera Plus in Nepal</a></li>
+      <li><a href="blog/buy-udemy-in-nepal/">How to buy Udemy in Nepal</a></li>
+      <li><a href="blog/buy-netflix-in-nepal/">How to buy Netflix in Nepal</a></li>
+      <li><a href="blog/buy-icloud-storage-in-nepal/">How to buy iCloud storage in Nepal</a></li>
+      </ul>
+    </div>
+  </noscript>
+  <!--/ANC_NOSCRIPT-->
 
-  <div class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4 sm:px-6">
-    <header class="floating-nav rounded-2xl md:rounded-full px-5 sm:px-8 py-3.5 max-w-6xl w-full flex items-center justify-between gap-3">
-      <a href="#/" class="nav-brand group" id="brand-home" aria-label="ANC Tools home">
-        <img src="assets/logo-light.png" alt="Aseem &amp; Consulting" class="logo-on-light transition-transform duration-200 group-hover:scale-105" width="184" height="76">
-        <img src="assets/logo-dark.png" alt="Aseem &amp; Consulting" class="logo-on-dark transition-transform duration-200 group-hover:scale-105" width="184" height="76">
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium opacity-80">
-        <a href="#/" class="hover:text-cyan-500 transition-colors">Catalog</a>
-        <a href="https://anc.com.np/" class="hover:text-cyan-500 transition-colors">anc.com.np</a>
-      </nav>
-      <div class="flex items-center gap-2 sm:gap-3">
-        <span class="hidden sm:inline-flex text-[10px] font-mono uppercase tracking-wider opacity-60 px-2.5 py-1 rounded-full border border-black/10 dark:border-white/10">Local only</span>
-        <button type="button" class="theme-toggle-btn" aria-label="Toggle theme"></button>
-        <a href="https://anc.com.np/#contact" class="btn-futuristic text-xs py-2 px-4 hidden sm:inline-flex"><span>Consult</span></a>
-        <button type="button" id="mobile-toggle" class="md:hidden p-2 opacity-70" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="ticker-left">
+        <span>🔒 <b>Quoted in chat</b></span>
+        <span>⚡ <b>WhatsApp price &amp; delivery</b></span>
+        <span>💎 <b>Premium products</b></span>
       </div>
-    </header>
+      <div class="ticker-right">
+        <span class="stars">★★★★★</span>
+        <span>Local support from Kushma, Nepal</span>
+      </div>
+    </div>
   </div>
 
-  <div id="mobile-menu" class="hidden fixed top-24 inset-x-4 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-2xl border border-black/10 dark:border-slate-800 rounded-3xl p-6 md:hidden shadow-2xl">
-    <nav class="flex flex-col gap-4 text-base font-medium">
-      <a href="#/" class="mobile-link hover:text-cyan-500">Tool catalog</a>
-      <a href="https://anc.com.np/" class="mobile-link hover:text-cyan-500">Main website</a>
-      <a href="https://anc.com.np/#contact" class="mobile-link hover:text-cyan-500">Start a consultation</a>
+  <header class="site-header">
+    <div class="header-row">
+      <a class="brand" href="./">ANC Tools</a>
+      <div class="search-wrap">
+        <form id="search-form" role="search">
+          <input id="search-input" type="search" placeholder="Search ChatGPT, Canva, VPN…" autocomplete="off" enterkeyhint="search" aria-label="Search products" aria-autocomplete="list" aria-controls="search-results">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+          </button>
+        </form>
+        <div class="search-results" id="search-results" role="listbox"></div>
+      </div>
+      <div class="header-actions">
+        <a class="btn-ghost" href="blog/">Guides</a>
+        <a class="btn-ghost" href="how/">How it works</a>
+        <a class="btn-wa-header" id="header-wa" href="https://wa.me/9779802840041?text=Hi%20ANC%20Tools%2C%20I%20want%20a%20price." target="_blank" rel="noopener noreferrer">Get a quote</a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Categories" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <nav class="cat-nav" id="cat-nav" aria-label="Categories">
+      <ul></ul>
     </nav>
+  </header>
+
+  <main id="app" class="page"></main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close image">×</button>
+    <img id="lightbox-img" alt="">
   </div>
 
-  <div id="app" class="relative z-10 pt-32 pb-8 max-w-6xl mx-auto px-4 sm:px-6"></div>
-
-  <footer class="site-footer relative z-10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row md:items-end justify-between gap-6 text-xs">
-      <div>
-        <p class="font-semibold">ANC Tools · Aseem and Consulting Pvt Ltd</p>
-        <p class="opacity-70 mt-1">Every tool runs in your browser. We do not upload, store, or log what you paste.</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="./">ANC Tools</a>
+          <p>Digital subscriptions in Nepal. Catalog is public; today’s NPR rate is on WhatsApp. Serving Kathmandu, Pokhara, Kushma, and all Nepal.</p>
+        </div>
+        <div class="footer-cta">
+          <a class="btn-wa-header" id="footer-wa" href="https://wa.me/9779802840041?text=Hi%20ANC%20Tools%2C%20I%20want%20a%20price." target="_blank" rel="noopener noreferrer">Get a quote</a>
+          <p>Same-day replies from Kushma, most days.</p>
+        </div>
       </div>
-      <div class="font-mono opacity-70 text-center md:text-right">
-        <a href="https://anc.com.np/" class="text-cyan-600 dark:text-cyan-400 hover:underline">anc.com.np</a>
-        · info@anc.com.np
-        · Kushma, Gandaki, Nepal
+      <div class="footer-grid">
+        <div>
+          <h4>Shop</h4>
+          <a href="about/">About us</a>
+          <a href="how/">How it works</a>
+          <a href="blog/">Buying guides</a>
+          <a href="delivery/">Delivery time</a>
+          <a href="https://anc.com.np/">Main website</a>
+        </div>
+        <div>
+          <h4>Policy</h4>
+          <a href="privacy/">Privacy</a>
+          <a href="refund/">Refunds</a>
+          <a href="terms/">Terms</a>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <a href="payment/">Payment</a>
+          <a href="contact/">Contact</a>
+          <a href="partnership/">Partnership</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="https://wa.me/9779802840041">+977 9802840041</a>
+          <a href="mailto:info@anc.com.np">info@anc.com.np</a>
+          <span>Kushma 05 Parbat, Gandaki 33400</span>
+        </div>
+      </div>
+    </div>
+    <div class="pay-strip">
+      <div class="footer-inner">
+        <ul class="pay-logos" aria-label="Payment methods we accept">
+          <li>
+            <img class="pay-khalti" src="assets/payments/khalti.svg?v=2" alt="Khalti" width="80" height="40">
+          </li>
+          <li class="pay-mb" aria-label="Mobile banking"><span>Mobile</span><span>Banking</span></li>
+          <li class="pay-chip">
+            <img class="pay-connectips" src="assets/payments/connectips.png?v=2" alt="connectIPS" width="80" height="58">
+          </li>
+          <li>
+            <svg class="pay-visa" viewBox="0 0 24 24" role="img" aria-label="Visa" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.269.262-.555.822-.628a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.367 1.01.603 1.006.931-.005.504-.602.725-1.16.734-.975.015-1.54-.263-1.992-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.377-2.564m5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.16-4.84l-1.603 7.496H8.34l1.605-7.496z"/></svg>
+          </li>
+          <li>
+            <svg class="pay-mc" viewBox="0 0 152 96" role="img" aria-label="Mastercard" xmlns="http://www.w3.org/2000/svg"><circle cx="58" cy="48" r="48" fill="#EB001B"/><circle cx="94" cy="48" r="48" fill="#F79E1B"/><path fill="#FF5F00" d="M76 9.2a47.9 47.9 0 0 0 0 77.6 47.9 47.9 0 0 0 0-77.6z"/></svg>
+          </li>
+        </ul>
+        <div class="copy">
+          <span>© 2026 ANC Tools · Aseem and Consulting Pvt Ltd</span>
+          <span>Kushma, Nepal</span>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script src="js/tools.js"></script>
-  <script src="js/app.js"></script>
+  <a class="wa-float" id="wa-float" href="https://wa.me/9779802840041?text=Hi%20ANC%20Tools%2C%20I%20want%20a%20price." target="_blank" rel="noopener noreferrer">
+    <span class="wa-pulse" aria-hidden="true"></span>
+    Get a quote
+  </a>
+
+  <script src="js/catalog.js?v=11"></script>
+  <script src="js/app.js?v=31"></script>
 </body>
 </html>

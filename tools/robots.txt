@@ -1,7 +1,44 @@
-# Robots.txt for tools.anc.com.np — ANC Tools
-# Aseem and Consulting Pvt Ltd
+# ANC Tools — tools.anc.com.np
+# Aseem and Consulting Pvt Ltd, Kushma, Nepal
 
 User-agent: *
+Allow: /
+Disallow: /seller/
+Disallow: /seller
+
+User-agent: Googlebot
+Allow: /
+Disallow: /seller/
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Disallow: /seller/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://tools.anc.com.np/sitemap.xml

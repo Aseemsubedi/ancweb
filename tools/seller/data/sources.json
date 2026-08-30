@@ -1,0 +1,1126 @@
+{
+  "titan-mail": {
+    "name": "Titan Mail",
+    "code": "TM Titan Mail",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/titan-mail"
+    }
+  },
+  "google-meet": {
+    "name": "Google Meet",
+    "code": "TM-KSN Google Meet",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/google-meet",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-google-meet-in-nepal"
+    }
+  },
+  "microsoft-onedrive": {
+    "name": "Microsoft OneDrive",
+    "code": "TM-KSN-CM-KS OneDrive",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/microsoft-onedrive",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-microsoft-onedrive-nepal",
+      "CM": "https://cheapmandu.com/product/microsoft-onedrive/",
+      "KS": "https://keysewa.com/product/onedrive-1tb/"
+    }
+  },
+  "google-one": {
+    "name": "Google One",
+    "code": "TM-KSN-CM-KS Google One",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/google-one",
+      "KSN": "https://keyshopnepal.com/product-detail/get-google-one-plan-nepal",
+      "CM": "https://cheapmandu.com/product/google-one/",
+      "KS": "https://keysewa.com/product/google-one-subscription-google-drive-keysewa-com/"
+    }
+  },
+  "zoom-pro": {
+    "name": "Zoom Pro",
+    "code": "TM-KSN-KS Zoom",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/zoom-pro",
+      "KSN": "https://keyshopnepal.com/product-detail/get-zoom-pro-nepal-best-price"
+    }
+  },
+  "stealth-writer": {
+    "name": "Stealth Writer",
+    "code": "TM-KSN-CM Stealth Writer",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/stealth-writer",
+      "KSN": "https://keyshopnepal.com/product-detail/stealthwriter-ai-now-in-nepal-buy-today",
+      "CM": "https://cheapmandu.com/product/stealth-writer-ai-in-nepal/"
+    }
+  },
+  "hix-ai-bypass": {
+    "name": "HIX AI Bypass",
+    "code": "TM-KSN-CM HIX",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/hix-ai-bypass",
+      "KSN": "https://keyshopnepal.com/product-detail/get-hix-ai-in-nepal-today-quick-affordable",
+      "CM": "https://cheapmandu.com/product/hix-ai-bypass/"
+    }
+  },
+  "chatgpt-plus": {
+    "name": "ChatGPT Plus",
+    "code": "TM-KSN-KS ChatGPT",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/chatgpt-plus",
+      "KSN": "https://keyshopnepal.com/product-detail/how-to-get-chatgpt-plus-in-nepal",
+      "KS": "https://keysewa.com/product/chatgpt-plus-keysewa/"
+    }
+  },
+  "google-gemini-ai": {
+    "name": "Google Gemini AI",
+    "code": "TM-KSN-CM-KS Gemini",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/google-gemini-ai",
+      "KSN": "https://keyshopnepal.com/product-detail/get-gemini-ai-now",
+      "CM": "https://cheapmandu.com/product/google-gemini-ai/",
+      "KS": "https://keysewa.com/product/google-gemini-ai-google-ai-pro/"
+    }
+  },
+  "paperpal-premium": {
+    "name": "Paperpal Premium",
+    "code": "TM-KSN-CM Paperpal",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/paperpal-premium",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-paperpal-premium-in-nepal-the-best-deal-at-keyshopnepal",
+      "CM": "https://cheapmandu.com/product/paperpal-ai-pro-in-nepal/"
+    }
+  },
+  "jenni-ai": {
+    "name": "Jenni AI",
+    "code": "TM-KSN-CM Jenni",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/jenni-ai",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-jenni-ai-subscription-in-nepal-at-the-best-price",
+      "CM": "https://cheapmandu.com/product/jenni-ai-in-nepal/"
+    }
+  },
+  "ai-plagiarism-checker": {
+    "name": "AI & Plagiarism Checker",
+    "code": "TM Plagiarism",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/ai-plagiarism-checker"
+    }
+  },
+  "scribd-premium": {
+    "name": "Scribd Premium",
+    "code": "TM-KSN-CM-KS Scribd",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/scribd-premium",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-scribd-premium-subscription-in-nepal",
+      "CM": "https://cheapmandu.com/product/scribd-premium-in-nepal/",
+      "KS": "https://keysewa.com/product/scridb-keysewa-com/"
+    }
+  },
+  "quillbot-premium": {
+    "name": "Quillbot Premium",
+    "code": "TM-KSN-KS Quillbot",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/quillbot-premium",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-quillbot-premium-subscription-in-nepal",
+      "KS": "https://keysewa.com/product/quillbot-premium-subscription/"
+    }
+  },
+  "grammarly": {
+    "name": "Grammarly",
+    "code": "TM-KSN Grammarly",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/grammarly",
+      "KSN": "https://keyshopnepal.com/product-detail/grammarly-premium-boost-your-writing"
+    }
+  },
+  "visio-professional": {
+    "name": "Visio Professional",
+    "code": "TM-CM Visio",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/visio-professional",
+      "CM": "https://cheapmandu.com/product/visio-professional/"
+    }
+  },
+  "windows-11-pro": {
+    "name": "Windows 11 Pro",
+    "code": "TM-KSN-CM-KS Win11",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/windows-activation-key",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-windows-activation-key-in-nepal",
+      "CM": "https://cheapmandu.com/product/windows-activation-key/",
+      "KS": "https://keysewa.com/product/windows-11-pro-key/"
+    }
+  },
+  "microsoft-365-personal": {
+    "name": "Microsoft 365 Personal",
+    "code": "TM-KSN-CM-KS 365 Personal",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/microsoft-365-personal",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-microsoft-365-personal-in-nepal",
+      "CM": "https://cheapmandu.com/product/microsoft-365-personal/",
+      "KS": "https://keysewa.com/product/microsoft-365-personal/"
+    }
+  },
+  "windows-server": {
+    "name": "Windows Server",
+    "code": "TM-KS Win Server",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/windows-server-key",
+      "KS": "https://keysewa.com/product/windows-server-genuine-license-key/"
+    }
+  },
+  "microsoft-365-family": {
+    "name": "Microsoft 365 Family",
+    "code": "TM-KSN-CM-KS 365 Family",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/microsoft-365-family",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-microsoft-365-personal-in-nepal",
+      "CM": "https://cheapmandu.com/product/microsoft-365-family/",
+      "KS": "https://keysewa.com/product/microsoft-365-family/"
+    }
+  },
+  "office-windows": {
+    "name": "Office for Windows PC",
+    "code": "TM-KSN-CM-KS Office Win",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/office-for-windows-pc",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-microsoft-office-activation-key-in-nepal",
+      "CM": "https://cheapmandu.com/product/office-for-windows-pc/",
+      "KS": "https://keysewa.com/product/office-2024-pro-plus-key/"
+    }
+  },
+  "office-mac": {
+    "name": "Office for Mac",
+    "code": "TM-CM-KS Office Mac",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/office-for-macbook",
+      "CM": "https://cheapmandu.com/product/office-for-macbook/",
+      "KS": "https://keysewa.com/product/office-2021-home-business-lifetime-bind-key-for-mac/"
+    }
+  },
+  "project-professional": {
+    "name": "Project Professional",
+    "code": "TM-KSN-CM-KS Project",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/project-professional",
+      "KSN": "https://keyshopnepal.com/product-detail/get-microsoft-project-professional-best-price",
+      "CM": "https://cheapmandu.com/product/project-professional/",
+      "KS": "https://keysewa.com/product/ms-project-2019-pro-lifetime-bind-key/"
+    }
+  },
+  "office-365-account": {
+    "name": "Office 365 Account",
+    "code": "TM-CM Office 365",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/office-365-account",
+      "CM": "https://cheapmandu.com/product/office-365-account/"
+    }
+  },
+  "clipchamp": {
+    "name": "Microsoft Clipchamp",
+    "code": "TM Clipchamp",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/microsoft-clipchamp-video-editor"
+    }
+  },
+  "coreldraw": {
+    "name": "CorelDRAW Software",
+    "code": "TM-KSN-CM CorelDRAW",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/coreldraw-software",
+      "KSN": "https://keyshopnepal.com/product-detail/get-coreldraw-download-license-in-nepal",
+      "CM": "https://cheapmandu.com/product/coreldraw-software/"
+    }
+  },
+  "canva-pro-edu": {
+    "name": "Canva Pro Edu",
+    "code": "TM Canva Edu",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/canva-pro-edu"
+    }
+  },
+  "canva-professional": {
+    "name": "Canva Professional",
+    "code": "TM-KSN-CM-KS Canva",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/canva-professional",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-canva-pro-in-nepal-best-price-easy-setup",
+      "CM": "https://cheapmandu.com/product/canva-pro/",
+      "KS": "https://keysewa.com/product/canva-pro-1-year/"
+    }
+  },
+  "adobe-photography": {
+    "name": "Adobe Photography Plan",
+    "code": "TM-CM Adobe Photo",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/adobe-photography-plan",
+      "CM": "https://cheapmandu.com/product/adobe-photography-plan/"
+    }
+  },
+  "capcut-pro": {
+    "name": "CapCut Pro",
+    "code": "TM-KSN-CM CapCut",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/capcut-pro",
+      "KSN": "https://keyshopnepal.com/product-detail/get-capcut-pro-nepal",
+      "CM": "https://cheapmandu.com/product/capcut-pro/"
+    }
+  },
+  "envato-elements": {
+    "name": "Envato Elements",
+    "code": "TM-KSN-KS Envato",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/en-vato-elements",
+      "KSN": "https://keyshopnepal.com/product-detail/get-envato-elements-premium-in-nepal",
+      "KS": "https://keysewa.com/product/envato-elements-premium/"
+    }
+  },
+  "adobe-creative-cloud": {
+    "name": "Adobe Creative Cloud",
+    "code": "TM-KSN-CM Adobe CC",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/adobe-creative-cloud",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-adobe-creative-cloud-in-nepal",
+      "CM": "https://cheapmandu.com/product/adobe-creative-cloud/"
+    }
+  },
+  "kaspersky-vpn": {
+    "name": "Kaspersky VPN",
+    "code": "TM-CM Kaspersky VPN",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/kaspersky-vpn",
+      "CM": "https://cheapmandu.com/product/kaspersky-vpn/"
+    }
+  },
+  "surfshark-vpn": {
+    "name": "Surfshark VPN",
+    "code": "TM-KSN-KS Surfshark",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/surf-shark-vpn",
+      "KSN": "https://keyshopnepal.com/product-detail/get-surfshark-vpn-in-nepal",
+      "KS": "https://keysewa.com/product/surfshark-vpn/"
+    }
+  },
+  "hma-vpn": {
+    "name": "HMA VPN",
+    "code": "TM-KSN-CM-KS HMA",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/hma-vpn",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-hma-vpn-in-nepal-at-best-price",
+      "CM": "https://cheapmandu.com/product/hma-vpn/",
+      "KS": "https://keysewa.com/product/hma-vpn/"
+    }
+  },
+  "nordvpn": {
+    "name": "NordVPN",
+    "code": "TM-KSN-KS NordVPN",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/nordvpn",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-nord-vpn-in-nepal-fast-private-easy-setup",
+      "KS": "https://keysewa.com/product/nord-vpn/"
+    }
+  },
+  "avast-vpn": {
+    "name": "Avast SecureLine VPN",
+    "code": "TM-CM-KS Avast VPN",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/avast-secureline-vpn",
+      "CM": "https://cheapmandu.com/product/avast-secureline-vpn/",
+      "KS": "https://keysewa.com/product/avast-secureline-vpn/"
+    }
+  },
+  "express-vpn": {
+    "name": "ExpressVPN",
+    "code": "TM-KSN-CM-KS ExpressVPN",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/express-vpn",
+      "KSN": "https://keyshopnepal.com/product-detail/express-vpn-protect-your-online-privacy",
+      "CM": "https://cheapmandu.com/product/ex-press-vpn/",
+      "KS": "https://keysewa.com/product/express-vpn/"
+    }
+  },
+  "nitro-pdf-pro": {
+    "name": "Nitro PDF Pro",
+    "code": "TM-KSN Nitro",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/nitro-pdf-pro",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-nitro-pdf-pro-online-nepal"
+    }
+  },
+  "notion": {
+    "name": "Notion",
+    "code": "TM-KSN-CM Notion",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/notion",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-notion-premium-in-nepal-keyshopnepal-official-guide",
+      "CM": "https://cheapmandu.com/product/notion/"
+    }
+  },
+  "cleanmymac-x": {
+    "name": "CleanMyMac X",
+    "code": "TM-CM-KS CleanMyMac",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/cleanmymac-x",
+      "CM": "https://cheapmandu.com/product/cleanmymac-x/",
+      "KS": "https://keysewa.com/product/cleanmymac-x/"
+    }
+  },
+  "easeus-data-recovery": {
+    "name": "EaseUS Data Recovery Pro",
+    "code": "TM-CM-KS EaseUS",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/easeus-data-recovery-pro",
+      "CM": "https://cheapmandu.com/product/easeus-data-recovery-pro/",
+      "KS": "https://keysewa.com/product/easeus-data-recovery-pro/"
+    }
+  },
+  "ccleaner-professional": {
+    "name": "CCleaner Professional",
+    "code": "TM-CM CCleaner",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/ccleaner-professional",
+      "CM": "https://cheapmandu.com/product/ccleaner-professional/"
+    }
+  },
+  "linkedin-premium": {
+    "name": "LinkedIn Premium",
+    "code": "TM-KSN-CM Linkedin",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/linkedin-premium",
+      "KSN": "https://keyshopnepal.com/product-detail/get-linkedin-premium-in-nepal-instantly",
+      "CM": "https://cheapmandu.com/product/linkedin-premium/"
+    }
+  },
+  "truecaller": {
+    "name": "Truecaller",
+    "code": "TM-KSN-CM-KS Truecaller",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/true-cller",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-truecaller-subscription-in-nepal",
+      "CM": "https://cheapmandu.com/product/truecller/",
+      "KS": "https://keysewa.com/product/truecaller-premium/"
+    }
+  },
+  "codedex-club": {
+    "name": "Codedex Club",
+    "code": "TM Codedex",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/codedex-club"
+    }
+  },
+  "kids-worksheets": {
+    "name": "6000+ Kids Printable Worksheets",
+    "code": "TM Worksheets",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/6000-kids-printable-worksheets"
+    }
+  },
+  "datacamp": {
+    "name": "DataCamp",
+    "code": "TM-CM DataCamp",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/datacamp",
+      "CM": "https://cheapmandu.com/product/datacamp/"
+    }
+  },
+  "educative": {
+    "name": "Educative",
+    "code": "TM-CM Educative",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/educative",
+      "CM": "https://cheapmandu.com/product/educative/"
+    }
+  },
+  "skillshare": {
+    "name": "Skillshare",
+    "code": "TM-KSN-KS Skillshare",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/skillshare",
+      "KSN": "https://keyshopnepal.com/product-detail/skillshare-premium-nepal-buy-now",
+      "KS": "https://keysewa.com/product/skillshare-keysewa-com/"
+    }
+  },
+  "linkedin-learning": {
+    "name": "LinkedIn Learning",
+    "code": "TM-CM Linkedin Learning",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/linkedin-learning",
+      "CM": "https://cheapmandu.com/product/linkedin-learning/"
+    }
+  },
+  "udemy": {
+    "name": "Udemy",
+    "code": "TM-KSN-KS Udemy",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/udemy",
+      "KSN": "https://keyshopnepal.com/product-detail/purchase-udemy-courses-in-nepal"
+    }
+  },
+  "norton-security": {
+    "name": "Norton Security",
+    "code": "TM Norton",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/norton-security"
+    }
+  },
+  "avg-internet-security": {
+    "name": "AVG Internet Security",
+    "code": "TM AVG",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/avg-internet-security"
+    }
+  },
+  "eset-antivirus": {
+    "name": "ESET Antivirus",
+    "code": "TM ESET",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/eset-antivirus"
+    }
+  },
+  "bitdefender-antivirus": {
+    "name": "Bitdefender Antivirus",
+    "code": "TM Bitdefender",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/bitdefender-antivirus"
+    }
+  },
+  "mcafee-internet-security": {
+    "name": "McAfee Internet Security",
+    "code": "TM-KSN-CM McAfee IS",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/mcafee-internet-security",
+      "KSN": "https://keyshopnepal.com/product-detail/mcafee-mobile-security-plus-vpn",
+      "CM": "https://cheapmandu.com/product/mcafee-internet-security/"
+    }
+  },
+  "mcafee-total-protection": {
+    "name": "McAfee Total Protection",
+    "code": "TM-KSN-CM McAfee Total",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/mcafee-total-protection",
+      "KSN": "https://keyshopnepal.com/product-detail/get-mcafee-total-protection-nepal",
+      "CM": "https://cheapmandu.com/product/mcafee-total-protection/"
+    }
+  },
+  "mcafee-antivirus": {
+    "name": "McAfee AntiVirus",
+    "code": "TM-KSN-CM McAfee AV",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/mcafee-antivirus",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-mcafee-antivirus-online-in-nepal",
+      "CM": "https://cheapmandu.com/product/mcafee-antivirus/"
+    }
+  },
+  "kaspersky": {
+    "name": "Kaspersky",
+    "code": "TM-KSN-CM Kaspersky",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/kaspersky",
+      "KSN": "https://keyshopnepal.com/product-detail/get-kaspersky-antivirus-nepal-instant-activation",
+      "CM": "https://cheapmandu.com/product/kaspersky/"
+    }
+  },
+  "speechelo-pro": {
+    "name": "Speechelo Pro",
+    "code": "TM-KSN Speechelo",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/speechelo-pro",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-speechelo-pro-in-nepal-from-keyshopnepal"
+    }
+  },
+  "jetbrains-premium": {
+    "name": "JetBrains Premium",
+    "code": "TM-CM JetBrains",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/jetbrains-premium",
+      "CM": "https://cheapmandu.com/product/jetbrains-premium/"
+    }
+  },
+  "dashlane": {
+    "name": "Dashlane Password Manager",
+    "code": "TM-CM Dashlane",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/dashlane-password-manager",
+      "CM": "https://cheapmandu.com/product/dashlane-password-manager/"
+    }
+  },
+  "1password": {
+    "name": "1Password Premium",
+    "code": "TM 1Password",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/1password-premium"
+    }
+  },
+  "roboform": {
+    "name": "RoboForm Password Manager",
+    "code": "TM-KS RoboForm",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/roboform-password-manager",
+      "KS": "https://keysewa.com/product/roboform-password-manager/"
+    }
+  },
+  "github-student": {
+    "name": "GitHub Student Developer Pack",
+    "code": "TM-KSN-CM GitHub Student",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/github-student-developer-pack",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-github-student-developer-pack-nepal-keyshopnepal-offer",
+      "CM": "https://cheapmandu.com/product/github-student-developer-pack/"
+    }
+  },
+  "idm": {
+    "name": "Internet Download Manager (IDM)",
+    "code": "TM-KSN-CM-KS IDM",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/internet-download-manager-idm",
+      "KSN": "https://keyshopnepal.com/product-detail/buy-internet-download-manager-idm-in-nepal-best-price-support",
+      "KS": "https://keysewa.com/product/internet-download-manager-lifetime-key/",
+      "CM": "https://cheapmandu.com/product/internet-download-manager/"
+    }
+  },
+  "autodesk-apps": {
+    "name": "Autodesk Apps",
+    "code": "TM-CM-KS Autodesk",
+    "sources": {
+      "TM": "https://toolsmandu.com/item/auto-desk-apps",
+      "CM": "https://cheapmandu.com/product/autodesk-apps/",
+      "KS": "https://keysewa.com/product/autodesk-all-apps-1-year-subscription/"
+    }
+  },
+  "icloud": {
+    "name": "iCloud Storage",
+    "code": "KSN-CM-KS iCloud",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-icloud-storage-in-nepal",
+      "CM": "https://cheapmandu.com/product/icloud-upgrade/",
+      "KS": "https://keysewa.com/product/icloud-upgrade-keysewa/"
+    }
+  },
+  "claude-ai": {
+    "name": "Claude AI",
+    "code": "KSN-CM Claude",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-claude-ai-in-nepal-best-price-fast-delivery",
+      "CM": "https://cheapmandu.com/product/claude-ai-pro-in-nepal/"
+    }
+  },
+  "grok": {
+    "name": "Grok",
+    "code": "KSN-CM Grok",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-grok-subscription-nepal",
+      "CM": "https://cheapmandu.com/product/super-grok-in-nepal/"
+    }
+  },
+  "perplexity-ai": {
+    "name": "Perplexity AI",
+    "code": "KSN-CM Perplexity",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-perplexity-ai-in-nepal",
+      "CM": "https://cheapmandu.com/product/perplexity-ai/"
+    }
+  },
+  "google-ai-ultra": {
+    "name": "Google AI Ultra",
+    "code": "KSN-CM Google Ultra",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-google-ai-ultra-online-nepal",
+      "CM": "https://cheapmandu.com/product/gemini-ai-ultra-in-nepal/"
+    }
+  },
+  "midjourney": {
+    "name": "Midjourney",
+    "code": "KSN Midjourney",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-midjourney-ai-in-nepal-at-best-prices"
+    }
+  },
+  "elevenlabs": {
+    "name": "ElevenLabs",
+    "code": "KSN ElevenLabs",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-elevenlabs-now-in-nepal"
+    }
+  },
+  "replit-core": {
+    "name": "Replit Core",
+    "code": "KSN Replit",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-replit-core-in-nepal"
+    }
+  },
+  "lovable-ai": {
+    "name": "Lovable AI",
+    "code": "KSN Lovable",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-lovable-ai-pro-at-best-price"
+    }
+  },
+  "originality-ai": {
+    "name": "Originality AI",
+    "code": "KSN Originality",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-originality-ai-in-nepal-best-price"
+    }
+  },
+  "semrush": {
+    "name": "Semrush",
+    "code": "KSN-KS Semrush",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/semrush-nepal-buy-subscription-at-low-cost",
+      "KS": "https://keysewa.com/product/semrush-keysewa-com/"
+    }
+  },
+  "descript-ai": {
+    "name": "Descript",
+    "code": "KSN Descript",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-descript-ai-creator-plan-in-nepal"
+    }
+  },
+  "gamma-ai": {
+    "name": "Gamma",
+    "code": "KSN-CM Gamma",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-gamma-ai-in-nepal-at-lowest-price",
+      "CM": "https://cheapmandu.com/product/gamma-ai-pro-in-nepal/"
+    }
+  },
+  "devin-ai": {
+    "name": "Devin AI",
+    "code": "KSN Devin",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-devin-ai-at-the-best-price-now"
+    }
+  },
+  "suno-ai": {
+    "name": "Suno AI",
+    "code": "KSN-KS Suno",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-suno-ai-premium-in-nepal-best-deals-2026",
+      "KS": "https://keysewa.com/product/suno-ai-pro/"
+    }
+  },
+  "bolt-ai": {
+    "name": "Bolt",
+    "code": "KSN-CM Bolt",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/bolt-new-pro-in-nepal/"
+    }
+  },
+  "heygen-ai": {
+    "name": "HeyGen",
+    "code": "KSN-CM HeyGen",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-heygen-ai-online-in-nepal",
+      "CM": "https://cheapmandu.com/product/heygen-creator-in-nepal/"
+    }
+  },
+  "invideo-ai": {
+    "name": "InVideo AI",
+    "code": "KSN-CM InVideo",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-invideo-ai-in-nepal-trusted-source",
+      "CM": "https://cheapmandu.com/product/invideo/"
+    }
+  },
+  "pollo-ai": {
+    "name": "Pollo AI",
+    "code": "KSN Pollo",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/pollo-ai-in-nepal-best-ai-video-generator"
+    }
+  },
+  "gptzero": {
+    "name": "GPTZero",
+    "code": "KSN GPTZero",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-gptzero-subscription-in-nepal"
+    }
+  },
+  "turnitin": {
+    "name": "Turnitin",
+    "code": "KSN Turnitin",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-turnitin-premium-subscription-in-nepal"
+    }
+  },
+  "humanizeai-pro": {
+    "name": "HumanizeAI Pro",
+    "code": "KSN HumanizeAI",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/humanizeai-pro-make-ai-text-sound-human"
+    }
+  },
+  "humbot-ai": {
+    "name": "Humbot AI",
+    "code": "KSN Humbot",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/humbot-ai-subscription-nepal-at-best-price"
+    }
+  },
+  "figma": {
+    "name": "Figma",
+    "code": "KSN-CM Figma",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-figma-in-nepal-at-best-price-keyshopnepal",
+      "CM": "https://cheapmandu.com/product/figma-pro/"
+    }
+  },
+  "beautiful-ai": {
+    "name": "Beautiful.ai",
+    "code": "KSN-CM Beautiful.ai",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-beautiful-ai-nepal",
+      "CM": "https://cheapmandu.com/product/beautiful-ai/"
+    }
+  },
+  "freepik-premium": {
+    "name": "Freepik Premium",
+    "code": "KSN-CM-KS Freepik",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-freepik-premium-account-in-nepal",
+      "CM": "https://cheapmandu.com/product/freepik-premium/",
+      "KS": "https://keysewa.com/product/magnific-formerly-freepik/"
+    }
+  },
+  "adobe-premiere-pro": {
+    "name": "Adobe Premiere Pro",
+    "code": "KSN Premiere",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-adobe-premiere-pro-nepal"
+    }
+  },
+  "filmora": {
+    "name": "Wondershare Filmora",
+    "code": "KSN-CM-KS Filmora",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-wondershare-filmora-license-in-nepal",
+      "CM": "https://cheapmandu.com/product/wondershare-filmora-14/"
+    }
+  },
+  "mcafee-mobile-vpn": {
+    "name": "McAfee Mobile Security + VPN",
+    "code": "KSN-CM McAfee VPN",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/mcafee-mobile-security-plus-vpn",
+      "CM": "https://cheapmandu.com/product/mcafee-mobile-security-for-android/"
+    }
+  },
+  "iscanner": {
+    "name": "iScanner",
+    "code": "KSN iScanner",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-iscanner-subscription-online-in-nepal"
+    }
+  },
+  "wps-office-pro": {
+    "name": "WPS Office Pro",
+    "code": "KSN-CM-KS WPS",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/wps-office-pro-for-nepal-users-affordable-fast-access",
+      "CM": "https://cheapmandu.com/product/wps-office-pro/"
+    }
+  },
+  "cursor-ai": {
+    "name": "Cursor",
+    "code": "KSN-CM Cursor",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-cursor-ai-in-nepal-keyshopnepal-official",
+      "CM": "https://cheapmandu.com/product/cursor-ai-pro-in-nepal/"
+    }
+  },
+  "coursera-plus": {
+    "name": "Coursera Plus",
+    "code": "KSN-CM Coursera",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-coursera-plus-in-nepal-best-price-easy-access",
+      "CM": "https://cheapmandu.com/product/coursera-in-nepal/"
+    }
+  },
+  "duolingo-super": {
+    "name": "Super Duolingo",
+    "code": "KSN-CM Duolingo",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-super-duolingo-app-in-nepal",
+      "CM": "https://cheapmandu.com/product/super-duolingo-in-nepal/"
+    }
+  },
+  "epidemic-sound": {
+    "name": "Epidemic Sound",
+    "code": "KSN-CM Epidemic",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-epidemic-sound-in-nepal-safe-quick-purchase",
+      "CM": "https://cheapmandu.com/product/epidemic-sound/"
+    }
+  },
+  "mcafee-livesafe": {
+    "name": "McAfee LiveSafe",
+    "code": "KSN-CM LiveSafe",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-mcafee-livesafe-nepal-best-price",
+      "CM": "https://cheapmandu.com/product/mcafee-livesafe/"
+    }
+  },
+  "netflix": {
+    "name": "Netflix",
+    "code": "KSN-CM-KS Netflix",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-netflix-subscription-in-nepal",
+      "CM": "https://cheapmandu.com/product/netflix/",
+      "KS": "https://keysewa.com/product/netflix/"
+    }
+  },
+  "spotify-premium": {
+    "name": "Spotify Premium",
+    "code": "KSN-CM-KS Spotify",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/spotify-premium-nepal-buy-instantly-from-keyshopnepal",
+      "CM": "https://cheapmandu.com/product/spotify-premium/",
+      "KS": "https://keysewa.com/product/spotify-premium/"
+    }
+  },
+  "youtube-premium": {
+    "name": "YouTube Premium",
+    "code": "KSN-CM YouTube",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-youtube-premium-subscription-in-nepal",
+      "CM": "https://cheapmandu.com/product/youtube-premium/"
+    }
+  },
+  "prime-video": {
+    "name": "Prime Video",
+    "code": "KSN-CM-KS Prime Video",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/get-prime-video-easily-in-nepal",
+      "CM": "https://cheapmandu.com/product/prime-video/",
+      "KS": "https://keysewa.com/product/prime-video/"
+    }
+  },
+  "crunchyroll": {
+    "name": "Crunchyroll",
+    "code": "KSN-CM-KS Crunchyroll",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/best-way-to-buy-crunchyroll-in-nepal",
+      "CM": "https://cheapmandu.com/product/crunchyroll/",
+      "KS": "https://keysewa.com/product/crunchyroll/"
+    }
+  },
+  "sony-liv": {
+    "name": "SonyLIV",
+    "code": "KSN-KS SonyLIV",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-sony-liv-premium-in-nepal",
+      "KS": "https://keysewa.com/product/sonyliv-premium/"
+    }
+  },
+  "zee5": {
+    "name": "ZEE5",
+    "code": "KSN ZEE5",
+    "sources": {
+      "KSN": "https://keyshopnepal.com/product-detail/buy-zee5-subscription-in-nepal"
+    }
+  },
+  "google-workspace": {
+    "name": "Google Workspace",
+    "code": "CM Workspace",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/google-workspace/"
+    }
+  },
+  "google-workspace-education": {
+    "name": "Personal Google Workspace Education Plan - 1 Domain, 10 TB Drive, 5 Emails",
+    "code": "ANC Workspace Edu",
+    "sources": {}
+  },
+  "digitalocean": {
+    "name": "DigitalOcean",
+    "code": "CM DigitalOcean",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/200-verified-digitalocean-account/"
+    }
+  },
+  "remote-desktop": {
+    "name": "Remote Desktop",
+    "code": "CM Remote Desktop",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/remote-desktop-connection/"
+    }
+  },
+  "higgsfield": {
+    "name": "Higgsfield",
+    "code": "CM Higgsfield",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/higgsfield-pro-in-nepal/"
+    }
+  },
+  "kling-ai": {
+    "name": "Kling AI",
+    "code": "CM Kling",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/kling-ai-in-nepal/"
+    }
+  },
+  "github-copilot": {
+    "name": "GitHub Copilot",
+    "code": "CM Copilot",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/github-copilot/"
+    }
+  },
+  "microsoft-copilot": {
+    "name": "Microsoft Copilot",
+    "code": "CM-KS MS Copilot",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/microsoft-copilot/",
+      "KS": "https://keysewa.com/product/microsoft-copilot-pro/"
+    }
+  },
+  "writehuman": {
+    "name": "WriteHuman",
+    "code": "CM WriteHuman",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/write-human-ai-pro-in-nepal/"
+    }
+  },
+  "zerogpt": {
+    "name": "ZeroGPT",
+    "code": "CM ZeroGPT",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/zerogpt-premium-in-nepal/"
+    }
+  },
+  "german-exam": {
+    "name": "German Exam Preparation",
+    "code": "CM German Exam",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/german-exam-preparation-in-nepal/"
+    }
+  },
+  "adobe-acrobat": {
+    "name": "Adobe Acrobat",
+    "code": "CM Acrobat",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/adobe-acrobat-2022-in-nepal/"
+    }
+  },
+  "corel-videostudio": {
+    "name": "Corel VideoStudio Ultimate",
+    "code": "CM VideoStudio",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/corel-videostudio-ultimate-in-nepal/"
+    }
+  },
+  "vmware-fusion": {
+    "name": "VMware Fusion Pro",
+    "code": "CM Fusion",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/vmware-fusion-pro-13/"
+    }
+  },
+  "parallels-desktop": {
+    "name": "Parallels Desktop",
+    "code": "CM-KS Parallels",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/parallels-desktop/",
+      "KS": "https://keysewa.com/product/parallels-desktop-20/"
+    }
+  },
+  "camscanner": {
+    "name": "CamScanner Gold",
+    "code": "CM CamScanner",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/camscanner-gold-premium-in-nepal/"
+    }
+  },
+  "ilovepdf": {
+    "name": "iLovePDF Premium",
+    "code": "CM iLovePDF",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/ilovepdf-premium-in-nepal/"
+    }
+  },
+  "aiseesoft-recovery": {
+    "name": "Aiseesoft Data Recovery",
+    "code": "CM-KS Aiseesoft",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/aiseesoft-data-recovery/",
+      "KS": "https://keysewa.com/product/aiseesoft-data-recovery/"
+    }
+  },
+  "malwarebytes": {
+    "name": "Malwarebytes Premium",
+    "code": "CM Malwarebytes",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/malwarebytes-premium/"
+    }
+  },
+  "mcafee-android": {
+    "name": "McAfee Mobile Security Android",
+    "code": "CM McAfee Android",
+    "sources": {
+      "CM": "https://cheapmandu.com/product/mcafee-mobile-security-for-android/"
+    }
+  },
+  "avg-secure-vpn": {
+    "name": "AVG Secure VPN",
+    "code": "KS AVG VPN",
+    "sources": {
+      "KS": "https://keysewa.com/product/avg-secure-vpn/"
+    }
+  },
+  "moz-pro": {
+    "name": "Moz Pro",
+    "code": "KS Moz",
+    "sources": {
+      "KS": "https://keysewa.com/product/moz-pro/"
+    }
+  },
+  "ullu": {
+    "name": "Ullu",
+    "code": "KS Ullu",
+    "sources": {
+      "KS": "https://keysewa.com/product/ullu/"
+    }
+  },
+  "vmware-workstation": {
+    "name": "VMware Workstation Pro",
+    "code": "KS Workstation",
+    "sources": {
+      "KS": "https://keysewa.com/product/vmware-workstation-17-pro/"
+    }
+  },
+  "autocad": {
+    "name": "AutoCAD",
+    "code": "KS AutoCAD",
+    "sources": {
+      "KS": "https://keysewa.com/product/autodesk-autocad-1-year-subscription/"
+    }
+  },
+  "windows-10-home": {
+    "name": "Windows 10 Home",
+    "code": "KS Win10 Home",
+    "sources": {
+      "KS": "https://keysewa.com/product/windows-10-home-key/"
+    }
+  },
+  "windows-10-pro": {
+    "name": "Windows 10 Pro",
+    "code": "KS Win10 Pro",
+    "sources": {
+      "KS": "https://keysewa.com/product/windows-10-pro-key/"
+    }
+  },
+  "windows-11-home": {
+    "name": "Windows 11 Home",
+    "code": "KS Win11 Home",
+    "sources": {
+      "KS": "https://keysewa.com/product/windows-11-home-key/"
+    }
+  },
+  "windows-pro-mak": {
+    "name": "Windows Pro MAK 20 PC",
+    "code": "KS Win MAK",
+    "sources": {
+      "KS": "https://keysewa.com/product/windows-10-11-pro-20-pc-mak-key-volume-licensing/"
+    }
+  }
+}

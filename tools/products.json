@@ -1,0 +1,1294 @@
+[
+  {
+    "slug": "titan-mail",
+    "name": "Titan Mail",
+    "category": "cloud",
+    "color": "#1a73e8",
+    "blurb": "Business email on your domain with spam protection and calendar.",
+    "code": "TM Titan Mail",
+    "hidden": false
+  },
+  {
+    "slug": "google-meet",
+    "name": "Google Meet",
+    "category": "cloud",
+    "color": "#00832d",
+    "blurb": "HD video meetings with recording and larger participant limits.",
+    "code": "TM-KSN Google Meet",
+    "hidden": false
+  },
+  {
+    "slug": "microsoft-onedrive",
+    "name": "Microsoft OneDrive",
+    "category": "cloud",
+    "color": "#0078d4",
+    "blurb": "Cloud storage that syncs files across Windows, Mac, and mobile.",
+    "code": "TM-KSN-CM-KS OneDrive",
+    "hidden": false
+  },
+  {
+    "slug": "google-one",
+    "name": "Google One",
+    "category": "cloud",
+    "color": "#4285f4",
+    "blurb": "Extra Google storage for Drive, Gmail, and Photos.",
+    "code": "TM-KSN-CM-KS Google One",
+    "hidden": false
+  },
+  {
+    "slug": "zoom-pro",
+    "name": "Zoom Pro",
+    "category": "cloud",
+    "color": "#2d8cff",
+    "blurb": "Longer meetings, cloud recording, and host controls for teams.",
+    "code": "TM-KSN-KS Zoom",
+    "hidden": false
+  },
+  {
+    "slug": "stealth-writer",
+    "name": "Stealth Writer",
+    "category": "ai-tools",
+    "color": "#7c3aed",
+    "blurb": "AI writing assistant for long-form drafts and rewrites.",
+    "code": "TM-KSN-CM Stealth Writer",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "hix-ai-bypass",
+    "name": "HIX AI Bypass",
+    "category": "ai-tools",
+    "color": "#111827",
+    "blurb": "Rewrite AI text so it reads more naturally for academic and work use.",
+    "code": "TM-KSN-CM HIX",
+    "hidden": false,
+    "deal": true,
+    "heroTag": "Humanize AI drafts"
+  },
+  {
+    "slug": "chatgpt-plus",
+    "name": "ChatGPT Plus",
+    "category": "ai-tools",
+    "color": "#10a37f",
+    "blurb": "Priority access to GPT models, image generation, and custom GPTs.",
+    "code": "TM-KSN-KS ChatGPT",
+    "hidden": false
+  },
+  {
+    "slug": "google-gemini-ai",
+    "name": "Google Gemini AI",
+    "category": "ai-tools",
+    "color": "#4285f4",
+    "blurb": "Google’s multimodal AI for writing, research, and image prompts.",
+    "code": "TM-KSN-CM-KS Gemini",
+    "hidden": false,
+    "deal": true
+  },
+  {
+    "slug": "paperpal-premium",
+    "name": "Paperpal Premium",
+    "category": "academic",
+    "color": "#2563eb",
+    "blurb": "Academic English editing, paraphrasing, and submission checks.",
+    "code": "TM-KSN-CM Paperpal",
+    "hidden": false,
+    "recently": true,
+    "heroTag": "Academic writing tool"
+  },
+  {
+    "slug": "jenni-ai",
+    "name": "Jenni AI",
+    "category": "academic",
+    "color": "#0f766e",
+    "blurb": "Research writing assistant with citations and outline help.",
+    "code": "TM-KSN-CM Jenni",
+    "hidden": false
+  },
+  {
+    "slug": "ai-plagiarism-checker",
+    "name": "AI & Plagiarism Checker",
+    "category": "academic",
+    "color": "#dc2626",
+    "blurb": "Scan drafts for similarity and AI-generated phrasing before you submit.",
+    "code": "TM Plagiarism",
+    "hidden": true
+  },
+  {
+    "slug": "scribd-premium",
+    "name": "Scribd Premium",
+    "category": "academic",
+    "color": "#1e3a5f",
+    "blurb": "Books, audiobooks, magazines, and documents in one library.",
+    "code": "TM-KSN-CM-KS Scribd",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "quillbot-premium",
+    "name": "Quillbot Premium",
+    "category": "academic",
+    "color": "#499557",
+    "blurb": "Paraphrase, grammar, and citation tools for faster editing.",
+    "code": "TM-KSN-KS Quillbot",
+    "hidden": false
+  },
+  {
+    "slug": "grammarly",
+    "name": "Grammarly",
+    "category": "academic",
+    "color": "#15c39a",
+    "blurb": "Grammar, tone, and clarity suggestions across the browser and docs.",
+    "code": "TM-KSN Grammarly",
+    "hidden": false
+  },
+  {
+    "slug": "visio-professional",
+    "name": "Visio Professional",
+    "category": "microsoft",
+    "color": "#3955a3",
+    "blurb": "Diagrams, flowcharts, and network maps for Windows.",
+    "code": "TM-CM Visio",
+    "hidden": false
+  },
+  {
+    "slug": "windows-11-pro",
+    "name": "Windows 11 Pro",
+    "category": "microsoft",
+    "color": "#0078d4",
+    "blurb": "Genuine Windows 11 Pro license for a single PC.",
+    "code": "TM-KSN-CM-KS Win11",
+    "hidden": false
+  },
+  {
+    "slug": "microsoft-365-personal",
+    "name": "Microsoft 365 Personal",
+    "category": "microsoft",
+    "color": "#d83b01",
+    "blurb": "Word, Excel, PowerPoint, Outlook, and OneDrive for one person.",
+    "code": "TM-KSN-CM-KS 365 Personal",
+    "hidden": false
+  },
+  {
+    "slug": "windows-server",
+    "name": "Windows Server",
+    "category": "microsoft",
+    "color": "#00188f",
+    "blurb": "Windows Server license for lab, office, or hosting use.",
+    "code": "TM-KS Win Server",
+    "hidden": false
+  },
+  {
+    "slug": "microsoft-365-family",
+    "name": "Microsoft 365 Family",
+    "category": "microsoft",
+    "color": "#d83b01",
+    "blurb": "Office apps and cloud storage for up to six people.",
+    "code": "TM-KSN-CM-KS 365 Family",
+    "hidden": false
+  },
+  {
+    "slug": "office-windows",
+    "name": "Office for Windows PC",
+    "category": "microsoft",
+    "color": "#ea3e23",
+    "blurb": "Classic Office suite license for a Windows computer.",
+    "code": "TM-KSN-CM-KS Office Win",
+    "hidden": false
+  },
+  {
+    "slug": "office-mac",
+    "name": "Office for Mac",
+    "category": "microsoft",
+    "color": "#ea3e23",
+    "blurb": "Word, Excel, and PowerPoint for Mac.",
+    "code": "TM-CM-KS Office Mac",
+    "hidden": false
+  },
+  {
+    "slug": "project-professional",
+    "name": "Project Professional",
+    "category": "microsoft",
+    "color": "#31752f",
+    "blurb": "Schedules, Gantt charts, and resource planning.",
+    "code": "TM-KSN-CM-KS Project",
+    "hidden": false
+  },
+  {
+    "slug": "office-365-account",
+    "name": "Office 365 Account",
+    "category": "microsoft",
+    "color": "#d83b01",
+    "blurb": "Microsoft 365 account setup for web and desktop apps.",
+    "code": "TM-CM Office 365",
+    "hidden": false
+  },
+  {
+    "slug": "clipchamp",
+    "name": "Microsoft Clipchamp",
+    "category": "graphics",
+    "color": "#0078d4",
+    "blurb": "Browser video editor with stock media and auto captions.",
+    "code": "TM Clipchamp",
+    "hidden": false
+  },
+  {
+    "slug": "coreldraw",
+    "name": "CorelDRAW Software",
+    "category": "graphics",
+    "color": "#24b06d",
+    "blurb": "Vector illustration and layout for print and brand work.",
+    "code": "TM-KSN-CM CorelDRAW",
+    "hidden": false
+  },
+  {
+    "slug": "canva-pro-edu",
+    "name": "Canva Pro Edu",
+    "category": "graphics",
+    "color": "#00c4cc",
+    "blurb": "Canva Pro features for students and educators.",
+    "code": "TM Canva Edu",
+    "hidden": false
+  },
+  {
+    "slug": "canva-professional",
+    "name": "Canva Professional",
+    "category": "graphics",
+    "color": "#7d2ae8",
+    "blurb": "Brand kits, Magic Studio, and premium templates.",
+    "code": "TM-KSN-CM-KS Canva",
+    "hidden": false,
+    "deal": true
+  },
+  {
+    "slug": "adobe-photography",
+    "name": "Adobe Photography Plan",
+    "category": "graphics",
+    "color": "#001e36",
+    "blurb": "Photoshop and Lightroom with cloud photo storage.",
+    "code": "TM-CM Adobe Photo",
+    "hidden": false
+  },
+  {
+    "slug": "capcut-pro",
+    "name": "CapCut Pro",
+    "category": "graphics",
+    "color": "#000000",
+    "blurb": "Pro video effects, 4K export, and no watermark.",
+    "code": "TM-KSN-CM CapCut",
+    "hidden": false
+  },
+  {
+    "slug": "envato-elements",
+    "name": "Envato Elements",
+    "category": "graphics",
+    "color": "#82b441",
+    "blurb": "Unlimited stock video, music, templates, and graphics.",
+    "code": "TM-KSN-KS Envato",
+    "hidden": false
+  },
+  {
+    "slug": "adobe-creative-cloud",
+    "name": "Adobe Creative Cloud",
+    "category": "graphics",
+    "color": "#da1f26",
+    "blurb": "Full Adobe app suite including Premiere, Illustrator, and more.",
+    "code": "TM-KSN-CM Adobe CC",
+    "hidden": false
+  },
+  {
+    "slug": "kaspersky-vpn",
+    "name": "Kaspersky VPN",
+    "category": "vpn",
+    "color": "#006d5b",
+    "blurb": "VPN from Kaspersky with split tunneling and kill switch.",
+    "code": "TM-CM Kaspersky VPN",
+    "hidden": false
+  },
+  {
+    "slug": "surfshark-vpn",
+    "name": "Surfshark VPN",
+    "category": "vpn",
+    "color": "#1e5cfc",
+    "blurb": "Unlimited devices, CleanWeb, and servers in 100+ countries.",
+    "code": "TM-KSN-KS Surfshark",
+    "hidden": false
+  },
+  {
+    "slug": "hma-vpn",
+    "name": "HMA VPN",
+    "category": "vpn",
+    "color": "#00b140",
+    "blurb": "HideMyAss VPN for streaming and public Wi-Fi.",
+    "code": "TM-KSN-CM-KS HMA",
+    "hidden": false
+  },
+  {
+    "slug": "nordvpn",
+    "name": "NordVPN",
+    "category": "vpn",
+    "color": "#4687ff",
+    "blurb": "Fast VPN with Threat Protection and a large server network.",
+    "code": "TM-KSN-KS NordVPN",
+    "hidden": false,
+    "deal": true
+  },
+  {
+    "slug": "avast-vpn",
+    "name": "Avast SecureLine VPN",
+    "category": "vpn",
+    "color": "#ff7800",
+    "blurb": "Simple VPN bundled with Avast security tools.",
+    "code": "TM-CM-KS Avast VPN",
+    "hidden": false
+  },
+  {
+    "slug": "express-vpn",
+    "name": "ExpressVPN",
+    "category": "vpn",
+    "color": "#da3940",
+    "blurb": "Reliable VPN with Lightway protocol and easy apps.",
+    "code": "TM-KSN-CM-KS ExpressVPN",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "nitro-pdf-pro",
+    "name": "Nitro PDF Pro",
+    "category": "productivity",
+    "color": "#f36f21",
+    "blurb": "Create, edit, sign, and convert PDFs without Adobe.",
+    "code": "TM-KSN Nitro",
+    "hidden": false
+  },
+  {
+    "slug": "notion",
+    "name": "Notion",
+    "category": "productivity",
+    "color": "#000000",
+    "blurb": "Notes, wikis, and project databases in one workspace.",
+    "code": "TM-KSN-CM Notion",
+    "hidden": false
+  },
+  {
+    "slug": "cleanmymac-x",
+    "name": "CleanMyMac X",
+    "category": "productivity",
+    "color": "#1d6fe9",
+    "blurb": "Mac cleaner, uninstaller, and malware scan.",
+    "code": "TM-CM-KS CleanMyMac",
+    "hidden": false
+  },
+  {
+    "slug": "easeus-data-recovery",
+    "name": "EaseUS Data Recovery Pro",
+    "category": "productivity",
+    "color": "#00a0e9",
+    "blurb": "Recover deleted files from disks, USBs, and memory cards.",
+    "code": "TM-CM-KS EaseUS",
+    "hidden": false,
+    "deal": true
+  },
+  {
+    "slug": "ccleaner-professional",
+    "name": "CCleaner Professional",
+    "category": "productivity",
+    "color": "#e21e26",
+    "blurb": "Windows cleanup, startup control, and driver updates.",
+    "code": "TM-CM CCleaner",
+    "hidden": false
+  },
+  {
+    "slug": "linkedin-premium",
+    "name": "LinkedIn Premium",
+    "category": "productivity",
+    "color": "#0a66c2",
+    "blurb": "InMail, applicant insights, and who viewed your profile.",
+    "code": "TM-KSN-CM Linkedin",
+    "hidden": false,
+    "deal": true,
+    "recently": true,
+    "heroTag": "See who viewed your profile"
+  },
+  {
+    "slug": "truecaller",
+    "name": "Truecaller",
+    "category": "productivity",
+    "color": "#0ea5e9",
+    "blurb": "Caller ID, spam blocking, and verified business listings.",
+    "code": "TM-KSN-CM-KS Truecaller",
+    "hidden": false
+  },
+  {
+    "slug": "codedex-club",
+    "name": "Codedex Club",
+    "category": "learning",
+    "color": "#7c3aed",
+    "blurb": "Learn to code with projects, quests, and a community club.",
+    "code": "TM Codedex",
+    "hidden": false
+  },
+  {
+    "slug": "kids-worksheets",
+    "name": "6000+ Kids Printable Worksheets",
+    "category": "learning",
+    "color": "#f59e0b",
+    "blurb": "Printable packs for early maths, English, and activities.",
+    "code": "TM Worksheets",
+    "hidden": false
+  },
+  {
+    "slug": "datacamp",
+    "name": "DataCamp",
+    "category": "learning",
+    "color": "#03ef62",
+    "blurb": "Data science and Python courses with in-browser practice.",
+    "code": "TM-CM DataCamp",
+    "hidden": false
+  },
+  {
+    "slug": "educative",
+    "name": "Educative",
+    "category": "learning",
+    "color": "#4951f5",
+    "blurb": "Text-based software courses without video fluff.",
+    "code": "TM-CM Educative",
+    "hidden": false
+  },
+  {
+    "slug": "skillshare",
+    "name": "Skillshare",
+    "category": "learning",
+    "color": "#17c5cc",
+    "blurb": "Creative classes in design, video, photography, and business.",
+    "code": "TM-KSN-KS Skillshare",
+    "hidden": false
+  },
+  {
+    "slug": "linkedin-learning",
+    "name": "LinkedIn Learning",
+    "category": "learning",
+    "color": "#0a66c2",
+    "blurb": "Professional courses that can show on your LinkedIn profile.",
+    "code": "TM-CM Linkedin Learning",
+    "hidden": false
+  },
+  {
+    "slug": "udemy",
+    "name": "Udemy",
+    "category": "learning",
+    "color": "#a435f0",
+    "blurb": "Lifetime access to selected Udemy courses you choose with us.",
+    "code": "TM-KSN-KS Udemy",
+    "hidden": false
+  },
+  {
+    "slug": "norton-security",
+    "name": "Norton Security",
+    "category": "antivirus",
+    "color": "#fbbf24",
+    "blurb": "Antivirus, VPN, and dark-web monitoring in one suite.",
+    "code": "TM Norton",
+    "hidden": false
+  },
+  {
+    "slug": "avg-internet-security",
+    "name": "AVG Internet Security",
+    "category": "antivirus",
+    "color": "#ff8000",
+    "blurb": "Real-time protection, firewall, and email shield.",
+    "code": "TM AVG",
+    "hidden": false
+  },
+  {
+    "slug": "eset-antivirus",
+    "name": "ESET Antivirus",
+    "category": "antivirus",
+    "color": "#003da5",
+    "blurb": "Lightweight antivirus known for low system impact.",
+    "code": "TM ESET",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "bitdefender-antivirus",
+    "name": "Bitdefender Antivirus",
+    "category": "antivirus",
+    "color": "#ed1c24",
+    "blurb": "Strong malware detection with ransomware remediation.",
+    "code": "TM Bitdefender",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "mcafee-internet-security",
+    "name": "McAfee Internet Security",
+    "category": "antivirus",
+    "color": "#c01820",
+    "blurb": "Multi-device McAfee protection for home internet use.",
+    "code": "TM-KSN-CM McAfee IS",
+    "hidden": false
+  },
+  {
+    "slug": "mcafee-total-protection",
+    "name": "McAfee Total Protection",
+    "category": "antivirus",
+    "color": "#c01820",
+    "blurb": "Identity, antivirus, and password tools in one plan.",
+    "code": "TM-KSN-CM McAfee Total",
+    "hidden": false
+  },
+  {
+    "slug": "mcafee-antivirus",
+    "name": "McAfee AntiVirus",
+    "category": "antivirus",
+    "color": "#c01820",
+    "blurb": "Core McAfee antivirus for a single PC.",
+    "code": "TM-KSN-CM McAfee AV",
+    "hidden": false
+  },
+  {
+    "slug": "kaspersky",
+    "name": "Kaspersky",
+    "category": "antivirus",
+    "color": "#006d5b",
+    "blurb": "Kaspersky antivirus and web protection for Windows and Mac.",
+    "code": "TM-KSN-CM Kaspersky",
+    "hidden": false
+  },
+  {
+    "slug": "speechelo-pro",
+    "name": "Speechelo Pro",
+    "category": "ai-tools",
+    "color": "#16a34a",
+    "blurb": "Text-to-speech voices for videos and e-learning.",
+    "code": "TM-KSN Speechelo",
+    "hidden": false
+  },
+  {
+    "slug": "jetbrains-premium",
+    "name": "JetBrains Premium",
+    "category": "productivity",
+    "color": "#fe315d",
+    "blurb": "IntelliJ, PyCharm, WebStorm, and other JetBrains IDEs.",
+    "code": "TM-CM JetBrains",
+    "hidden": false
+  },
+  {
+    "slug": "dashlane",
+    "name": "Dashlane Password Manager",
+    "category": "productivity",
+    "color": "#0e353d",
+    "blurb": "Passwords, autofill, and a VPN in one app.",
+    "code": "TM-CM Dashlane",
+    "hidden": false
+  },
+  {
+    "slug": "1password",
+    "name": "1Password Premium",
+    "category": "productivity",
+    "color": "#0572ec",
+    "blurb": "Family or personal password vaults with Watchtower alerts.",
+    "code": "TM 1Password",
+    "hidden": false
+  },
+  {
+    "slug": "roboform",
+    "name": "RoboForm Password Manager",
+    "category": "productivity",
+    "color": "#e21e26",
+    "blurb": "Password manager with form filling for long applications.",
+    "code": "TM-KS RoboForm",
+    "hidden": false
+  },
+  {
+    "slug": "github-student",
+    "name": "GitHub Student Developer Pack",
+    "category": "learning",
+    "color": "#24292f",
+    "blurb": "Help verifying and using GitHub Education student benefits.",
+    "code": "TM-KSN-CM GitHub Student",
+    "hidden": false
+  },
+  {
+    "slug": "idm",
+    "name": "Internet Download Manager (IDM)",
+    "category": "productivity",
+    "color": "#0072c6",
+    "blurb": "Faster downloads and resume support for Windows.",
+    "code": "TM-KSN-CM-KS IDM",
+    "hidden": false
+  },
+  {
+    "slug": "autodesk-apps",
+    "name": "Autodesk Apps",
+    "category": "graphics",
+    "color": "#0696d7",
+    "blurb": "AutoCAD, Revit, or related Autodesk apps — ask which title you need.",
+    "code": "TM-CM-KS Autodesk",
+    "hidden": false
+  },
+  {
+    "slug": "icloud",
+    "name": "iCloud Storage",
+    "category": "cloud",
+    "color": "#3693f3",
+    "blurb": "Extra iCloud space for photos, backups, and files across Apple devices.",
+    "code": "KSN-CM-KS iCloud",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "claude-ai",
+    "name": "Claude AI",
+    "category": "ai-tools",
+    "color": "#d97757",
+    "blurb": "Anthropic’s AI assistant for writing, coding, and long documents.",
+    "code": "KSN-CM Claude",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "grok",
+    "name": "Grok",
+    "category": "ai-tools",
+    "color": "#000000",
+    "blurb": "xAI’s Grok assistant with real-time answers and image generation.",
+    "code": "KSN-CM Grok",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "perplexity-ai",
+    "name": "Perplexity AI",
+    "category": "ai-tools",
+    "color": "#20808d",
+    "blurb": "AI search with cited answers for research and current topics.",
+    "code": "KSN-CM Perplexity",
+    "hidden": false
+  },
+  {
+    "slug": "google-ai-ultra",
+    "name": "Google AI Ultra",
+    "category": "ai-tools",
+    "color": "#4285f4",
+    "blurb": "Google’s higher-tier AI plan across Gemini and related tools.",
+    "code": "KSN-CM Google Ultra",
+    "hidden": false
+  },
+  {
+    "slug": "midjourney",
+    "name": "Midjourney",
+    "category": "ai-tools",
+    "color": "#1a1a2e",
+    "blurb": "AI image generation for concept art, product shots, and mood boards.",
+    "code": "KSN Midjourney",
+    "hidden": false
+  },
+  {
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "category": "ai-tools",
+    "color": "#000000",
+    "blurb": "Natural AI voices for videos, podcasts, and narration.",
+    "code": "KSN ElevenLabs",
+    "hidden": false
+  },
+  {
+    "slug": "replit-core",
+    "name": "Replit Core",
+    "category": "ai-tools",
+    "color": "#f26207",
+    "blurb": "Cloud IDE with AI coding, hosting, and collaboration.",
+    "code": "KSN Replit",
+    "hidden": false
+  },
+  {
+    "slug": "lovable-ai",
+    "name": "Lovable AI",
+    "category": "ai-tools",
+    "color": "#ec4899",
+    "blurb": "Build web apps from prompts with Lovable’s AI builder.",
+    "code": "KSN Lovable",
+    "hidden": false
+  },
+  {
+    "slug": "originality-ai",
+    "name": "Originality AI",
+    "category": "ai-tools",
+    "color": "#2563eb",
+    "blurb": "AI and plagiarism detection for publishers and agencies.",
+    "code": "KSN Originality",
+    "hidden": false
+  },
+  {
+    "slug": "semrush",
+    "name": "Semrush",
+    "category": "ai-tools",
+    "color": "#ff622d",
+    "blurb": "SEO, keywords, and competitor research in one suite.",
+    "code": "KSN-KS Semrush",
+    "hidden": false
+  },
+  {
+    "slug": "descript-ai",
+    "name": "Descript",
+    "category": "ai-tools",
+    "color": "#5b4dff",
+    "blurb": "Edit video and podcasts like a doc, with AI voices and studio sound.",
+    "code": "KSN Descript",
+    "hidden": false
+  },
+  {
+    "slug": "gamma-ai",
+    "name": "Gamma",
+    "category": "ai-tools",
+    "color": "#8b5cf6",
+    "blurb": "AI decks and docs that look presentation-ready in minutes.",
+    "code": "KSN-CM Gamma",
+    "hidden": false
+  },
+  {
+    "slug": "devin-ai",
+    "name": "Devin AI",
+    "category": "ai-tools",
+    "color": "#0f172a",
+    "blurb": "AI software engineer for coding tasks you brief in chat.",
+    "code": "KSN Devin",
+    "hidden": false
+  },
+  {
+    "slug": "suno-ai",
+    "name": "Suno AI",
+    "category": "ai-tools",
+    "color": "#000000",
+    "blurb": "Generate songs with lyrics, vocals, and instrumentals from a prompt.",
+    "code": "KSN-KS Suno",
+    "hidden": false
+  },
+  {
+    "slug": "bolt-ai",
+    "name": "Bolt",
+    "category": "ai-tools",
+    "color": "#136bf5",
+    "blurb": "Ship full-stack apps in the browser from a prompt.",
+    "code": "KSN-CM Bolt",
+    "hidden": false
+  },
+  {
+    "slug": "heygen-ai",
+    "name": "HeyGen",
+    "category": "ai-tools",
+    "color": "#000000",
+    "blurb": "AI avatars and translated talking videos for marketing and training.",
+    "code": "KSN-CM HeyGen",
+    "hidden": false
+  },
+  {
+    "slug": "invideo-ai",
+    "name": "InVideo AI",
+    "category": "ai-tools",
+    "color": "#7c3aed",
+    "blurb": "Turn scripts into short videos with stock, captions, and AI voice.",
+    "code": "KSN-CM InVideo",
+    "hidden": false
+  },
+  {
+    "slug": "pollo-ai",
+    "name": "Pollo AI",
+    "category": "ai-tools",
+    "color": "#f59e0b",
+    "blurb": "AI video generator for social clips and product demos.",
+    "code": "KSN Pollo",
+    "hidden": false
+  },
+  {
+    "slug": "gptzero",
+    "name": "GPTZero",
+    "category": "academic",
+    "color": "#111827",
+    "blurb": "Check whether text looks AI-written before you submit or publish.",
+    "code": "KSN GPTZero",
+    "hidden": false
+  },
+  {
+    "slug": "turnitin",
+    "name": "Turnitin",
+    "category": "academic",
+    "color": "#a51c30",
+    "blurb": "Similarity and originality checks used by schools and journals.",
+    "code": "KSN Turnitin",
+    "hidden": false
+  },
+  {
+    "slug": "humanizeai-pro",
+    "name": "HumanizeAI Pro",
+    "category": "academic",
+    "color": "#0ea5e9",
+    "blurb": "Rewrite AI drafts so they read more like human writing.",
+    "code": "KSN HumanizeAI",
+    "hidden": false
+  },
+  {
+    "slug": "humbot-ai",
+    "name": "Humbot AI",
+    "category": "academic",
+    "color": "#6366f1",
+    "blurb": "Humanize and detect AI text for essays and reports.",
+    "code": "KSN Humbot",
+    "hidden": false
+  },
+  {
+    "slug": "figma",
+    "name": "Figma",
+    "category": "graphics",
+    "color": "#f24e1e",
+    "blurb": "Collaborative UI design, prototyping, and FigJam boards.",
+    "code": "KSN-CM Figma",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "beautiful-ai",
+    "name": "Beautiful.ai",
+    "category": "graphics",
+    "color": "#4c6ef5",
+    "blurb": "Smart slide layouts that keep decks on-brand as you type.",
+    "code": "KSN-CM Beautiful.ai",
+    "hidden": false
+  },
+  {
+    "slug": "freepik-premium",
+    "name": "Freepik Premium",
+    "category": "graphics",
+    "color": "#1273eb",
+    "blurb": "Stock photos, vectors, and AI assets without the free-tier limits.",
+    "code": "KSN-CM-KS Freepik",
+    "hidden": false
+  },
+  {
+    "slug": "adobe-premiere-pro",
+    "name": "Adobe Premiere Pro",
+    "category": "graphics",
+    "color": "#9999ff",
+    "blurb": "Professional video editing for YouTube, film, and client work.",
+    "code": "KSN Premiere",
+    "hidden": false
+  },
+  {
+    "slug": "filmora",
+    "name": "Wondershare Filmora",
+    "category": "graphics",
+    "color": "#1137ff",
+    "blurb": "Easy video editor with effects, captions, and stock media.",
+    "code": "KSN-CM-KS Filmora",
+    "hidden": false
+  },
+  {
+    "slug": "mcafee-mobile-vpn",
+    "name": "McAfee Mobile Security + VPN",
+    "category": "vpn",
+    "color": "#c01820",
+    "blurb": "Phone security plus a VPN for public Wi-Fi and travel.",
+    "code": "KSN-CM McAfee VPN",
+    "hidden": false
+  },
+  {
+    "slug": "iscanner",
+    "name": "iScanner",
+    "category": "productivity",
+    "color": "#2563eb",
+    "blurb": "Scan, sign, and OCR documents from your phone.",
+    "code": "KSN iScanner",
+    "hidden": false
+  },
+  {
+    "slug": "wps-office-pro",
+    "name": "WPS Office Pro",
+    "category": "productivity",
+    "color": "#c8161d",
+    "blurb": "Word, Excel, and PDF tools as a lighter Office alternative.",
+    "code": "KSN-CM-KS WPS",
+    "hidden": false
+  },
+  {
+    "slug": "cursor-ai",
+    "name": "Cursor",
+    "category": "ai-tools",
+    "color": "#000000",
+    "blurb": "AI code editor based on VS Code for faster shipping.",
+    "code": "KSN-CM Cursor",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "coursera-plus",
+    "name": "Coursera Plus",
+    "category": "learning",
+    "color": "#0056d2",
+    "blurb": "Unlimited Coursera certificates and courses for a year.",
+    "code": "KSN-CM Coursera",
+    "hidden": false
+  },
+  {
+    "slug": "duolingo-super",
+    "name": "Super Duolingo",
+    "category": "learning",
+    "color": "#58cc02",
+    "blurb": "Ad-free Duolingo with unlimited hearts and extra practice.",
+    "code": "KSN-CM Duolingo",
+    "hidden": false
+  },
+  {
+    "slug": "epidemic-sound",
+    "name": "Epidemic Sound",
+    "category": "graphics",
+    "color": "#000000",
+    "blurb": "Royalty-free music and SFX for YouTube and client videos.",
+    "code": "KSN-CM Epidemic",
+    "hidden": false
+  },
+  {
+    "slug": "mcafee-livesafe",
+    "name": "McAfee LiveSafe",
+    "category": "antivirus",
+    "color": "#c01820",
+    "blurb": "Unlimited-device McAfee protection for a household.",
+    "code": "KSN-CM LiveSafe",
+    "hidden": false
+  },
+  {
+    "slug": "netflix",
+    "name": "Netflix",
+    "category": "streaming",
+    "color": "#e50914",
+    "blurb": "Stream series and films. Ask which plan and screens you need.",
+    "code": "KSN-CM-KS Netflix",
+    "hidden": false,
+    "deal": true,
+    "recently": true
+  },
+  {
+    "slug": "spotify-premium",
+    "name": "Spotify Premium",
+    "category": "streaming",
+    "color": "#1db954",
+    "blurb": "Ad-free music, downloads, and higher quality audio.",
+    "code": "KSN-CM-KS Spotify",
+    "hidden": false,
+    "deal": true,
+    "recently": true
+  },
+  {
+    "slug": "youtube-premium",
+    "name": "YouTube Premium",
+    "category": "streaming",
+    "color": "#ff0000",
+    "blurb": "Ad-free YouTube, background play, and YouTube Music.",
+    "code": "KSN-CM YouTube",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "prime-video",
+    "name": "Prime Video",
+    "category": "streaming",
+    "color": "#00a8e1",
+    "blurb": "Amazon Prime Video for movies and series on your devices.",
+    "code": "KSN-CM-KS Prime Video",
+    "hidden": false
+  },
+  {
+    "slug": "crunchyroll",
+    "name": "Crunchyroll",
+    "category": "streaming",
+    "color": "#f47521",
+    "blurb": "Anime streaming with simulcasts and a large catalog.",
+    "code": "KSN-CM-KS Crunchyroll",
+    "hidden": false
+  },
+  {
+    "slug": "sony-liv",
+    "name": "SonyLIV",
+    "category": "streaming",
+    "color": "#000000",
+    "blurb": "Sports, shows, and Sony network content for South Asia.",
+    "code": "KSN-KS SonyLIV",
+    "hidden": false
+  },
+  {
+    "slug": "zee5",
+    "name": "ZEE5",
+    "category": "streaming",
+    "color": "#6c2bd9",
+    "blurb": "Hindi and regional films, serials, and originals.",
+    "code": "KSN ZEE5",
+    "hidden": false
+  },
+  {
+    "slug": "google-workspace",
+    "name": "Google Workspace",
+    "category": "cloud",
+    "color": "#1a73e8",
+    "blurb": "Business Gmail, Drive, Meet, and admin controls on your domain.",
+    "code": "CM Workspace",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "google-workspace-education",
+    "name": "Personal Google Workspace Education Plan - 1 Domain, 10 TB Drive, 5 Emails",
+    "category": "cloud",
+    "color": "#1a73e8",
+    "blurb": "Education Workspace on 1 domain: 10 TB Drive and 5 custom email accounts.",
+    "code": "ANC Workspace Edu",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "digitalocean",
+    "name": "DigitalOcean",
+    "category": "cloud",
+    "color": "#0080ff",
+    "blurb": "Cloud droplets and hosting for sites, APIs, and student labs.",
+    "code": "CM DigitalOcean",
+    "hidden": false
+  },
+  {
+    "slug": "remote-desktop",
+    "name": "Remote Desktop",
+    "category": "cloud",
+    "color": "#0078d4",
+    "blurb": "Remote Windows desktop access for work from another PC.",
+    "code": "CM Remote Desktop",
+    "hidden": false
+  },
+  {
+    "slug": "higgsfield",
+    "name": "Higgsfield",
+    "category": "ai-tools",
+    "color": "#7c3aed",
+    "blurb": "AI video and image generation for social and campaign clips.",
+    "code": "CM Higgsfield",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "kling-ai",
+    "name": "Kling AI",
+    "category": "ai-tools",
+    "color": "#111827",
+    "blurb": "Text-to-video generation for ads, storyboards, and shorts.",
+    "code": "CM Kling",
+    "hidden": false
+  },
+  {
+    "slug": "github-copilot",
+    "name": "GitHub Copilot",
+    "category": "ai-tools",
+    "color": "#24292f",
+    "blurb": "AI pair programmer in VS Code, JetBrains, and GitHub.",
+    "code": "CM Copilot",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "microsoft-copilot",
+    "name": "Microsoft Copilot",
+    "category": "ai-tools",
+    "color": "#0078d4",
+    "blurb": "Copilot in Microsoft 365 for Word, Excel, Outlook, and Teams.",
+    "code": "CM-KS MS Copilot",
+    "hidden": false
+  },
+  {
+    "slug": "writehuman",
+    "name": "WriteHuman",
+    "category": "academic",
+    "color": "#0f766e",
+    "blurb": "Humanize AI drafts for essays and blog posts before you submit.",
+    "code": "CM WriteHuman",
+    "hidden": false
+  },
+  {
+    "slug": "zerogpt",
+    "name": "ZeroGPT",
+    "category": "academic",
+    "color": "#111827",
+    "blurb": "Detect AI-written text for schools, editors, and hiring.",
+    "code": "CM ZeroGPT",
+    "hidden": false
+  },
+  {
+    "slug": "german-exam",
+    "name": "German Exam Preparation",
+    "category": "learning",
+    "color": "#dd0000",
+    "blurb": "Goethe / TELC-style German exam packs — ask which level you need.",
+    "code": "CM German Exam",
+    "hidden": false
+  },
+  {
+    "slug": "adobe-acrobat",
+    "name": "Adobe Acrobat",
+    "category": "graphics",
+    "color": "#ec1c24",
+    "blurb": "Create, edit, sign, and OCR PDFs with Adobe Acrobat.",
+    "code": "CM Acrobat",
+    "hidden": false
+  },
+  {
+    "slug": "corel-videostudio",
+    "name": "Corel VideoStudio Ultimate",
+    "category": "graphics",
+    "color": "#24b06d",
+    "blurb": "Consumer video editor with effects, screen capture, and discs.",
+    "code": "CM VideoStudio",
+    "hidden": false
+  },
+  {
+    "slug": "vmware-fusion",
+    "name": "VMware Fusion Pro",
+    "category": "cloud",
+    "color": "#607078",
+    "blurb": "Run Windows and Linux VMs on a Mac.",
+    "code": "CM Fusion",
+    "hidden": false
+  },
+  {
+    "slug": "parallels-desktop",
+    "name": "Parallels Desktop",
+    "category": "cloud",
+    "color": "#e31c23",
+    "blurb": "Run Windows apps on Mac without rebooting.",
+    "code": "CM-KS Parallels",
+    "hidden": false
+  },
+  {
+    "slug": "camscanner",
+    "name": "CamScanner Gold",
+    "category": "productivity",
+    "color": "#1e88e5",
+    "blurb": "Scan, OCR, and share documents from your phone.",
+    "code": "CM CamScanner",
+    "hidden": false
+  },
+  {
+    "slug": "ilovepdf",
+    "name": "iLovePDF Premium",
+    "category": "productivity",
+    "color": "#e5322d",
+    "blurb": "Merge, compress, convert, and edit PDFs in the browser.",
+    "code": "CM iLovePDF",
+    "hidden": false
+  },
+  {
+    "slug": "aiseesoft-recovery",
+    "name": "Aiseesoft Data Recovery",
+    "category": "productivity",
+    "color": "#2b6cb0",
+    "blurb": "Recover deleted files from disks, USBs, and cards.",
+    "code": "CM-KS Aiseesoft",
+    "hidden": false
+  },
+  {
+    "slug": "malwarebytes",
+    "name": "Malwarebytes Premium",
+    "category": "antivirus",
+    "color": "#0d4f8b",
+    "blurb": "Malware, ransomware, and web protection for Windows and Mac.",
+    "code": "CM Malwarebytes",
+    "hidden": false
+  },
+  {
+    "slug": "mcafee-android",
+    "name": "McAfee Mobile Security Android",
+    "category": "antivirus",
+    "color": "#c01820",
+    "blurb": "Antivirus, anti-theft, and Wi-Fi checks for Android phones.",
+    "code": "CM McAfee Android",
+    "hidden": false
+  },
+  {
+    "slug": "avg-secure-vpn",
+    "name": "AVG Secure VPN",
+    "category": "vpn",
+    "color": "#ff8000",
+    "blurb": "VPN from AVG for streaming, public Wi-Fi, and extra devices.",
+    "code": "KS AVG VPN",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "moz-pro",
+    "name": "Moz Pro",
+    "category": "ai-tools",
+    "color": "#2d64ff",
+    "blurb": "SEO rankings, keywords, and link research from Moz.",
+    "code": "KS Moz",
+    "hidden": false
+  },
+  {
+    "slug": "ullu",
+    "name": "Ullu",
+    "category": "streaming",
+    "color": "#e11d48",
+    "blurb": "Hindi web series and films. Ask which plan you need.",
+    "code": "KS Ullu",
+    "hidden": false
+  },
+  {
+    "slug": "vmware-workstation",
+    "name": "VMware Workstation Pro",
+    "category": "cloud",
+    "color": "#607078",
+    "blurb": "Run multiple VMs on a Windows or Linux PC.",
+    "code": "KS Workstation",
+    "hidden": false,
+    "recently": true
+  },
+  {
+    "slug": "autocad",
+    "name": "AutoCAD",
+    "category": "graphics",
+    "color": "#0696d7",
+    "blurb": "AutoCAD licence for drafting and 2D/3D design.",
+    "code": "KS AutoCAD",
+    "hidden": false
+  },
+  {
+    "slug": "windows-10-home",
+    "name": "Windows 10 Home",
+    "category": "microsoft",
+    "color": "#0078d4",
+    "blurb": "Windows 10 Home licence for a single PC.",
+    "code": "KS Win10 Home",
+    "hidden": false
+  },
+  {
+    "slug": "windows-10-pro",
+    "name": "Windows 10 Pro",
+    "category": "microsoft",
+    "color": "#0078d4",
+    "blurb": "Windows 10 Pro licence with Remote Desktop and BitLocker.",
+    "code": "KS Win10 Pro",
+    "hidden": false
+  },
+  {
+    "slug": "windows-11-home",
+    "name": "Windows 11 Home",
+    "category": "microsoft",
+    "color": "#0078d4",
+    "blurb": "Windows 11 Home licence for a single PC.",
+    "code": "KS Win11 Home",
+    "hidden": false
+  },
+  {
+    "slug": "windows-pro-mak",
+    "name": "Windows Pro MAK 20 PC",
+    "category": "microsoft",
+    "color": "#0078d4",
+    "blurb": "Volume MAK key for up to 20 Windows 10/11 Pro PCs.",
+    "code": "KS Win MAK",
+    "hidden": false
+  }
+]
