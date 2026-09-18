@@ -2,17 +2,22 @@
 # Hostinger Apache Configuration - Aseem and Consulting Pvt Ltd (anc.com.np)
 # ==============================================================================
 
-# 1. Serve the static homepage (Hostinger PHP plans often look for index.php first)
-DirectoryIndex index.html
+# 1. Do not execute .html as PHP (Hostinger was returning a blank PHP 200 for index.html)
+<IfModule mod_mime.c>
+  RemoveHandler .html .htm
+  AddType text/html .html .htm
+</IfModule>
 
-# 2. Force HTTPS and canonical host
+# 2. Prefer PHP only as a fallback that prints the HTML file
+DirectoryIndex index.php index.html
+
+# 3. Force HTTPS and canonical host
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   RewriteCond %{HTTP_HOST} ^www\.anc\.com\.np$ [NC]
   RewriteRule ^(.*)$ https://anc.com.np/$1 [L,R=301]
-  RewriteRule ^$ index.html [L]
 </IfModule>
 
 # 3. Enable Gzip / Brotli Compression
