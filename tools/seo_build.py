@@ -336,21 +336,9 @@ def product_article(p: dict) -> list[dict]:
     sections = list(block.get("sections") or [])
     name = p.get("name") or "this product"
     if not sections:
-        sections = [
-            {
-                "h2": f"Buy {name} in Nepal",
-                "p": [
-                    f"{p.get('blurb') or name} ANC Tools in Kushma quotes {name} on WhatsApp in NPR for Kathmandu, Pokhara, and all Nepal.",
-                    "Pay with eSewa, Khalti, connectIPS, mobile banking, or card after you agree. Access is digital.",
-                ],
-            },
-            {
-                "h2": f"{name} price in Nepal",
-                "p": [
-                    f"We do not publish a catalog rupee price for {name}. Official vendors bill in foreign currency; eSewa and Khalti do not complete those checkouts. The live NPR rate is the WhatsApp quote for the duration you pick. Last editorial update {TODAY}.",
-                ],
-            },
-        ]
+        from expand_product_seo import unique_block
+
+        sections = unique_block(p, products()).get("sections") or []
     return sections
 
 
@@ -1097,5 +1085,8 @@ def publish_seo(slug: str | None = None) -> None:
 
 
 if __name__ == "__main__":
+    from expand_product_seo import expand
+
+    expand()
     publish_seo()
-    print("seo pages", len(products()), "guides", len(posts()), "sitemap written")
+    print("seo pages", len(products()), "guides", len(posts()), "product copy", len((seo_copy().get("products") or {})), "sitemap written")

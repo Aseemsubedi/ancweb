@@ -214,7 +214,7 @@
       const ol = s.ol ? `<ol>${s.ol.map((t) => `<li>${esc(t)}</li>`).join('')}</ol>` : '';
       return `${h}${ps}${ul}${ol}`;
     }).join('');
-    const how = `
+    const how = sections.some((s) => s.ol) ? '' : `
       <h2>How to buy ${esc(p.name)}</h2>
       <ol>
         <li>Set duration and quantity on the order sheet, or leave duration as “Not sure”.</li>
