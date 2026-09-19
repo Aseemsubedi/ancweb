@@ -18,7 +18,7 @@ MONTHS = (
 )
 PAGES = [
     ("how", "How it works", "How to buy digital subscriptions in Nepal from ANC Tools. Browse, get a WhatsApp NPR quote, pay with Khalti or eSewa, then receive access."),
-    ("about", "About us", "ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd in Kushma, Nepal. Live NPR quotes on WhatsApp. Pay Khalti, eSewa, or connectIPS. Same-day digital delivery nationwide."),
+    ("about", "About ANC Tools", "ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd in Kushma, Nepal. Live NPR quotes on WhatsApp. Pay Khalti, eSewa, or connectIPS. Same-day digital delivery nationwide."),
     ("delivery", "Delivery time", "Most ANC Tools digital orders in Nepal go out the same day after WhatsApp payment is confirmed. Kathmandu, Pokhara, Kushma, nationwide."),
     ("privacy", "Privacy policy", "ANC Tools privacy policy: we only use WhatsApp and email details to quote and fulfil orders in Nepal."),
     ("refund", "Refund policy", "ANC Tools refund policy for digital subscriptions quoted and agreed on WhatsApp in Nepal."),
@@ -215,6 +215,7 @@ def seo_block(title: str, description: str, url: str, image: str, page_type: str
   <meta name="title" content="{escape(title)}">
   <meta name="description" content="{escape(desc)}">
   <meta name="author" content="Aseem and Consulting Pvt Ltd">
+  <meta name="generator" content="ANC Tools 2026-09-19c">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
   <link rel="canonical" href="{escape(url)}">
@@ -589,8 +590,8 @@ def category_block(cat: dict, items: list[dict]) -> str:
     intro = (seo_copy().get("categories") or {}).get(cat["slug"]) or cat["blurb"]
     title = f"Buy {cat['name']} in Nepal | eSewa, Khalti | ANC Tools"
     desc = (
-        f"Buy {cat['name']} in Nepal from ANC Tools in Kushma. {intro} "
-        f"{len(items)} products. Live NPR quote on WhatsApp. Pay Khalti, eSewa, or connectIPS."
+        f"{intro} {len(items)} products. Live NPR quote on WhatsApp. "
+        "Pay Khalti, eSewa, or connectIPS."
     )[:320]
     extra = [
         {
@@ -719,7 +720,7 @@ def noscript_about() -> str:
         f"""      <h1>About ANC Tools</h1>
       <p>ANC Tools is an online shop for genuine digital subscriptions in Nepal. We quote today’s NPR rate on WhatsApp, you pay after you agree, then we send access — usually the same day.</p>
       <h2>Who we are</h2>
-      <p>ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd. The office is Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal. Parent site: <a href="https://anc.com.np/">anc.com.np</a>.</p>
+      <p>ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd (company registration 326626, PAN 620866943). The office is Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal. Parent site: <a href="https://anc.com.np/">anc.com.np</a>.</p>
       <p>People in Kathmandu, Lalitpur, Bhaktapur, Pokhara, Bharatpur, Kushma, and across Nepal use us for AI tools, Microsoft, Canva, Adobe, VPN, antivirus, cloud, learning, and streaming. The catalog is public. The live NPR price is not — supplier rates move, so we quote in chat.</p>
       <h2>How we sell</h2>
       <p>There is no cart and no login. You pick a product, tap Get a quote, and WhatsApp opens with the order sheet. We reply with today’s rate, payment options, and delivery time. You pay only after both sides agree. Access details follow after payment is confirmed.</p>
@@ -851,6 +852,12 @@ def noscript_html(items: list[dict], cats: list[dict], guides: list[dict] | None
     return noscript_wrap(
         f"""      <h1>Buy digital subscriptions in Nepal</h1>
       <p>ANC Tools quotes live NPR rates on WhatsApp from Kushma. Catalog is public; price is in chat.</p>
+      <h2>Why buy from ANC Tools</h2>
+      <ul>
+        <li>Shop of Aseem and Consulting Pvt Ltd, Kushma 05 Parbat, Gandaki 33400 (Reg. 326626, PAN 620866943).</li>
+        <li>Quote on WhatsApp, pay after you agree — eSewa, Khalti, or connectIPS.</li>
+        <li>Same-day digital delivery to Kathmandu, Pokhara, and all Nepal.</li>
+      </ul>
       <h2>Categories</h2>
       <ul>
 {clinks}

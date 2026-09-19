@@ -158,6 +158,27 @@
       <div class="how-step"><span class="n">3</span><div><h3>Pay, then receive</h3><p>Confirm, pay, and get access — usually the same day.</p></div></div>
     </section>`;
 
+  const proofStrip = () => `
+    <section class="proof" aria-label="Why ANC Tools">
+      <header class="section-head">
+        <h2>Why buy from ANC Tools</h2>
+      </header>
+      <div class="how-cards">
+        <article class="how-card">
+          <h3>Nepal company, Kushma office</h3>
+          <p>ANC Tools is the shop of Aseem and Consulting Pvt Ltd, Kushma 05 Parbat, Gandaki 33400. Company registration 326626. PAN 620866943.</p>
+        </article>
+        <article class="how-card">
+          <h3>Quote, then pay</h3>
+          <p>WhatsApp is the till. You see today’s NPR rate in chat, then pay eSewa, Khalti, or connectIPS after you agree. No stale website price.</p>
+        </article>
+        <article class="how-card">
+          <h3>Same-day digital delivery</h3>
+          <p>Access details usually go out the same Nepal working day after payment — Kathmandu, Pokhara, and nationwide. No parcel.</p>
+        </article>
+      </div>
+    </section>`;
+
   const pathAbs = (rel) => new URL(rel, document.baseURI || (window.ANC_BASE || './')).pathname;
 
   const hrefHome = () => './';
@@ -343,6 +364,7 @@
       </div>
 
       ${howStrip()}
+      ${proofStrip()}
 
       <section class="section">
         <div class="section-head">
@@ -572,7 +594,7 @@
       html: ''
     },
     about: {
-      title: 'About us',
+      title: 'About ANC Tools',
       desc: 'ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd in Kushma, Nepal. Live NPR quotes on WhatsApp. Pay Khalti, eSewa, or connectIPS. Same-day digital delivery nationwide.'
     },
     delivery: {
@@ -757,7 +779,7 @@
     </div>
     <div class="about-prose">
       <h2>Who we are</h2>
-      <p>ANC Tools is the digital subscriptions shop of <strong>Aseem and Consulting Pvt Ltd</strong>. The office is Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal. Parent site: <a href="${S.mainSite}">anc.com.np</a>.</p>
+      <p>ANC Tools is the digital subscriptions shop of <strong>Aseem and Consulting Pvt Ltd</strong> (company registration 326626, PAN 620866943). The office is Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal. Parent site: <a href="${S.mainSite}">anc.com.np</a>.</p>
       <p>People in Kathmandu, Lalitpur, Bhaktapur, Pokhara, Bharatpur, Kushma, and across Nepal use us for AI tools, Microsoft, Canva, Adobe, VPN, antivirus, cloud, learning, and streaming. The catalog is public. The live NPR price is not — supplier rates move, so we quote in chat.</p>
       <h2>How we sell</h2>
       <p>There is no cart and no login. You pick a product, tap Get a quote, and WhatsApp opens with the order sheet. We reply with today’s rate, payment options, and delivery time. You pay only after both sides agree. Access details follow after payment is confirmed.</p>
@@ -943,22 +965,23 @@
   };
 
   const applySeo = (r) => {
-    let title = 'Buy Digital Subscriptions in Nepal | ChatGPT, Canva, VPN | ANC Tools';
-    let desc = 'Buy ChatGPT Plus, Canva Pro, Microsoft 365, NordVPN and 100+ digital subscriptions in Nepal. Quote today’s NPR rate on WhatsApp from Kushma.';
+    let title = (seoCopy.homeTitle) || 'Buy ChatGPT, Canva, Adobe & VPN in Nepal | eSewa, Khalti | ANC Tools';
+    let desc = seoCopy.homeDescription || 'Buy ChatGPT Plus, Canva Pro, Microsoft 365, NordVPN and 100+ digital subscriptions in Nepal. Quote today’s NPR rate on WhatsApp from Kushma.';
     let url = SITE_URL;
     let image = `${SITE_URL}assets/og-image.png`;
     let ogType = 'website';
     if (r.name === 'product' && bySlug[r.slug] && isLive(bySlug[r.slug])) {
       const p = bySlug[r.slug];
-      title = `Buy ${p.name} in Nepal | Live WhatsApp Rate | ANC Tools`;
-      desc = `Buy ${p.name} in Nepal from ANC Tools in Kushma. ${p.blurb || ''} Live NPR quote on WhatsApp. Pay Khalti, eSewa, or connectIPS.`.replace(/\s+/g, ' ').trim();
+      title = `Buy ${p.name} in Nepal — eSewa, Khalti | ANC Tools`;
+      desc = `Buy ${p.name} in Nepal from ANC Tools in Kushma. ${p.blurb || ''} Live NPR quote on WhatsApp. Pay with Khalti, eSewa, or connectIPS.`.replace(/\s+/g, ' ').trim();
       url = `${SITE_URL}p/${p.slug}/`;
       image = `${SITE_URL}assets/products/${p.slug}.webp`;
       ogType = 'product';
     } else if (r.name === 'category' && catBySlug[r.slug]) {
       const cat = catBySlug[r.slug];
-      title = `Buy ${cat.name} in Nepal | ANC Tools`;
-      desc = `Buy ${cat.name} in Nepal from ANC Tools. ${cat.blurb || ''} Quote the live NPR rate on WhatsApp.`;
+      const intro = (seoCopy.categories && seoCopy.categories[cat.slug]) || cat.blurb || '';
+      title = `Buy ${cat.name} in Nepal | eSewa, Khalti | ANC Tools`;
+      desc = `${intro} Quote the live NPR rate on WhatsApp. Pay eSewa, Khalti, or connectIPS.`.replace(/\s+/g, ' ').trim();
       url = `${SITE_URL}c/${cat.slug}/`;
     } else if (r.name === 'page' && pages[r.slug]) {
       title = r.slug === 'about'

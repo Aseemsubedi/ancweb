@@ -818,6 +818,8 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   color: var(--navy);
   margin: 0 0 8px;
 }
+.proof { margin: 8px 0 28px; }
+.proof .section-head { margin-bottom: 14px; }
 .how-card p {
   font-size: 14px;
   color: #334155;
