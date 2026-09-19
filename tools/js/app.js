@@ -15,6 +15,7 @@
   let availability = {};
   let supplierPlans = {};
   let posts = [];
+  let seoCopy = { products: {}, categories: {} };
   const isLive = (p) => p && !p.hidden;
   const liveList = () => S.products.filter(isLive);
   const isOut = (p) => availability[p.slug] === 'out';
@@ -105,8 +106,11 @@
   const waLink = (text) =>
     `https://wa.me/${S.whatsapp}?text=${encodeURIComponent(text)}`;
 
-  const productImg = (p, extraClass = '') =>
-    `<img src="assets/products/${p.slug}.webp?v=5" alt="Buy ${esc(p.name)} in Nepal — ANC Tools" class="${extraClass}" width="480" height="720"${extraClass.includes('hero') ? '' : ' loading="lazy"'}>`;
+  const productImg = (p, extraClass = '') => {
+    const src = `assets/products/${p.slug}.webp?v=6`;
+    const label = esc(`Buy ${p.name} in Nepal — ANC Tools`);
+    return `<span class="poster ${extraClass}" role="img" aria-label="${label}" style="background-image:url('${src}')"></span>`;
+  };
 
   const thumb = (p, size) =>
     `<span class="thumb" style="width:${size}px;height:${size}px">${productImg(p)}</span>`;
@@ -148,6 +152,43 @@
   const hrefPost = (slug) => `blog/${slug}/`;
   const postForProduct = (slug) => posts.find((g) => (g.products || []).includes(slug));
 
+  const defaultFaqs = (p) => [
+    { q: `How do I buy ${p.name} in Nepal?`, a: `Open this page, choose a duration, and tap Get a quote. We send the live NPR rate on WhatsApp from Kushma.` },
+    { q: `What does ${p.name} cost in Nepal?`, a: `The live NPR rate is in WhatsApp. We do not print a catalog price because supplier rates change. You pay the figure in that chat.` },
+    { q: `Can I pay for ${p.name} with eSewa or Khalti?`, a: `Yes. After you agree the quote, pay eSewa, Khalti, connectIPS, mobile banking, or card — confirmed in the same chat.` },
+    { q: 'Do I need a VPN to buy from ANC Tools?', a: 'No. You do not need a VPN to WhatsApp us or to pay eSewa or Khalti. If the product itself needs a VPN on your ISP, we say so before you pay.' },
+    { q: 'Will this work on WorldLink, Vianet, NTC, or Ncell?', a: 'Most subscriptions run on those Nepal ISPs after access is delivered. If a title is geo-locked, we tell you in the quote thread.' },
+    { q: 'How fast is delivery?', a: 'Most digital items go out after payment is confirmed, usually the same day during Nepal daytime.' },
+    { q: 'Who runs ANC Tools?', a: 'ANC Tools is the shop of Aseem and Consulting Pvt Ltd, Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal.' }
+  ];
+
+  const productSeoHtml = (p) => {
+    const block = (seoCopy.products && seoCopy.products[p.slug]) || {};
+    const sections = (block.sections && block.sections.length) ? block.sections : [
+      { h2: `Buy ${p.name} in Nepal`, p: [`${p.blurb || p.name} ANC Tools in Kushma quotes ${p.name} on WhatsApp in NPR for Kathmandu, Pokhara, and all Nepal.`, 'Pay with eSewa, Khalti, connectIPS, or card after you agree. Access is digital.'] },
+      { h2: `${p.name} price in Nepal`, p: [`We do not publish a catalog rupee price. Official vendors bill in foreign currency; eSewa and Khalti do not complete those checkouts. The live NPR rate is the WhatsApp quote for the duration you pick.`] }
+    ];
+    const extraFaq = Array.isArray(block.faq) ? block.faq : [];
+    const faqs = defaultFaqs(p).concat(extraFaq);
+    const article = (sections || []).map((s) => {
+      const h = s.h2 ? `<h2>${esc(s.h2)}</h2>` : '';
+      const ps = (s.p || []).map((t) => `<p>${esc(t)}</p>`).join('');
+      const ul = s.ul ? `<ul>${s.ul.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : '';
+      const ol = s.ol ? `<ol>${s.ol.map((t) => `<li>${esc(t)}</li>`).join('')}</ol>` : '';
+      return `${h}${ps}${ul}${ol}`;
+    }).join('');
+    const how = `
+      <h2>How to buy ${esc(p.name)}</h2>
+      <ol>
+        <li>Set duration and quantity on the order sheet, or leave duration as “Not sure”.</li>
+        <li>Tap Get a quote — WhatsApp opens with the same order sheet filled in.</li>
+        <li>We reply with the live rate, payment options, and delivery time.</li>
+        <li>Pay only after you agree. Then we send access details.</li>
+      </ol>`;
+    const faqHtml = `<h2>FAQ</h2><div class="faq-block">${faqs.map((f) => `<details class="faq-item"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</div>`;
+    return `${article}${how}${faqHtml}`;
+  };
+
   const goTo = (rel) => {
     const next = pathAbs(rel);
     if (location.pathname !== next) history.pushState(null, '', next);
@@ -156,7 +197,7 @@
 
   const route = () => {
     const raw = location.hash || '';
-    if (raw === '#/' || /^#\/((p|c)\/[a-z0-9-]+|blog(\/[a-z0-9-]+)?|how|about|delivery|privacy|refund|terms|payment|contact|partnership)\/?$/i.test(raw)) {
+    if (raw === '#/' || /^#\/((p|c)\/[a-z0-9-]+|blog(\/[a-z0-9-]+)?|how|about(-us)?|delivery|privacy|refund|terms|payment|contact|partnership)\/?$/i.test(raw)) {
       const dest = raw.replace(/^#\/?/, '').replace(/\/$/, '');
       history.replaceState(null, '', pathAbs(dest ? `${dest}/` : './'));
     }
@@ -171,6 +212,7 @@
     if (parts[0] === 'blog' && parts[1]) return { name: 'post', slug: parts[1] };
     if (parts[0] === 'blog') return { name: 'blog' };
     if (parts[0] === 'account') return { name: 'page', slug: 'how' };
+    if (parts[0] === 'about-us') return { name: 'page', slug: 'about' };
     if (['about', 'delivery', 'privacy', 'refund', 'terms', 'payment', 'contact', 'partnership', 'how'].includes(parts[0])) {
       return { name: 'page', slug: parts[0] };
     }
@@ -183,6 +225,16 @@
       <div class="body">
         <h3>${p.name}</h3>
         <span class="card-cta${isOut(p) ? ' oos-label' : ''}">${isOut(p) ? 'Out of stock' : 'Get a quote'}</span>
+      </div>
+    </a>`;
+
+  const dealCard = (p, clone = false) => `
+    <a class="deal-card${isOut(p) ? ' is-oos' : ''}" href="${hrefProduct(p.slug)}"${clone ? ' tabindex="-1"' : ''}>
+      <span class="offer-badge">${isOut(p) ? 'Out of stock' : 'Popular'}</span>
+      ${media(p)}
+      <div class="body">
+        <h3>${p.name}</h3>
+        <span class="btn-buy">${isOut(p) ? 'Out of stock' : 'Get a quote'}</span>
       </div>
     </a>`;
 
@@ -294,16 +346,11 @@
           <h2>Popular right now</h2>
           <p>These move fastest. Message us for today’s NPR rate — no public price list to go stale.</p>
         </div>
-        <div class="deals-grid">
-          ${deals.map((p) => `
-            <a class="deal-card${isOut(p) ? ' is-oos' : ''}" href="${hrefProduct(p.slug)}">
-              <span class="offer-badge">${isOut(p) ? 'Out of stock' : 'Popular'}</span>
-              ${media(p)}
-              <div class="body">
-                <h3>${p.name}</h3>
-                <span class="btn-buy">${isOut(p) ? 'Out of stock' : 'Get a quote'}</span>
-              </div>
-            </a>`).join('')}
+        <div class="deals-marquee" id="deals-marquee">
+          <div class="deals-track${deals.length > 3 ? ' is-rolling' : ''}">
+            <div class="deals-set">${deals.map((p) => dealCard(p)).join('')}</div>
+            ${deals.length > 3 ? `<div class="deals-set" aria-hidden="true">${deals.map((p) => dealCard(p, true)).join('')}</div>` : ''}
+          </div>
         </div>
       </section>
 
@@ -398,7 +445,7 @@
       <div class="section-head">
         <div>
           <h1>Buy ${cat.name} in Nepal</h1>
-          <p class="muted cat-lead">${cat.blurb ? `${cat.blurb} ` : ''}Live NPR quote on WhatsApp from Kushma — <span id="cat-count">${items.length} product${items.length === 1 ? '' : 's'}</span>${live !== items.length ? ` · ${live} in stock` : ''}. Pay Khalti, eSewa, or connectIPS.</p>
+          <p class="muted cat-lead">${(seoCopy.categories && seoCopy.categories[id]) ? esc(seoCopy.categories[id]) : `${cat.blurb ? `${cat.blurb} ` : ''}Live NPR quote on WhatsApp from Kushma — <span id="cat-count">${items.length} product${items.length === 1 ? '' : 's'}</span>${live !== items.length ? ` · ${live} in stock` : ''}. Pay Khalti, eSewa, or connectIPS.`}</p>
         </div>
         <div class="cat-toolbar">
           <div class="cat-filter" role="group" aria-label="Stock filter">
@@ -434,9 +481,9 @@
     return `
       <p class="crumbs"><a href="${hrefHome()}">Home</a> / <a href="${hrefCategory(primary)}">${catName[primary]}</a> / ${p.name}</p>
       <div class="product-layout">
-        <button type="button" class="product-art" data-lightbox aria-label="View ${p.name} image">
+        <div class="product-art">
           ${productImg(p)}
-        </button>
+        </div>
         <div class="product-info">
           <p class="cat-chips">${catChips}</p>
           <h1>${h1}</h1>
@@ -480,26 +527,8 @@
               <span class="reply-note">${oos ? 'Not available to quote right now.' : S.hours}</span>
             </div>
           </div>
-          <div class="prose">
-            <h2>Buy ${p.name} in Nepal from ANC Tools</h2>
-            <p>${p.blurb} ANC Tools in Kushma, Gandaki quotes ${p.name} on WhatsApp in NPR, then delivers access after you pay. That is how people in Kathmandu, Pokhara, and the rest of Nepal buy this without a stale website price.</p>
-            <p>Pay with Khalti, eSewa, connectIPS, mobile banking, or card — we confirm the method in chat before you send money.</p>
-            <h2>How to buy ${p.name}</h2>
-            <ol>
-              <li>Set duration and quantity on the order sheet, or leave duration as “Not sure”.</li>
-              <li>Tap Get a quote — WhatsApp opens with the same order sheet filled in.</li>
-              <li>We reply with the live rate, payment options, and delivery time.</li>
-              <li>Pay only after you agree. Then we send access details.</li>
-            </ol>
-            <h2>FAQ</h2>
-            <h3>How do I buy ${p.name} in Nepal?</h3>
-            <p>Open this page, choose a duration, and tap Get a quote. We send the live NPR rate on WhatsApp from Kushma.</p>
-            <h3>What does ${p.name} cost in Nepal?</h3>
-            <p>The live NPR rate is in WhatsApp. We do not publish a catalog price because supplier rates change.</p>
-            <h3>How do I pay?</h3>
-            <p>Khalti, eSewa, connectIPS, mobile banking, or cards — confirmed in the same chat before you pay.</p>
-            <h3>How fast is delivery?</h3>
-            <p>Most digital items go out after payment is confirmed, usually the same day during Nepal daytime.</p>
+          <div class="prose product-seo">
+            ${productSeoHtml(p)}
           </div>
         </div>
       </div>
@@ -524,9 +553,7 @@
     },
     about: {
       title: 'About us',
-      html: `<p>ANC Tools is the digital subscriptions shop of <strong>Aseem and Consulting Pvt Ltd</strong>. The office is Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal.</p>
-        <p>We help people across Nepal — Kathmandu, Pokhara, Bharatpur, Kushma, and nationwide — get AI, Microsoft, Canva, VPN, antivirus, cloud, and learning subscriptions. WhatsApp is the shop: you ask, we quote in NPR, you confirm, then we deliver access.</p>
-        <p>Parent site: <a href="${S.mainSite}">anc.com.np</a>. Email ${S.email}. WhatsApp ${S.phone}.</p>`
+      desc: 'ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd in Kushma, Nepal. Live NPR quotes on WhatsApp. Pay Khalti, eSewa, or connectIPS. Same-day digital delivery nationwide.'
     },
     delivery: {
       title: 'Delivery time',
@@ -680,6 +707,118 @@
     return `<article class="page-card"><h1>${p.title}</h1>${p.html}</article>`;
   };
 
+  const aboutPage = () => {
+    const cats = liveCats();
+    return `
+    <div class="home-stage guides-stage">
+      <p class="crumbs"><a href="${hrefHome()}">Home</a> / About us</p>
+      <header class="guides-hero">
+        <p class="kicker">ANC Tools · Kushma, Nepal</p>
+        <h1>About ANC Tools</h1>
+        <p>ANC Tools is an online shop for genuine digital subscriptions in Nepal. We quote today’s NPR rate on WhatsApp, you pay after you agree, then we send access — usually the same day.</p>
+        <div class="home-hero-actions">
+          <a class="btn-wa" href="${waLink(defaultQuote)}" target="_blank" rel="noopener noreferrer">Get a quote</a>
+          <a class="btn-navy" href="${hrefHome()}">Browse products</a>
+        </div>
+        <ul class="trust-chips">
+          <li>WhatsApp quote</li>
+          <li>Khalti · eSewa</li>
+          <li>Same-day delivery</li>
+        </ul>
+      </header>
+    </div>
+    <div class="about-prose">
+      <h2>Who we are</h2>
+      <p>ANC Tools is the digital subscriptions shop of <strong>Aseem and Consulting Pvt Ltd</strong>. The office is Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal. Parent site: <a href="${S.mainSite}">anc.com.np</a>.</p>
+      <p>People in Kathmandu, Lalitpur, Bhaktapur, Pokhara, Bharatpur, Kushma, and across Nepal use us for AI tools, Microsoft, Canva, Adobe, VPN, antivirus, cloud, learning, and streaming. The catalog is public. The live NPR price is not — supplier rates move, so we quote in chat.</p>
+      <h2>How we sell</h2>
+      <p>There is no cart and no login. You pick a product, tap Get a quote, and WhatsApp opens with the order sheet. We reply with today’s rate, payment options, and delivery time. You pay only after both sides agree. Access details follow after payment is confirmed.</p>
+      <p>Support is on WhatsApp in English and Nepali during Nepal daytime. That is the shop — not a ticket queue.</p>
+    </div>
+    <div class="how-cards">
+      <article class="how-card">
+        <h3>WhatsApp is the shop</h3>
+        <p>Ask for ChatGPT, Claude, Cursor, Adobe, Microsoft, CapCut, Netflix, or anything in the catalog. We send the live NPR rate from Kushma.</p>
+      </article>
+      <article class="how-card">
+        <h3>Pay the Nepal way</h3>
+        <p>Khalti, eSewa, connectIPS, mobile banking, Visa, or Mastercard — confirmed in the same chat before you send money.</p>
+      </article>
+      <article class="how-card">
+        <h3>Digital delivery</h3>
+        <p>No parcel. Login or licence details go out after payment, usually the same day during Nepal working hours.</p>
+      </article>
+    </div>
+    <h2 class="about-contact-title">Our contact details</h2>
+    <dl class="about-contact">
+      <div>
+        <dt>Address</dt>
+        <dd>${S.address}</dd>
+      </div>
+      <div>
+        <dt>Phone / WhatsApp</dt>
+        <dd><a href="${waLink(defaultQuote)}">${S.phone}</a></dd>
+      </div>
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:${S.email}">${S.email}</a></dd>
+      </div>
+      <div>
+        <dt>Website</dt>
+        <dd><a href="${hrefHome()}">tools.anc.com.np</a></dd>
+      </div>
+    </dl>
+    ${cats.length ? `
+    <section class="section">
+      <div class="section-head"><h2>What we sell</h2></div>
+      <div class="cat-tiles">
+        ${cats.map((c) => {
+          const n = productsIn(c.slug).length;
+          return `
+          <a class="cat-tile" href="${hrefCategory(c.slug)}">
+            <span class="cat-tile-icon">${icon(c.icon || 'spark')}</span>
+            <strong>${c.nav || c.name}</strong>
+            <span>${n} product${n === 1 ? '' : 's'}</span>
+          </a>`;
+        }).join('')}
+      </div>
+    </section>` : ''}
+    <div class="post-cta">
+      <div>
+        <h2>Need a live NPR quote?</h2>
+        <p>Message us on WhatsApp from Kushma. Pay with Khalti, eSewa, or connectIPS after you agree.</p>
+      </div>
+      <a class="btn-wa" href="${waLink(defaultQuote)}" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+    </div>
+    <div class="faq-block">
+      <h2>FAQ</h2>
+      <details class="faq-item" open>
+        <summary>What is ANC Tools?</summary>
+        <p>ANC Tools is a digital subscriptions shop in Nepal. We list AI, Microsoft, design, VPN, antivirus, cloud, learning, and streaming products, then quote today’s NPR rate on WhatsApp.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Who owns ANC Tools?</summary>
+        <p>Aseem and Consulting Pvt Ltd. The office is in Kushma, Gandaki, Nepal.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where is ANC Tools based?</summary>
+        <p>Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal. We serve Kathmandu, Pokhara, Bharatpur, and all Nepal with digital delivery.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I buy a subscription in Nepal from ANC Tools?</summary>
+        <p>Open the product page, tap Get a quote, and finish on WhatsApp. Pay only after you agree the rate. Access usually follows the same day.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you show prices on the website?</summary>
+        <p>No. A public NPR list goes stale when supplier rates change. The price you pay is the one we send in chat that day.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How can I contact ANC Tools?</summary>
+        <p>WhatsApp ${S.phone} is fastest. Email ${S.email}. We reply in English and Nepali during Nepal daytime.</p>
+      </details>
+    </div>`;
+  };
+
   const howPage = () => {
     const more = posts.slice(0, 3);
     return `
@@ -794,8 +933,10 @@
       desc = `Buy ${cat.name} in Nepal from ANC Tools. ${cat.blurb || ''} Quote the live NPR rate on WhatsApp.`;
       url = `${SITE_URL}c/${cat.slug}/`;
     } else if (r.name === 'page' && pages[r.slug]) {
-      title = `${pages[r.slug].title} | ANC Tools`;
-      desc = `${pages[r.slug].title} — ANC Tools digital subscriptions in Nepal. WhatsApp ${S.phone}.`;
+      title = r.slug === 'about'
+        ? 'About ANC Tools | Digital Subscriptions in Nepal'
+        : `${pages[r.slug].title} | ANC Tools`;
+      desc = pages[r.slug].desc || `${pages[r.slug].title} — ANC Tools digital subscriptions in Nepal. WhatsApp ${S.phone}.`;
       url = `${SITE_URL}${r.slug}/`;
     } else if (r.name === 'blog') {
       title = 'How to buy digital subscriptions in Nepal | Guides | ANC Tools';
@@ -882,6 +1023,13 @@
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox || e.target === lightboxClose) closeLightbox();
   });
+  const ART_GUARD = '.poster, .media, .product-art, .guide-art, .show-art, .post-hero-art, .thumb, .deal-card, .deals-marquee, .lightbox-frame, .lightbox';
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.closest(ART_GUARD)) e.preventDefault();
+  });
+  document.addEventListener('dragstart', (e) => {
+    if (e.target.closest(ART_GUARD)) e.preventDefault();
+  });
 
   const render = () => {
     closeLightbox();
@@ -892,7 +1040,7 @@
     else if (r.name === 'product') app.innerHTML = product(r.slug);
     else if (r.name === 'blog') app.innerHTML = blogIndex();
     else if (r.name === 'post') app.innerHTML = blogPost(r.slug);
-    else if (r.name === 'page') app.innerHTML = r.slug === 'how' ? howPage() : pageView(r.slug);
+    else if (r.name === 'page') app.innerHTML = r.slug === 'how' ? howPage() : r.slug === 'about' ? aboutPage() : pageView(r.slug);
     else app.innerHTML = notFound();
 
     app.classList.remove('page-enter');
@@ -942,6 +1090,28 @@
         if (el) el.scrollBy({ left: Number(btn.dataset.dir) * 240, behavior: 'smooth' });
       };
     });
+
+    const marquee = document.getElementById('deals-marquee');
+    if (marquee) {
+      const track = marquee.querySelector('.deals-track');
+      let resumeTimer = 0;
+      const pause = () => {
+        window.clearTimeout(resumeTimer);
+        track?.classList.add('is-paused');
+      };
+      const resume = (delay = 0) => {
+        window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(() => track?.classList.remove('is-paused'), delay);
+      };
+      marquee.addEventListener('mouseenter', pause);
+      marquee.addEventListener('mouseleave', () => resume(0));
+      marquee.addEventListener('focusin', pause);
+      marquee.addEventListener('focusout', (e) => {
+        if (!marquee.contains(e.relatedTarget)) resume(0);
+      });
+      marquee.addEventListener('touchstart', pause, { passive: true });
+      marquee.addEventListener('touchend', () => resume(1400), { passive: true });
+    }
 
     const slides = [...document.querySelectorAll('.hero-slide')];
     const dots = [...document.querySelectorAll('.hero-dot')];
@@ -1001,11 +1171,6 @@
           refreshOrder(p);
         };
       });
-    }
-
-    const zoom = document.querySelector('[data-lightbox]');
-    if (zoom) {
-      zoom.onclick = () => openLightbox(zoom.querySelector('img'));
     }
   };
 
@@ -1155,6 +1320,14 @@
       });
       rebuildIndex();
       fillNav();
+      render();
+    })
+    .catch(() => {});
+  fetch('seo_copy.json', { cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!data || typeof data !== 'object') return;
+      seoCopy = data;
       render();
     })
     .catch(() => {});

@@ -232,8 +232,104 @@ def seo_block(title: str, description: str, url: str, image: str, page_type: str
   </script>"""
 
 
+def seo_copy() -> dict:
+    data = load_json(TOOLS / "seo_copy.json", {})
+    return data if isinstance(data, dict) else {}
+
+
+def featured_products(items: list[dict]) -> list[dict]:
+    by = {p["slug"]: p for p in items}
+    slugs = seo_copy().get("featured") or []
+    out = [by[s] for s in slugs if s in by]
+    if len(out) < 6:
+        for p in items:
+            if p not in out:
+                out.append(p)
+            if len(out) >= 6:
+                break
+    return out[:6]
+
+
+def similar_for(p: dict, items: list[dict]) -> list[dict]:
+    extra = ((seo_copy().get("products") or {}).get(p["slug"]) or {}).get("related") or []
+    by = {x["slug"]: x for x in items}
+    out = [by[s] for s in extra if s in by and s != p["slug"]]
+    cat = p.get("category")
+    for x in items:
+        if x["slug"] == p["slug"] or x in out:
+            continue
+        if x.get("category") == cat:
+            out.append(x)
+        if len(out) >= 4:
+            break
+    return out[:4]
+
+
+def product_article(p: dict) -> list[dict]:
+    block = (seo_copy().get("products") or {}).get(p.get("slug") or "") or {}
+    sections = list(block.get("sections") or [])
+    name = p.get("name") or "this product"
+    if not sections:
+        sections = [
+            {
+                "h2": f"Buy {name} in Nepal",
+                "p": [
+                    f"{p.get('blurb') or name} ANC Tools in Kushma quotes {name} on WhatsApp in NPR for Kathmandu, Pokhara, and all Nepal.",
+                    "Pay with eSewa, Khalti, connectIPS, mobile banking, or card after you agree. Access is digital.",
+                ],
+            },
+            {
+                "h2": f"{name} price in Nepal",
+                "p": [
+                    f"We do not publish a catalog rupee price for {name}. Official vendors bill in foreign currency; eSewa and Khalti do not complete those checkouts. The live NPR rate is the WhatsApp quote for the duration you pick. Last editorial update {TODAY}.",
+                ],
+            },
+        ]
+    return sections
+
+
+def default_product_faqs(p: dict) -> list[dict]:
+    name = p.get("name") or "this product"
+    faqs = [
+        {
+            "q": f"How do I buy {name} in Nepal?",
+            "a": f"Open the {name} page on ANC Tools, pick a duration, tap Get a quote, and we send today’s NPR rate on WhatsApp from Kushma.",
+        },
+        {
+            "q": f"What does {name} cost in Nepal?",
+            "a": f"The live NPR rate for {name} is quoted on WhatsApp. We do not print a catalog price because supplier rates change. You pay the figure in that chat.",
+        },
+        {
+            "q": f"Can I pay for {name} with eSewa or Khalti?",
+            "a": "Yes. After you agree the WhatsApp quote, pay eSewa, Khalti, connectIPS, mobile banking, or card — confirmed in the same chat.",
+        },
+        {
+            "q": "Do I need a VPN to buy from ANC Tools?",
+            "a": "No. You do not need a VPN to WhatsApp us or to pay eSewa or Khalti. If the product itself needs a VPN on your ISP, we say so in chat before you pay.",
+        },
+        {
+            "q": "Will this work on WorldLink, Vianet, NTC, or Ncell?",
+            "a": "Most subscriptions run on those Nepal ISPs after access is delivered. If a title is geo-locked, we tell you in the quote thread.",
+        },
+        {
+            "q": "How fast is delivery in Nepal?",
+            "a": "Most digital items go out after payment, usually the same day during Nepal daytime, to Kathmandu, Pokhara, Kushma, and nationwide.",
+        },
+        {
+            "q": "Who runs ANC Tools?",
+            "a": "ANC Tools is the shop of Aseem and Consulting Pvt Ltd, Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal.",
+        },
+    ]
+    extra = ((seo_copy().get("products") or {}).get(p.get("slug") or "") or {}).get("faq") or []
+    return faqs + [f for f in extra if isinstance(f, dict) and f.get("q")]
+
+
+def render_article_html(sections: list[dict]) -> str:
+    return render_sections(sections)
+
+
 def product_title(name: str) -> str:
-    return f"Buy {name} in Nepal | Live WhatsApp Rate | ANC Tools"
+    return f"Buy {name} in Nepal — eSewa, Khalti | ANC Tools"
 
 
 def product_desc(p: dict) -> str:
@@ -286,9 +382,10 @@ def prune_dirs(keep: set[str], folder: str) -> None:
 
 
 def home_block(items: list[dict]) -> str:
-    names = ", ".join(p["name"] for p in items[:6])
-    title = "Buy Digital Subscriptions in Nepal | ChatGPT, Canva, VPN | ANC Tools"
-    desc = (
+    names = ", ".join(p["name"] for p in featured_products(items))
+    copy = seo_copy()
+    title = copy.get("homeTitle") or "Buy ChatGPT, Canva, Adobe & VPN in Nepal | eSewa, Khalti | ANC Tools"
+    desc = copy.get("homeDescription") or (
         f"Buy {names} and 100+ digital subscriptions in Nepal. "
         "Live NPR quote on WhatsApp from Kushma. Pay Khalti, eSewa, or connectIPS. "
         "Same-day delivery after payment — Kathmandu, Pokhara, and all Nepal."
@@ -403,36 +500,10 @@ def product_block(p: dict) -> str:
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": f"How do I buy {p['name']} in Nepal?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": f"Open the {p['name']} page on ANC Tools, pick a duration, tap Get a quote, and we send today’s NPR rate on WhatsApp from Kushma.",
-                    },
-                },
-                {
-                    "@type": "Question",
-                    "name": f"What does {p['name']} cost in Nepal?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "The live NPR rate is quoted on WhatsApp. We do not publish a catalog price because supplier rates change.",
-                    },
-                },
-                {
-                    "@type": "Question",
-                    "name": "How do I pay?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Khalti, eSewa, connectIPS, mobile banking, or cards — confirmed in the same WhatsApp chat before you pay.",
-                    },
-                },
-                {
-                    "@type": "Question",
-                    "name": "How fast is delivery in Nepal?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Most digital items go out after payment is confirmed, usually the same day during Nepal daytime, to Kathmandu, Pokhara, Kushma, and nationwide.",
-                    },
-                },
+                    "name": f["q"],
+                    "acceptedAnswer": {"@type": "Answer", "text": f["a"]},
+                }
+                for f in default_product_faqs(p)
             ],
         },
     ]
@@ -441,11 +512,12 @@ def product_block(p: dict) -> str:
 
 def category_block(cat: dict, items: list[dict]) -> str:
     url = f"{SITE}c/{cat['slug']}/"
-    title = f"Buy {cat['name']} in Nepal | ANC Tools"
+    intro = (seo_copy().get("categories") or {}).get(cat["slug"]) or cat["blurb"]
+    title = f"Buy {cat['name']} in Nepal | eSewa, Khalti | ANC Tools"
     desc = (
-        f"Buy {cat['name']} in Nepal from ANC Tools in Kushma. {cat['blurb']} "
+        f"Buy {cat['name']} in Nepal from ANC Tools in Kushma. {intro} "
         f"{len(items)} products. Live NPR quote on WhatsApp. Pay Khalti, eSewa, or connectIPS."
-    )
+    )[:320]
     extra = [
         {
             "@type": "CollectionPage",
@@ -490,6 +562,108 @@ def page_block(slug: str, title: str, desc: str) -> str:
         }
     ]
     return seo_block(f"{title} | ANC Tools", desc, url, f"{SITE}assets/og-image.png", "page", extra)
+
+
+ABOUT_FAQS = [
+    {
+        "q": "What is ANC Tools?",
+        "a": "ANC Tools is a digital subscriptions shop in Nepal. We list AI, Microsoft, design, VPN, antivirus, cloud, learning, and streaming products, then quote today’s NPR rate on WhatsApp.",
+    },
+    {
+        "q": "Who owns ANC Tools?",
+        "a": "Aseem and Consulting Pvt Ltd. The office is in Kushma, Gandaki, Nepal.",
+    },
+    {
+        "q": "Where is ANC Tools based?",
+        "a": "Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal. We serve Kathmandu, Pokhara, Bharatpur, and all Nepal with digital delivery.",
+    },
+    {
+        "q": "How do I buy a subscription in Nepal from ANC Tools?",
+        "a": "Open the product page, tap Get a quote, and finish on WhatsApp. Pay only after you agree the rate. Access usually follows the same day.",
+    },
+    {
+        "q": "Do you show prices on the website?",
+        "a": "No. A public NPR list goes stale when supplier rates change. The price you pay is the one we send in chat that day.",
+    },
+    {
+        "q": "How can I contact ANC Tools?",
+        "a": "WhatsApp +977 9802840041 is fastest. Email info@anc.com.np. We reply in English and Nepali during Nepal daytime.",
+    },
+]
+
+
+def about_block() -> str:
+    url = f"{SITE}about/"
+    title = "About ANC Tools | Digital Subscriptions in Nepal"
+    desc = (
+        "ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd in Kushma, Nepal. "
+        "Live NPR quotes on WhatsApp. Pay Khalti, eSewa, or connectIPS. Same-day digital delivery nationwide."
+    )
+    extra = [
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE},
+                {"@type": "ListItem", "position": 2, "name": "About us", "item": url},
+            ],
+        },
+        {
+            "@type": "AboutPage",
+            "@id": f"{url}#aboutpage",
+            "url": url,
+            "name": title,
+            "description": desc,
+            "isPartOf": {"@id": f"{SITE}#website"},
+            "mainEntity": {"@id": f"{SITE}#organization"},
+            "inLanguage": "en-NP",
+        },
+        {
+            "@type": "FAQPage",
+            "@id": f"{url}#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": f["q"],
+                    "acceptedAnswer": {"@type": "Answer", "text": f["a"]},
+                }
+                for f in ABOUT_FAQS
+            ],
+        },
+    ]
+    return seo_block(title, desc, url, f"{SITE}assets/og-image.png", "about", extra)
+
+
+def noscript_about() -> str:
+    faqs = "\n".join(
+        f"      <h3>{escape(f['q'])}</h3>\n      <p>{escape(f['a'])}</p>" for f in ABOUT_FAQS
+    )
+    cats = "\n".join(
+        f'      <li><a href="c/{c["slug"]}/">{escape(c["name"])}</a> — {escape(c["blurb"])}</li>'
+        for c in categories()
+    )
+    return noscript_wrap(
+        f"""      <h1>About ANC Tools</h1>
+      <p>ANC Tools is an online shop for genuine digital subscriptions in Nepal. We quote today’s NPR rate on WhatsApp, you pay after you agree, then we send access — usually the same day.</p>
+      <h2>Who we are</h2>
+      <p>ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd. The office is Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal. Parent site: <a href="https://anc.com.np/">anc.com.np</a>.</p>
+      <p>People in Kathmandu, Lalitpur, Bhaktapur, Pokhara, Bharatpur, Kushma, and across Nepal use us for AI tools, Microsoft, Canva, Adobe, VPN, antivirus, cloud, learning, and streaming. The catalog is public. The live NPR price is not — supplier rates move, so we quote in chat.</p>
+      <h2>How we sell</h2>
+      <p>There is no cart and no login. You pick a product, tap Get a quote, and WhatsApp opens with the order sheet. We reply with today’s rate, payment options, and delivery time. You pay only after both sides agree. Access details follow after payment is confirmed.</p>
+      <h2>Our contact details</h2>
+      <ul>
+        <li>Address: Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal</li>
+        <li>Phone / WhatsApp: <a href="https://wa.me/9779802840041">+977 9802840041</a></li>
+        <li>Email: <a href="mailto:info@anc.com.np">info@anc.com.np</a></li>
+        <li>Website: <a href="./">tools.anc.com.np</a></li>
+      </ul>
+      <h2>What we sell</h2>
+      <ul>
+{cats}
+      </ul>
+      <h2>FAQ</h2>
+{faqs}
+      <p><a href="./">Back to ANC Tools</a></p>"""
+    )
 
 
 def blog_index_block(items: list[dict]) -> str:
@@ -606,22 +780,48 @@ def noscript_html(items: list[dict], cats: list[dict], guides: list[dict] | None
     )
 
 
-def noscript_product(p: dict) -> str:
+def noscript_product(p: dict, items: list[dict] | None = None) -> str:
+    items = items or products()
+    cat = str(p.get("category") or "")
+    cname = cat_name(cat)
+    article = render_article_html(product_article(p))
+    faqs = default_product_faqs(p)
+    faq_html = "\n".join(f"      <h3>{escape(f['q'])}</h3>\n      <p>{escape(f['a'])}</p>" for f in faqs)
+    related = similar_for(p, items)
+    rel = "\n".join(f'      <li><a href="p/{x["slug"]}/">{escape(x["name"])}</a></li>' for x in related)
+    guide = next((g for g in posts() if p["slug"] in (g.get("products") or [])), None)
+    guide_line = (
+        f'      <p>Buying guide: <a href="blog/{guide["slug"]}/">{escape(guide.get("h1") or guide.get("title") or "Guide")}</a></p>'
+        if guide
+        else ""
+    )
     return noscript_wrap(
-        f"""      <h1>Buy {escape(p["name"])} in Nepal</h1>
+        f"""      <nav class="crumbs"><a href="./">Home</a> / <a href="c/{escape(cat)}/">{escape(cname)}</a> / {escape(p["name"])}</nav>
+      <h1>Buy {escape(p["name"])} in Nepal</h1>
       <p>{escape(product_desc(p))}</p>
-      <p><a href="./">ANC Tools home</a> · <a href="https://wa.me/9779802840041">Get a quote on WhatsApp</a></p>"""
+{guide_line}
+      <p><a href="https://wa.me/9779802840041">Get a quote on WhatsApp</a></p>
+{article}
+      <h2>FAQ</h2>
+{faq_html}
+      <h2>Similar products</h2>
+      <ul>
+{rel}
+      </ul>"""
     )
 
 
 def noscript_category(cat: dict, items: list[dict]) -> str:
+    intro = (seo_copy().get("categories") or {}).get(cat["slug"]) or cat["blurb"]
     links = "\n".join(f'      <li><a href="p/{p["slug"]}/">{escape(p["name"])}</a></li>' for p in items)
     return noscript_wrap(
-        f"""      <h1>Buy {escape(cat["name"])} in Nepal</h1>
-      <p>{escape(cat["blurb"])} Quote the live NPR rate on WhatsApp.</p>
+        f"""      <nav class="crumbs"><a href="./">Home</a> / {escape(cat["name"])}</nav>
+      <h1>Buy {escape(cat["name"])} in Nepal</h1>
+      <p>{escape(intro)}</p>
       <ul>
 {links}
-      </ul>"""
+      </ul>
+      <p><a href="https://wa.me/9779802840041">Quote this category on WhatsApp</a></p>"""
     )
 
 
@@ -684,7 +884,8 @@ def write_sitemap(items: list[dict], cats: list[dict], guides: list[dict] | None
         (f"{SITE}blog/", "0.7", "weekly"),
     ]
     for slug, *_ in PAGES:
-        urls.append((f"{SITE}{slug}/", "0.4", "monthly"))
+        pri, freq = ("0.6", "weekly") if slug == "about" else ("0.4", "monthly")
+        urls.append((f"{SITE}{slug}/", pri, freq))
     for c in cats:
         urls.append((f"{SITE}c/{c['slug']}/", "0.7", "weekly"))
     lines = [
@@ -749,7 +950,7 @@ def publish_seo(slug: str | None = None) -> None:
         if p:
             write_page(
                 f"p/{slug}",
-                apply_noscript(apply_seo(home_html, product_block(p)), noscript_product(p)),
+                apply_noscript(apply_seo(home_html, product_block(p)), noscript_product(p, items)),
             )
         write_sitemap(items, cats, guides)
         return
@@ -758,7 +959,7 @@ def publish_seo(slug: str | None = None) -> None:
     for p in items:
         write_page(
             f"p/{p['slug']}",
-            apply_noscript(apply_seo(home_html, product_block(p)), noscript_product(p)),
+            apply_noscript(apply_seo(home_html, product_block(p)), noscript_product(p, items)),
         )
         keep_p.add(p["slug"])
     prune_dirs(keep_p, "p")
@@ -774,6 +975,11 @@ def publish_seo(slug: str | None = None) -> None:
     prune_dirs(keep_c, "c")
 
     for page_slug, title, desc in PAGES:
+        if page_slug == "about":
+            about_html = apply_noscript(apply_seo(home_html, about_block()), noscript_about())
+            write_page("about", about_html)
+            write_page("about-us", about_html)
+            continue
         write_page(
             page_slug,
             apply_noscript(apply_seo(home_html, page_block(page_slug, title, desc)), noscript_page(title, desc)),
