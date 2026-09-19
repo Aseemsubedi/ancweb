@@ -215,7 +215,7 @@ def seo_block(title: str, description: str, url: str, image: str, page_type: str
   <meta name="title" content="{escape(title)}">
   <meta name="description" content="{escape(desc)}">
   <meta name="author" content="Aseem and Consulting Pvt Ltd">
-  <meta name="generator" content="ANC Tools 2026-09-19c">
+  <meta name="generator" content="ANC Tools 2026-09-19e">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
   <link rel="canonical" href="{escape(url)}">
