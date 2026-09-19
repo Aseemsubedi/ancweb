@@ -13,7 +13,7 @@ SITE = "https://tools.anc.com.np/"
 TODAY = date.today().isoformat()
 PAGES = [
     ("how", "How it works", "How to buy digital subscriptions in Nepal from ANC Tools. Browse, get a WhatsApp NPR quote, pay with Khalti or eSewa, then receive access."),
-    ("about", "About us", "ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd in Kushma, Gandaki, Nepal. Owned by Aseem Subedi."),
+    ("about", "About us", "ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd in Kushma, Nepal. Live NPR quotes on WhatsApp. Pay Khalti, eSewa, or connectIPS. Same-day digital delivery nationwide."),
     ("delivery", "Delivery time", "Most ANC Tools digital orders in Nepal go out the same day after WhatsApp payment is confirmed. Kathmandu, Pokhara, Kushma, nationwide."),
     ("privacy", "Privacy policy", "ANC Tools privacy policy: we only use WhatsApp and email details to quote and fulfil orders in Nepal."),
     ("refund", "Refund policy", "ANC Tools refund policy for digital subscriptions quoted and agreed on WhatsApp in Nepal."),

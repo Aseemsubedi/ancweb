@@ -524,7 +524,7 @@
     },
     about: {
       title: 'About us',
-      html: `<p>ANC Tools is the digital subscriptions shop of <strong>Aseem and Consulting Pvt Ltd</strong>, owned by Aseem Subedi. The office is Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal.</p>
+      html: `<p>ANC Tools is the digital subscriptions shop of <strong>Aseem and Consulting Pvt Ltd</strong>. The office is Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal.</p>
         <p>We help people across Nepal — Kathmandu, Pokhara, Bharatpur, Kushma, and nationwide — get AI, Microsoft, Canva, VPN, antivirus, cloud, and learning subscriptions. WhatsApp is the shop: you ask, we quote in NPR, you confirm, then we deliver access.</p>
         <p>Parent site: <a href="${S.mainSite}">anc.com.np</a>. Email ${S.email}. WhatsApp ${S.phone}.</p>`
     },
