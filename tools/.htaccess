@@ -24,6 +24,7 @@ DirectoryIndex index.html
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^blog/?$ /index.html [L]
+  RewriteRule ^about-us/?$ /about/ [L,R=301]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(how|about|delivery|privacy|refund|terms|payment|contact|partnership)/?$ /index.html [L]

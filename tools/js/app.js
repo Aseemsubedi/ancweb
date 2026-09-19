@@ -22,6 +22,22 @@
   const catBySlug = Object.fromEntries(S.categories.map((c) => [c.slug, c]));
   const catName = Object.fromEntries(S.categories.map((c) => [c.slug, c.name]));
   const CAT_ALIAS = { pro: 'productivity', special: 'productivity' };
+  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const isoNepal = (day, hour = 10) => {
+    if (!day || !/^\d{4}-\d{2}-\d{2}$/.test(day)) return '';
+    return `${day}T${String(hour).padStart(2, '0')}:00:00+05:45`;
+  };
+  const displayDate = (day) => {
+    const parts = (day || '').split('-').map(Number);
+    if (parts.length !== 3 || !parts[0]) return '';
+    return `${parts[2]} ${MONTHS[parts[1] - 1]} ${parts[0]}`;
+  };
+  const timeEl = (day, hour = 10) => {
+    const iso = isoNepal(day, hour);
+    const label = displayDate(day);
+    if (!iso || !label) return '';
+    return `<time datetime="${iso}">${esc(label)}</time>`;
+  };
   const resolveCat = (slug) => CAT_ALIAS[slug] || slug;
 
   const catsOf = (p) => {
@@ -107,9 +123,9 @@
     `https://wa.me/${S.whatsapp}?text=${encodeURIComponent(text)}`;
 
   const productImg = (p, extraClass = '') => {
-    const src = `assets/products/${p.slug}.webp?v=6`;
+    const src = `assets/products/${p.slug}.webp?v=7`;
     const label = esc(`Buy ${p.name} in Nepal — ANC Tools`);
-    return `<span class="poster ${extraClass}" role="img" aria-label="${label}" style="background-image:url('${src}')"></span>`;
+    return `<span class="poster ${extraClass}"><img src="${src}" alt="${label}" width="800" height="800" decoding="async"></span>`;
   };
 
   const thumb = (p, size) =>
@@ -186,7 +202,11 @@
         <li>Pay only after you agree. Then we send access details.</li>
       </ol>`;
     const faqHtml = `<h2>FAQ</h2><div class="faq-block">${faqs.map((f) => `<details class="faq-item"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</div>`;
-    return `${article}${how}${faqHtml}`;
+    const reviewed = seoCopy.updated || '';
+    const reviewLine = reviewed
+      ? `<p class="page-dates">Last reviewed ${timeEl(reviewed, 11)} (Nepal).</p>`
+      : '';
+    return `${reviewLine}${article}${how}${faqHtml}`;
   };
 
   const goTo = (rel) => {
@@ -665,6 +685,14 @@
           <div class="post-hero-copy">
             <p class="kicker">Guide · Kushma, Nepal</p>
             <h1>${esc(g.h1 || g.title)}</h1>
+            ${(() => {
+              const pub = g.date || '';
+              const mod = g.updated || g.date || '';
+              if (!pub) return '';
+              const bits = [`Published ${timeEl(pub, 10)}`];
+              if (mod && mod !== pub) bits.push(`updated ${timeEl(mod, 11)}`);
+              return `<p class="page-dates">${bits.join(' · ')} · Kushma, Nepal</p>`;
+            })()}
             ${g.lede ? `<p class="lede">${esc(g.lede)}</p>` : ''}
             <div class="home-hero-actions">
               <a class="btn-wa" href="${quoteHref}" target="_blank" rel="noopener noreferrer">Get a quote</a>
@@ -969,6 +997,28 @@
     setSeoTag('meta[name="twitter:description"]', 'content', desc);
     setSeoTag('meta[name="twitter:image"]', 'content', image);
     document.querySelectorAll('link[hreflang]').forEach((el) => el.setAttribute('href', url));
+    const gPost = r.name === 'post' ? posts.find((x) => x.slug === r.slug) : null;
+    const pubDay = gPost && gPost.date;
+    const modDay = gPost && (gPost.updated || gPost.date);
+    let pubMeta = document.querySelector('meta[property="article:published_time"]');
+    let modMeta = document.querySelector('meta[property="article:modified_time"]');
+    if (pubDay) {
+      if (!pubMeta) {
+        pubMeta = document.createElement('meta');
+        pubMeta.setAttribute('property', 'article:published_time');
+        document.head.appendChild(pubMeta);
+      }
+      if (!modMeta) {
+        modMeta = document.createElement('meta');
+        modMeta.setAttribute('property', 'article:modified_time');
+        document.head.appendChild(modMeta);
+      }
+      pubMeta.setAttribute('content', isoNepal(pubDay, 10));
+      modMeta.setAttribute('content', isoNepal(modDay, (modDay === pubDay) ? 10 : 11));
+    } else {
+      pubMeta?.remove();
+      modMeta?.remove();
+    }
     const ldEl = document.getElementById('seo-jsonld');
     if (ldEl) {
       try {
@@ -980,6 +1030,13 @@
             node.description = desc;
             node.url = url;
             node['@id'] = url + '#webpage';
+            node.dateModified = isoNepal(modDay, (modDay && pubDay && modDay === pubDay) ? 10 : 11);
+            if (pubDay) node.datePublished = isoNepal(pubDay, 10);
+            else delete node.datePublished;
+          }
+          if (node && (node['@type'] === 'BlogPosting' || node['@type'] === 'Article') && pubDay) {
+            node.datePublished = isoNepal(pubDay, 10);
+            node.dateModified = isoNepal(modDay, (modDay === pubDay) ? 10 : 11);
           }
         });
         ldEl.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 2);

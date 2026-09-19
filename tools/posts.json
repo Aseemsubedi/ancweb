@@ -6,8 +6,14 @@
     "description": "Buy ChatGPT Plus in Nepal from ANC Tools in Kushma. Live NPR quote on WhatsApp. Pay Khalti, eSewa, or connectIPS. Same-day digital delivery.",
     "date": "2026-08-30",
     "image": "chatgpt-plus",
-    "products": ["chatgpt-plus"],
-    "related": ["claude-ai", "cursor-ai", "google-gemini-ai"],
+    "products": [
+      "chatgpt-plus"
+    ],
+    "related": [
+      "claude-ai",
+      "cursor-ai",
+      "google-gemini-ai"
+    ],
     "lede": "Students, founders, and agencies in Kathmandu and Pokhara use ChatGPT Plus for writing, coding, and image work. ANC Tools quotes today’s NPR rate on WhatsApp from Kushma — there is no stale price on this site.",
     "sections": [
       {
@@ -30,7 +36,7 @@
         "h2": "ChatGPT Plus price in Nepal — without a catalog number",
         "p": [
           "OpenAI bills ChatGPT Plus in US dollars on an international card. eSewa and Khalti do not work on that checkout. Other Nepal shops print a rupee figure that goes stale when the supplier moves.",
-          "ANC Tools quotes the live NPR rate in WhatsApp from Kushma, with duration and quantity on the order sheet. The amount you pay is the one in that chat. This guide was updated 19 September 2026."
+          "ANC Tools quotes the live NPR rate in WhatsApp from Kushma, with duration and quantity on the order sheet. The amount you pay is the one in that chat."
         ]
       },
       {
@@ -66,7 +72,8 @@
           }
         ]
       }
-    ]
+    ],
+    "updated": "2026-09-19"
   },
   {
     "slug": "buy-canva-pro-in-nepal",
@@ -75,8 +82,15 @@
     "description": "Buy Canva Pro and Canva Pro Edu in Nepal from ANC Tools in Kushma. Live NPR quote on WhatsApp. Pay eSewa, Khalti, or connectIPS. Same-day digital delivery.",
     "date": "2026-09-19",
     "image": "canva-professional",
-    "products": ["canva-professional", "canva-pro-edu"],
-    "related": ["adobe-creative-cloud", "capcut-pro", "figma"],
+    "products": [
+      "canva-professional",
+      "canva-pro-edu"
+    ],
+    "related": [
+      "adobe-creative-cloud",
+      "capcut-pro",
+      "figma"
+    ],
     "lede": "Designers, campus clubs, and shops in Kathmandu use Canva Pro for Brand Kit, Magic Studio, and premium templates. ANC Tools quotes Canva in NPR on WhatsApp — no stale rupee list on this page.",
     "sections": [
       {
@@ -88,7 +102,7 @@
       {
         "h2": "Canva Pro price in Nepal",
         "p": [
-          "Canva bills in USD. eSewa and Khalti do not complete Canva’s own checkout. We quote live NPR from Kushma. This guide does not print a catalog number. Updated 19 September 2026."
+          "Canva bills in USD. eSewa and Khalti do not complete Canva’s own checkout. We quote live NPR from Kushma. This guide does not print a catalog number."
         ]
       },
       {
@@ -122,8 +136,14 @@
     "description": "Buy Claude AI in Nepal from ANC Tools. Anthropic’s assistant for long documents and coding. Live NPR quote on WhatsApp. Pay Khalti or eSewa.",
     "date": "2026-08-30",
     "image": "claude-ai",
-    "products": ["claude-ai"],
-    "related": ["chatgpt-plus", "cursor-ai", "perplexity-ai"],
+    "products": [
+      "claude-ai"
+    ],
+    "related": [
+      "chatgpt-plus",
+      "cursor-ai",
+      "perplexity-ai"
+    ],
     "lede": "Claude is Anthropic’s assistant. People in Nepal pick it when they have long PDFs, research notes, or code they want explained without losing the thread. ANC Tools quotes Claude in NPR on WhatsApp.",
     "sections": [
       {
@@ -145,7 +165,7 @@
       {
         "h2": "Claude price in Nepal",
         "p": [
-          "Anthropic bills in USD. We do not print NPR on this page. The live rate is the WhatsApp quote for the duration you pick. Updated 19 September 2026."
+          "Anthropic bills in USD. We do not print NPR on this page. The live rate is the WhatsApp quote for the duration you pick."
         ]
       },
       {
@@ -167,7 +187,8 @@
           }
         ]
       }
-    ]
+    ],
+    "updated": "2026-09-19"
   },
   {
     "slug": "buy-cursor-in-nepal",
@@ -176,8 +197,14 @@
     "description": "Buy Cursor AI in Nepal from ANC Tools. VS Code-based AI editor for developers. Live WhatsApp NPR quote. Pay Khalti, eSewa, or connectIPS.",
     "date": "2026-08-30",
     "image": "cursor-ai",
-    "products": ["cursor-ai"],
-    "related": ["chatgpt-plus", "github-copilot", "lovable-ai"],
+    "products": [
+      "cursor-ai"
+    ],
+    "related": [
+      "chatgpt-plus",
+      "github-copilot",
+      "lovable-ai"
+    ],
     "lede": "Cursor is the AI code editor a lot of Nepal developers switched to after VS Code. ANC Tools quotes Cursor in NPR on WhatsApp from Kushma — no public price list that goes stale overnight.",
     "sections": [
       {
@@ -199,7 +226,7 @@
       {
         "h2": "Cursor price in Nepal",
         "p": [
-          "Cursor’s own billing is not eSewa. ANC Tools quotes live NPR on WhatsApp. We do not print a rupee figure here. Updated 19 September 2026."
+          "Cursor’s own billing is not eSewa. ANC Tools quotes live NPR on WhatsApp. We do not print a rupee figure here."
         ]
       },
       {
@@ -224,7 +251,8 @@
           }
         ]
       }
-    ]
+    ],
+    "updated": "2026-09-19"
   },
   {
     "slug": "buy-lovable-in-nepal",
@@ -233,8 +261,14 @@
     "description": "Buy Lovable AI in Nepal from ANC Tools. Build web apps from prompts. Live NPR quote on WhatsApp from Kushma. Pay Khalti or eSewa.",
     "date": "2026-08-30",
     "image": "lovable-ai",
-    "products": ["lovable-ai"],
-    "related": ["cursor-ai", "bolt-ai", "chatgpt-plus"],
+    "products": [
+      "lovable-ai"
+    ],
+    "related": [
+      "cursor-ai",
+      "bolt-ai",
+      "chatgpt-plus"
+    ],
     "lede": "Lovable (often typed Loveable) is an AI app builder: you describe a web app and it scaffolds the UI. Founders and student teams in Nepal use it for MVPs. ANC Tools quotes Lovable in NPR on WhatsApp.",
     "sections": [
       {
@@ -281,8 +315,14 @@
     "description": "Buy CapCut Pro in Nepal from ANC Tools. 4K export, no watermark, pro effects. Live WhatsApp NPR quote. Pay Khalti, eSewa, or connectIPS.",
     "date": "2026-08-30",
     "image": "capcut-pro",
-    "products": ["capcut-pro"],
-    "related": ["adobe-premiere-pro", "filmora", "canva-professional"],
+    "products": [
+      "capcut-pro"
+    ],
+    "related": [
+      "adobe-premiere-pro",
+      "filmora",
+      "canva-professional"
+    ],
     "lede": "Reels, TikTok, and YouTube Shorts in Nepal are often cut in CapCut. Pro removes the watermark and unlocks 4K export and effects. ANC Tools quotes CapCut Pro in NPR on WhatsApp.",
     "sections": [
       {
@@ -320,7 +360,8 @@
           }
         ]
       }
-    ]
+    ],
+    "updated": "2026-09-19"
   },
   {
     "slug": "buy-adobe-in-nepal",
@@ -329,8 +370,17 @@
     "description": "Buy Adobe Creative Cloud, Photography Plan, Premiere Pro, and Acrobat in Nepal from ANC Tools. Live NPR quote on WhatsApp. Pay Khalti or eSewa.",
     "date": "2026-08-30",
     "image": "adobe-creative-cloud",
-    "products": ["adobe-creative-cloud", "adobe-photography", "adobe-premiere-pro", "adobe-acrobat"],
-    "related": ["canva-professional", "capcut-pro", "figma"],
+    "products": [
+      "adobe-creative-cloud",
+      "adobe-photography",
+      "adobe-premiere-pro",
+      "adobe-acrobat"
+    ],
+    "related": [
+      "canva-professional",
+      "capcut-pro",
+      "figma"
+    ],
     "lede": "Design studios and students in Nepal still live in Photoshop, Illustrator, Premiere, and Acrobat. ANC Tools quotes Adobe plans in NPR on WhatsApp — Creative Cloud, Photography, Premiere Pro, or Acrobat — so you do not guess a website price.",
     "sections": [
       {
@@ -354,7 +404,7 @@
       {
         "h2": "Adobe Creative Cloud price in Nepal",
         "p": [
-          "Adobe’s site wants an international card. We quote NPR on WhatsApp for Cloud, Photography, Premiere, or Acrobat — different SKUs, different quotes. No catalog number on this page. Updated 19 September 2026."
+          "Adobe’s site wants an international card. We quote NPR on WhatsApp for Cloud, Photography, Premiere, or Acrobat — different SKUs, different quotes. No catalog number on this page."
         ]
       },
       {
@@ -376,7 +426,8 @@
           }
         ]
       }
-    ]
+    ],
+    "updated": "2026-09-19"
   },
   {
     "slug": "buy-microsoft-office-mac-windows-nepal",
@@ -385,8 +436,17 @@
     "description": "Buy Office for Mac, Office for Windows, and Microsoft 365 in Nepal from ANC Tools. Live NPR quote on WhatsApp. Pay Khalti, eSewa, or connectIPS.",
     "date": "2026-08-30",
     "image": "office-mac",
-    "products": ["office-mac", "office-windows", "microsoft-365-personal", "microsoft-365-family"],
-    "related": ["windows-11-pro", "microsoft-onedrive", "wps-office-pro"],
+    "products": [
+      "office-mac",
+      "office-windows",
+      "microsoft-365-personal",
+      "microsoft-365-family"
+    ],
+    "related": [
+      "windows-11-pro",
+      "microsoft-onedrive",
+      "wps-office-pro"
+    ],
     "lede": "MacBooks in Kathmandu offices still need Word, Excel, and PowerPoint. Windows PCs need the same suite. ANC Tools quotes Office for Mac, Office for Windows, and Microsoft 365 in NPR on WhatsApp — pick the machine, not a generic “Office” that might not activate.",
     "sections": [
       {
@@ -439,8 +499,15 @@
     "description": "Buy Google Workspace in Nepal from ANC Tools. Business Gmail on your domain, Drive, and Meet. Live NPR quote on WhatsApp from Kushma.",
     "date": "2026-08-30",
     "image": "google-workspace",
-    "products": ["google-workspace", "google-workspace-education"],
-    "related": ["google-one", "titan-mail", "google-meet"],
+    "products": [
+      "google-workspace",
+      "google-workspace-education"
+    ],
+    "related": [
+      "google-one",
+      "titan-mail",
+      "google-meet"
+    ],
     "lede": "Nepal companies want email on their own domain — you@yourcompany.com.np — not a personal Gmail. Google Workspace is that stack: Gmail, Drive, Meet, Calendar, admin. ANC Tools quotes Workspace in NPR on WhatsApp.",
     "sections": [
       {
@@ -488,8 +555,14 @@
     "description": "Gmail, Drive, and Photos full? Buy Google One in Nepal from ANC Tools. Extra storage, live NPR quote on WhatsApp. Pay Khalti or eSewa.",
     "date": "2026-08-30",
     "image": "google-one",
-    "products": ["google-one"],
-    "related": ["icloud", "google-workspace", "microsoft-onedrive"],
+    "products": [
+      "google-one"
+    ],
+    "related": [
+      "icloud",
+      "google-workspace",
+      "microsoft-onedrive"
+    ],
     "lede": "When Gmail says storage is full, the product you actually buy is Google One. It expands the same pool used by Gmail, Drive, and Google Photos. ANC Tools quotes Google One in NPR on WhatsApp from Kushma.",
     "sections": [
       {
@@ -538,8 +611,14 @@
     "description": "Buy Coursera Plus in Nepal from ANC Tools. Unlimited certificates for a year. Live NPR quote on WhatsApp. Pay Khalti, eSewa, or connectIPS.",
     "date": "2026-08-30",
     "image": "coursera-plus",
-    "products": ["coursera-plus"],
-    "related": ["udemy", "linkedin-learning", "datacamp"],
+    "products": [
+      "coursera-plus"
+    ],
+    "related": [
+      "udemy",
+      "linkedin-learning",
+      "datacamp"
+    ],
     "lede": "Coursera Plus is for people in Nepal who want many university and professional certificates in one year, not a single paid course. ANC Tools quotes Coursera Plus in NPR on WhatsApp.",
     "sections": [
       {
@@ -586,8 +665,14 @@
     "description": "Buy Udemy courses in Nepal from ANC Tools. Lifetime access to courses you choose with us. Live NPR quote on WhatsApp. Pay Khalti or eSewa.",
     "date": "2026-08-30",
     "image": "udemy",
-    "products": ["udemy"],
-    "related": ["coursera-plus", "skillshare", "linkedin-learning"],
+    "products": [
+      "udemy"
+    ],
+    "related": [
+      "coursera-plus",
+      "skillshare",
+      "linkedin-learning"
+    ],
     "lede": "Udemy is the catalog Nepal developers and designers already search at midnight. ANC Tools quotes Udemy as lifetime access to selected courses you pick with us — not a vague “premium” with no course list. Price is live NPR on WhatsApp.",
     "sections": [
       {
@@ -636,8 +721,14 @@
     "description": "Buy Netflix in Nepal from ANC Tools. Quote screens and plan on WhatsApp. Live NPR rate. Pay Khalti, eSewa, or connectIPS. Digital delivery.",
     "date": "2026-08-30",
     "image": "netflix",
-    "products": ["netflix"],
-    "related": ["prime-video", "youtube-premium", "spotify-premium"],
+    "products": [
+      "netflix"
+    ],
+    "related": [
+      "prime-video",
+      "youtube-premium",
+      "spotify-premium"
+    ],
     "lede": "Households in Kathmandu, Pokhara, and Bharatpur still ask for Netflix in NPR. ANC Tools quotes the plan and screen count on WhatsApp — we do not freeze a website price that will be wrong next week.",
     "sections": [
       {
@@ -686,8 +777,14 @@
     "description": "iPhone storage full? Buy iCloud in Nepal from ANC Tools. Extra space for photos and backups. Live NPR quote on WhatsApp. Pay Khalti or eSewa.",
     "date": "2026-08-30",
     "image": "icloud",
-    "products": ["icloud"],
-    "related": ["google-one", "microsoft-onedrive", "office-mac"],
+    "products": [
+      "icloud"
+    ],
+    "related": [
+      "google-one",
+      "microsoft-onedrive",
+      "office-mac"
+    ],
     "lede": "iPhones and MacBooks in Nepal hit the free 5 GB cap fast — photos, WhatsApp backups, and Mac snapshots. iCloud storage is the Apple plan that fixes that. ANC Tools quotes iCloud in NPR on WhatsApp.",
     "sections": [
       {

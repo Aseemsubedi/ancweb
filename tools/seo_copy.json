@@ -2,7 +2,14 @@
   "updated": "2026-09-19",
   "homeTitle": "Buy ChatGPT, Canva, Adobe & VPN in Nepal | eSewa, Khalti | ANC Tools",
   "homeDescription": "Buy ChatGPT Plus, Canva Pro, Adobe Creative Cloud, Cursor, CapCut, NordVPN and 100+ digital subscriptions in Nepal. Live NPR quote on WhatsApp from Kushma. Pay eSewa, Khalti, or connectIPS. Same-day digital delivery — Kathmandu, Pokhara, and all Nepal.",
-  "featured": ["chatgpt-plus", "canva-professional", "adobe-creative-cloud", "cursor-ai", "capcut-pro", "nordvpn"],
+  "featured": [
+    "chatgpt-plus",
+    "canva-professional",
+    "adobe-creative-cloud",
+    "cursor-ai",
+    "capcut-pro",
+    "nordvpn"
+  ],
   "categories": {
     "ai-tools": "Buy AI tools in Nepal from ANC Tools in Kushma: ChatGPT Plus, Claude, Gemini, Cursor, and more. Catalog is public. Today’s NPR rate is on WhatsApp. Pay eSewa, Khalti, or connectIPS, then receive access the same day in Kathmandu, Pokhara, and nationwide.",
     "academic": "Buy academic writing and research tools in Nepal — Grammarly, QuillBot, Jenni, Paperpal, Turnitin-related checks. Quote on WhatsApp in NPR. Digital delivery after eSewa or Khalti payment.",
@@ -17,7 +24,12 @@
   },
   "products": {
     "chatgpt-plus": {
-      "related": ["claude-ai", "cursor-ai", "google-gemini-ai", "github-copilot"],
+      "related": [
+        "claude-ai",
+        "cursor-ai",
+        "google-gemini-ai",
+        "github-copilot"
+      ],
       "sections": [
         {
           "h2": "What ChatGPT Plus is for people in Nepal",
@@ -30,7 +42,7 @@
           "h2": "ChatGPT Plus price in Nepal (why it is not on this page)",
           "p": [
             "OpenAI bills ChatGPT Plus in US dollars on an international card. eSewa and Khalti do not work on that checkout. Shops that print a rupee figure here go stale the week the supplier moves.",
-            "ANC Tools quotes the live NPR rate in WhatsApp from Kushma, with the product, duration, and quantity on the order sheet. The amount you pay is the one in that chat, not a number copied from another website. This page was last edited 19 September 2026."
+            "ANC Tools quotes the live NPR rate in WhatsApp from Kushma, with the product, duration, and quantity on the order sheet. The amount you pay is the one in that chat, not a number copied from another website."
           ]
         },
         {
@@ -61,7 +73,12 @@
       ]
     },
     "canva-professional": {
-      "related": ["canva-pro-edu", "adobe-creative-cloud", "capcut-pro", "figma"],
+      "related": [
+        "canva-pro-edu",
+        "adobe-creative-cloud",
+        "capcut-pro",
+        "figma"
+      ],
       "sections": [
         {
           "h2": "Buy Canva Pro in Nepal",
@@ -73,7 +90,7 @@
         {
           "h2": "Canva Pro price in Nepal",
           "p": [
-            "We do not print a rupee price here. Canva and reseller rates move. Tap Get a quote and the live NPR figure is in that WhatsApp thread, dated to the day you buy. Last editorial update: 19 September 2026."
+            "We do not print a rupee price here. Canva and reseller rates move. Tap Get a quote and the live NPR figure is in that WhatsApp thread, dated to the day you buy."
           ]
         },
         {
@@ -91,19 +108,28 @@
       ]
     },
     "canva-pro-edu": {
-      "related": ["canva-professional", "coursera-plus", "microsoft-365-personal"],
+      "related": [
+        "canva-professional",
+        "coursera-plus",
+        "microsoft-365-personal"
+      ],
       "sections": [
         {
           "h2": "Canva Pro Edu in Nepal",
           "p": [
             "Canva Pro Edu is Canva’s education-style Pro access. Students and teachers in Nepal use it for assignments and class graphics. Some Pro features differ from standard Canva Professional — we say which plan you are quoting before you pay.",
-            "Price stays on WhatsApp. This page does not list NPR because education plans change. Last updated 19 September 2026."
+            "Price stays on WhatsApp. This page does not list NPR because education plans change."
           ]
         }
       ]
     },
     "claude-ai": {
-      "related": ["chatgpt-plus", "cursor-ai", "perplexity-ai", "github-copilot"],
+      "related": [
+        "chatgpt-plus",
+        "cursor-ai",
+        "perplexity-ai",
+        "github-copilot"
+      ],
       "sections": [
         {
           "h2": "Buy Claude AI in Nepal",
@@ -115,13 +141,18 @@
         {
           "h2": "Claude price in Nepal",
           "p": [
-            "No catalog rupee figure on this page. The live rate is the WhatsApp quote for the duration you pick. Edited 19 September 2026."
+            "No catalog rupee figure on this page. The live rate is the WhatsApp quote for the duration you pick."
           ]
         }
       ]
     },
     "cursor-ai": {
-      "related": ["chatgpt-plus", "github-copilot", "claude-ai", "jetbrains-premium"],
+      "related": [
+        "chatgpt-plus",
+        "github-copilot",
+        "claude-ai",
+        "jetbrains-premium"
+      ],
       "sections": [
         {
           "h2": "Buy Cursor in Nepal",
@@ -133,13 +164,18 @@
         {
           "h2": "Cursor price in Nepal",
           "p": [
-            "We quote live NPR in chat. A number printed here would be wrong the next time the supplier changes. Last update 19 September 2026."
+            "We quote live NPR in chat. A number printed here would be wrong the next time the supplier changes."
           ]
         }
       ]
     },
     "adobe-creative-cloud": {
-      "related": ["adobe-photography", "adobe-premiere-pro", "canva-professional", "capcut-pro"],
+      "related": [
+        "adobe-photography",
+        "adobe-premiere-pro",
+        "canva-professional",
+        "capcut-pro"
+      ],
       "sections": [
         {
           "h2": "Buy Adobe Creative Cloud in Nepal",
@@ -151,7 +187,7 @@
         {
           "h2": "Adobe Creative Cloud price in Nepal",
           "p": [
-            "This page does not list NPR. Photography Plan, Premiere only, and full Cloud are different quotes. Tap Get a quote so we price the SKU you actually need. Updated 19 September 2026."
+            "This page does not list NPR. Photography Plan, Premiere only, and full Cloud are different quotes. Tap Get a quote so we price the SKU you actually need."
           ]
         },
         {
@@ -163,7 +199,11 @@
       ]
     },
     "capcut-pro": {
-      "related": ["adobe-premiere-pro", "canva-professional", "envato-elements"],
+      "related": [
+        "adobe-premiere-pro",
+        "canva-professional",
+        "envato-elements"
+      ],
       "sections": [
         {
           "h2": "Buy CapCut Pro in Nepal",
@@ -174,13 +214,17 @@
         {
           "h2": "CapCut Pro price in Nepal",
           "p": [
-            "Live rate in WhatsApp only. Last editorial update 19 September 2026."
+            "Live rate in WhatsApp only."
           ]
         }
       ]
     },
     "nordvpn": {
-      "related": ["express-vpn", "surfshark-vpn", "kaspersky-vpn"],
+      "related": [
+        "express-vpn",
+        "surfshark-vpn",
+        "kaspersky-vpn"
+      ],
       "sections": [
         {
           "h2": "Buy NordVPN in Nepal",
@@ -192,13 +236,17 @@
         {
           "h2": "NordVPN price in Nepal",
           "p": [
-            "Duration changes the quote. We do not pin NPR on this page. Get a quote in chat. Updated 19 September 2026."
+            "Duration changes the quote. We do not pin NPR on this page. Get a quote in chat."
           ]
         }
       ]
     },
     "express-vpn": {
-      "related": ["nordvpn", "surfshark-vpn", "avast-vpn"],
+      "related": [
+        "nordvpn",
+        "surfshark-vpn",
+        "avast-vpn"
+      ],
       "sections": [
         {
           "h2": "Buy ExpressVPN in Nepal",
@@ -209,13 +257,17 @@
       ]
     },
     "netflix": {
-      "related": ["youtube-premium", "spotify-premium", "prime-video"],
+      "related": [
+        "youtube-premium",
+        "spotify-premium",
+        "prime-video"
+      ],
       "sections": [
         {
           "h2": "Buy Netflix in Nepal",
           "p": [
             "Netflix is films and series in a browser or app. ANC Tools quotes Netflix in NPR on WhatsApp. Pay eSewa or Khalti after you agree. We confirm the plan type in chat so you are not quoted the wrong screen count.",
-            "No rupee catalog on this page. Last update 19 September 2026."
+            "No rupee catalog on this page."
           ]
         }
       ]

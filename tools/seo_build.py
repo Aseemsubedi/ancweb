@@ -4,13 +4,18 @@ from __future__ import annotations
 
 import json
 import re
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 from html import escape
 from pathlib import Path
 
 TOOLS = Path(__file__).resolve().parent
 SITE = "https://tools.anc.com.np/"
 TODAY = date.today().isoformat()
+NPT = timezone(timedelta(hours=5, minutes=45))
+MONTHS = (
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+)
 PAGES = [
     ("how", "How it works", "How to buy digital subscriptions in Nepal from ANC Tools. Browse, get a WhatsApp NPR quote, pay with Khalti or eSewa, then receive access."),
     ("about", "About us", "ANC Tools is the digital subscriptions shop of Aseem and Consulting Pvt Ltd in Kushma, Nepal. Live NPR quotes on WhatsApp. Pay Khalti, eSewa, or connectIPS. Same-day digital delivery nationwide."),
@@ -168,8 +173,23 @@ def org_graph() -> dict:
     }
 
 
-def seo_block(title: str, description: str, url: str, image: str, page_type: str, extra_graph: list | None = None, og_type: str = "website") -> str:
+def seo_block(title: str, description: str, url: str, image: str, page_type: str, extra_graph: list | None = None, og_type: str = "website", published: str | None = None, modified: str | None = None) -> str:
     desc = re.sub(r"\s+", " ", description).strip()[:320]
+    reviewed = modified or published or content_reviewed()
+    webpage = {
+        "@type": "WebPage",
+        "@id": f"{url}#webpage",
+        "url": url,
+        "name": title,
+        "description": desc,
+        "isPartOf": {"@id": f"{SITE}#website"},
+        "about": {"@id": f"{SITE}#organization"},
+        "inLanguage": "en-NP",
+        "primaryImageOfPage": {"@type": "ImageObject", "url": image},
+        "dateModified": iso_modified(published, reviewed),
+    }
+    if published:
+        webpage["datePublished"] = iso_nepal(published, 10)
     graph = [
         org_graph(),
         {
@@ -181,21 +201,16 @@ def seo_block(title: str, description: str, url: str, image: str, page_type: str
             "inLanguage": ["en-NP", "en"],
             "publisher": {"@id": f"{SITE}#organization"},
         },
-        {
-            "@type": "WebPage",
-            "@id": f"{url}#webpage",
-            "url": url,
-            "name": title,
-            "description": desc,
-            "isPartOf": {"@id": f"{SITE}#website"},
-            "about": {"@id": f"{SITE}#organization"},
-            "inLanguage": "en-NP",
-            "primaryImageOfPage": {"@type": "ImageObject", "url": image},
-        },
+        webpage,
     ]
     if extra_graph:
         graph.extend(extra_graph)
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
+    article_meta = ""
+    if og_type == "article" and published:
+        article_meta = f"""
+  <meta property="article:published_time" content="{iso_nepal(published, 10)}">
+  <meta property="article:modified_time" content="{iso_modified(published, reviewed)}">"""
     return f"""  <title>{escape(title)}</title>
   <meta name="title" content="{escape(title)}">
   <meta name="description" content="{escape(desc)}">
@@ -221,7 +236,7 @@ def seo_block(title: str, description: str, url: str, image: str, page_type: str
   <meta property="og:image" content="{escape(image)}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="{escape(title)}">
+  <meta property="og:image:alt" content="{escape(title)}">{article_meta}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{escape(title)}">
   <meta name="twitter:description" content="{escape(desc)}">
@@ -235,6 +250,56 @@ def seo_block(title: str, description: str, url: str, image: str, page_type: str
 def seo_copy() -> dict:
     data = load_json(TOOLS / "seo_copy.json", {})
     return data if isinstance(data, dict) else {}
+
+
+def content_reviewed() -> str:
+    """Calendar date of the last real copy pass — not date.today() on every build."""
+    return str(seo_copy().get("updated") or TODAY)
+
+
+def iso_nepal(day: str, hour: int = 10) -> str:
+    y, m, d = (int(x) for x in day.split("-"))
+    return datetime(y, m, d, hour, 0, 0, tzinfo=NPT).isoformat()
+
+
+def iso_modified(published: str | None, modified: str | None) -> str:
+    day = modified or published or content_reviewed()
+    hour = 10 if published and day == published else 11
+    return iso_nepal(day, hour)
+
+
+def display_date(day: str) -> str:
+    y, m, d = (int(x) for x in day.split("-"))
+    return f"{d} {MONTHS[m - 1]} {y}"
+
+
+def post_published(post: dict) -> str:
+    return str(post.get("date") or content_reviewed())
+
+
+def post_modified(post: dict) -> str:
+    return str(post.get("updated") or post.get("date") or content_reviewed())
+
+
+def time_tag(day: str, hour: int = 10) -> str:
+    return f'<time datetime="{iso_nepal(day, hour)}">{escape(display_date(day))}</time>'
+
+
+def product_reviewed_html() -> str:
+    day = content_reviewed()
+    return (
+        f'<p class="page-dates">Last reviewed <time datetime="{iso_nepal(day, 11)}">'
+        f"{escape(display_date(day))}</time> (Nepal).</p>"
+    )
+
+
+def article_byline_html(post: dict) -> str:
+    pub = post_published(post)
+    mod = post_modified(post)
+    bits = [f"Published {time_tag(pub, 10)}"]
+    if mod != pub:
+        bits.append(f"updated {time_tag(mod, 11)}")
+    return f'<p class="page-dates">{" · ".join(bits)} · Kushma, Nepal</p>'
 
 
 def featured_products(items: list[dict]) -> list[dict]:
@@ -451,7 +516,7 @@ def home_block(items: list[dict]) -> str:
             ],
         },
     ]
-    return seo_block(title, desc, SITE, f"{SITE}assets/og-image.png", "home", extra)
+    return seo_block(title, desc, SITE, f"{SITE}assets/og-image.png", "home", extra, modified=content_reviewed())
 
 
 def product_block(p: dict) -> str:
@@ -507,7 +572,16 @@ def product_block(p: dict) -> str:
             ],
         },
     ]
-    return seo_block(product_title(p["name"]), product_desc(p), url, image, "product", extra, og_type="product")
+    return seo_block(
+        product_title(p["name"]),
+        product_desc(p),
+        url,
+        image,
+        "product",
+        extra,
+        og_type="product",
+        modified=content_reviewed(),
+    )
 
 
 def category_block(cat: dict, items: list[dict]) -> str:
@@ -547,7 +621,7 @@ def category_block(cat: dict, items: list[dict]) -> str:
             ],
         },
     ]
-    return seo_block(title, desc, url, f"{SITE}assets/og-image.png", "category", extra)
+    return seo_block(title, desc, url, f"{SITE}assets/og-image.png", "category", extra, modified=content_reviewed())
 
 
 def page_block(slug: str, title: str, desc: str) -> str:
@@ -561,7 +635,7 @@ def page_block(slug: str, title: str, desc: str) -> str:
             ],
         }
     ]
-    return seo_block(f"{title} | ANC Tools", desc, url, f"{SITE}assets/og-image.png", "page", extra)
+    return seo_block(f"{title} | ANC Tools", desc, url, f"{SITE}assets/og-image.png", "page", extra, modified=content_reviewed())
 
 
 ABOUT_FAQS = [
@@ -630,7 +704,7 @@ def about_block() -> str:
             ],
         },
     ]
-    return seo_block(title, desc, url, f"{SITE}assets/og-image.png", "about", extra)
+    return seo_block(title, desc, url, f"{SITE}assets/og-image.png", "about", extra, modified=content_reviewed())
 
 
 def noscript_about() -> str:
@@ -697,7 +771,7 @@ def blog_index_block(items: list[dict]) -> str:
             ],
         },
     ]
-    return seo_block(title, desc, url, f"{SITE}assets/og-image.png", "blog", extra)
+    return seo_block(title, desc, url, f"{SITE}assets/og-image.png", "blog", extra, modified=content_reviewed())
 
 
 def article_block(post: dict) -> str:
@@ -705,14 +779,16 @@ def article_block(post: dict) -> str:
     title = f"{post.get('title') or post.get('h1')} | ANC Tools"
     desc = post.get("description") or post.get("lede") or title
     image = post_image(post)
+    pub = post_published(post)
+    mod = post_modified(post)
     extra = [
         {
-            "@type": "Article",
+            "@type": "BlogPosting",
             "@id": f"{url}#article",
             "headline": post.get("h1") or post.get("title"),
             "description": desc,
-            "datePublished": post.get("date") or TODAY,
-            "dateModified": post.get("date") or TODAY,
+            "datePublished": iso_nepal(pub, 10),
+            "dateModified": iso_modified(pub, mod),
             "inLanguage": "en-NP",
             "image": image,
             "author": {"@id": f"{SITE}#organization"},
@@ -744,7 +820,17 @@ def article_block(post: dict) -> str:
                 ],
             }
         )
-    return seo_block(title, desc, url, image, "article", extra, og_type="article")
+    return seo_block(
+        title,
+        desc,
+        url,
+        image,
+        "article",
+        extra,
+        og_type="article",
+        published=pub,
+        modified=mod,
+    )
 
 
 def noscript_wrap(inner: str) -> str:
@@ -798,6 +884,7 @@ def noscript_product(p: dict, items: list[dict] | None = None) -> str:
     return noscript_wrap(
         f"""      <nav class="crumbs"><a href="./">Home</a> / <a href="c/{escape(cat)}/">{escape(cname)}</a> / {escape(p["name"])}</nav>
       <h1>Buy {escape(p["name"])} in Nepal</h1>
+      {product_reviewed_html()}
       <p>{escape(product_desc(p))}</p>
 {guide_line}
       <p><a href="https://wa.me/9779802840041">Get a quote on WhatsApp</a></p>
@@ -855,6 +942,7 @@ def noscript_post(post: dict) -> str:
     )
     return noscript_wrap(
         f"""      <h1>{escape(post.get("h1") or post.get("title") or "")}</h1>
+      {article_byline_html(post)}
       <p>{escape(post.get("lede") or post.get("description") or "")}</p>
 {body}
       <h2>Get a quote</h2>
@@ -893,11 +981,12 @@ def write_sitemap(items: list[dict], cats: list[dict], guides: list[dict] | None
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
         '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
     ]
+    reviewed = content_reviewed()
     for loc, pri, freq in urls:
         lines += [
             "  <url>",
             f"    <loc>{loc}</loc>",
-            f"    <lastmod>{TODAY}</lastmod>",
+            f"    <lastmod>{reviewed}</lastmod>",
             f"    <changefreq>{freq}</changefreq>",
             f"    <priority>{pri}</priority>",
             "  </url>",
@@ -907,7 +996,7 @@ def write_sitemap(items: list[dict], cats: list[dict], guides: list[dict] | None
         lines += [
             "  <url>",
             f"    <loc>{SITE}p/{p['slug']}/</loc>",
-            f"    <lastmod>{TODAY}</lastmod>",
+            f"    <lastmod>{reviewed}</lastmod>",
             "    <changefreq>weekly</changefreq>",
             "    <priority>0.8</priority>",
             "    <image:image>",
@@ -922,7 +1011,7 @@ def write_sitemap(items: list[dict], cats: list[dict], guides: list[dict] | None
         lines += [
             "  <url>",
             f"    <loc>{SITE}blog/{g['slug']}/</loc>",
-            f"    <lastmod>{g.get('date') or TODAY}</lastmod>",
+            f"    <lastmod>{post_modified(g)}</lastmod>",
             "    <changefreq>monthly</changefreq>",
             "    <priority>0.65</priority>",
             "    <image:image>",
