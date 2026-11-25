@@ -195,6 +195,8 @@
   const defaultFaqs = (p) => [
     { q: `How do I buy ${p.name} in Nepal?`, a: `Open this page, choose a duration, and tap Get a quote. We send the live NPR rate on WhatsApp from Kushma.` },
     { q: `What does ${p.name} cost in Nepal?`, a: `The live NPR rate is in WhatsApp. We do not print a catalog price because supplier rates change. You pay the figure in that chat.` },
+    { q: `What is the ${p.name} price in Nepal in 2026?`, a: `There is no frozen 2026 catalog number. ANC Tools sends today’s NPR quote for ${p.name} on WhatsApp from Kushma.` },
+    { q: `Can I buy ${p.name} in Nepal without a dollar card?`, a: `Yes. Quote ${p.name} on WhatsApp, then pay eSewa, Khalti, connectIPS, or a Nepal card. No USD card needed on this shop.` },
     { q: `Can I pay for ${p.name} with eSewa or Khalti?`, a: `Yes. After you agree the quote, pay eSewa, Khalti, connectIPS, mobile banking, or card — confirmed in the same chat.` },
     { q: 'Do I need a VPN to buy from ANC Tools?', a: 'No. You do not need a VPN to WhatsApp us or to pay eSewa or Khalti. If the product itself needs a VPN on your ISP, we say so before you pay.' },
     { q: 'Will this work on WorldLink, Vianet, NTC, or Ncell?', a: 'Most subscriptions run on those Nepal ISPs after access is delivered. If a title is geo-locked, we tell you in the quote thread.' },
@@ -312,7 +314,7 @@
     const heroes = S.heroes.map((slug) => bySlug[slug]).filter(isLive);
     const featured = ['ai-tools', 'microsoft', 'graphics', 'streaming'];
     const heroSlugs = new Set(heroes.map((p) => p.slug));
-    const quick = ['claude-ai', 'lovable-ai', 'capcut-pro', 'office-mac', 'office-windows', 'google-workspace', 'google-one', 'coursera-plus', 'udemy', 'netflix', 'icloud']
+    const quick = ['canva-professional', 'nordvpn', 'claude-ai', 'lovable-ai', 'capcut-pro', 'office-mac', 'google-workspace', 'grammarly', 'linkedin-premium', 'youtube-premium', 'netflix', 'icloud']
       .map((slug) => bySlug[slug])
       .filter((p) => p && isLive(p) && !heroSlugs.has(p.slug));
     const lead = heroes[0];
@@ -323,8 +325,8 @@
       <section class="home-hero">
         <div class="home-hero-copy">
           <p class="kicker">ANC Tools · Kushma, Nepal</p>
-          <h1>Buy digital subscriptions in Nepal</h1>
-          <p>ChatGPT, Claude, Cursor, Adobe, Microsoft, CapCut, Netflix. Quote today’s NPR rate on WhatsApp. Pay with Khalti, eSewa, or connectIPS.</p>
+          <h1>Buy ChatGPT, Canva and VPN in Nepal</h1>
+          <p>ChatGPT Plus, Claude, Cursor, Adobe, Microsoft, CapCut, NordVPN, Netflix — quoted in NPR on WhatsApp from Kushma. Pay with Khalti, eSewa, or connectIPS.</p>
           <div class="home-hero-actions">
             <a class="btn-wa" href="${waLink(defaultQuote)}" target="_blank" rel="noopener noreferrer">Get a quote</a>
             <a class="btn-navy" href="${hrefProducts()}">Browse products</a>
@@ -476,6 +478,22 @@
           <details class="faq-item">
             <summary>How fast is delivery?</summary>
             <p>Most items go out after payment is confirmed, during Nepal daytime.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which payment methods work in Nepal?</summary>
+            <p>Khalti, eSewa, connectIPS, mobile banking, Visa, or Mastercard — confirmed on WhatsApp for each order.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I buy ChatGPT Plus in Nepal without a dollar card?</summary>
+            <p>Yes. Open ChatGPT Plus, tap Get a quote, and pay eSewa, Khalti, or connectIPS after you agree. No USD card needed on this shop.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is the ChatGPT Plus price in Nepal in 2026?</summary>
+            <p>OpenAI bills Plus in US dollars. We do not print a stale rupee list. The NPR rate you pay is the WhatsApp quote from Kushma that day.</p>
+          </details>
+          <details class="faq-item">
+            <summary lang="ne">नेपालमा ChatGPT Plus कसरी किन्ने?</summary>
+            <p lang="ne">ANC Tools मा ChatGPT Plus खोल्नुहोस्, Get a quote थिच्नुहोस्, WhatsApp मा आजको NPR दर आउँछ। सहमत भएपछि eSewa, Khalti वा connectIPS बाट तिर्नुहोस्। काठमाडौं, पोखरा र सबै नेपालमा डिजिटल डेलिभरी।</p>
           </details>
         </div>
       </section>
@@ -1029,14 +1047,14 @@
   };
 
   const applySeo = (r) => {
-    let title = (seoCopy.homeTitle) || 'Buy ChatGPT, Canva, Adobe & VPN in Nepal | eSewa, Khalti | ANC Tools';
+    let title = (seoCopy.homeTitle) || 'Buy ChatGPT, Canva, VPN in Nepal (2026) | eSewa, Khalti | ANC Tools';
     let desc = seoCopy.homeDescription || 'Buy ChatGPT Plus, Canva Pro, Microsoft 365, NordVPN and 100+ digital subscriptions in Nepal. Quote today’s NPR rate on WhatsApp from Kushma.';
     let url = SITE_URL;
     let image = `${SITE_URL}assets/og-image.png`;
     let ogType = 'website';
     if (r.name === 'product' && bySlug[r.slug] && isLive(bySlug[r.slug])) {
       const p = bySlug[r.slug];
-      title = `Buy ${p.name} in Nepal | WhatsApp NPR price | ANC Tools`;
+      title = `Buy ${p.name} in Nepal (2026) | WhatsApp NPR price | ANC Tools`;
       desc = `Buy ${p.name} in Nepal from ANC Tools in Kushma. ${p.blurb || ''} Live NPR quote on WhatsApp. Pay with Khalti, eSewa, or connectIPS.`.replace(/\s+/g, ' ').trim();
       url = `${SITE_URL}p/${p.slug}/`;
       image = `${SITE_URL}assets/products/${p.slug}.webp`;
@@ -1044,7 +1062,7 @@
     } else if (r.name === 'category' && catBySlug[r.slug]) {
       const cat = catBySlug[r.slug];
       const intro = (seoCopy.categories && seoCopy.categories[cat.slug]) || cat.blurb || '';
-      title = `Buy ${cat.name} in Nepal | WhatsApp NPR price | ANC Tools`;
+      title = `Buy ${cat.name} in Nepal (2026) | WhatsApp NPR price | ANC Tools`;
       desc = `${intro} Quote the live NPR rate on WhatsApp. Pay eSewa, Khalti, or connectIPS.`.replace(/\s+/g, ' ').trim();
       url = `${SITE_URL}c/${cat.slug}/`;
     } else if (r.name === 'products') {
@@ -1064,7 +1082,7 @@
       url = `${SITE_URL}${r.slug}/`;
     } else if (r.name === 'blog') {
       title = 'How to buy digital subscriptions in Nepal | Guides | ANC Tools';
-      desc = 'Buy ChatGPT, Claude, Cursor, Lovable, CapCut, Adobe, Microsoft Office, Google Workspace, Gmail storage, Coursera, Udemy, Netflix, and iCloud in Nepal. Live NPR quote on WhatsApp.';
+      desc = 'Buy ChatGPT, Canva, NordVPN, Grammarly, Microsoft 365, Gemini, LinkedIn Premium, YouTube Premium, Adobe, and more in Nepal. Live NPR quote on WhatsApp.';
       url = `${SITE_URL}blog/`;
     } else if (r.name === 'post') {
       const g = posts.find((x) => x.slug === r.slug);

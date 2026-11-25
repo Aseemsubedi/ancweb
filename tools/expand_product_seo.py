@@ -190,7 +190,7 @@ def expand() -> dict:
         else:
             products[slug] = generated
     copy["products"] = products
-    copy["updated"] = "2026-10-19"
+    copy["updated"] = "2026-11-25"
     (TOOLS / "seo_copy.json").write_text(json.dumps(copy, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return copy
 

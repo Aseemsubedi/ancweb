@@ -23,7 +23,7 @@ window.ANC_STORE = {
     { slug: 'productivity', name: 'Work tools', nav: 'Work', icon: 'brief', blurb: 'PDF, passwords, recovery, and everyday office apps.' }
   ],
 
-  heroes: ['chatgpt-plus', 'adobe-creative-cloud', 'cursor-ai'],
+  heroes: ['chatgpt-plus', 'canva-professional', 'nordvpn'],
 
   products: [
     { slug: 'titan-mail', name: 'Titan Mail', category: 'cloud', color: '#1a73e8', blurb: 'Business email on your domain with spam protection and calendar.' },

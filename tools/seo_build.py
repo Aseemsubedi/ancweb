@@ -166,6 +166,15 @@ def org_graph() -> dict:
             "availableLanguage": ["en", "ne"],
             "url": "https://wa.me/9779857619999",
         },
+        "knowsAbout": [
+            "ChatGPT Plus",
+            "Canva Pro",
+            "Adobe Creative Cloud",
+            "Microsoft 365",
+            "NordVPN",
+            "Netflix",
+            "Digital subscriptions in Nepal",
+        ],
         "sameAs": [
             "https://anc.com.np/",
             "https://github.com/Aseemsubedi/ancweb",
@@ -232,7 +241,7 @@ def seo_block(title: str, description: str, url: str, image: str, page_type: str
   <meta name="title" content="{escape(title)}">
   <meta name="description" content="{escape(desc)}">
   <meta name="author" content="Aseem and Consulting Pvt Ltd">
-  <meta name="generator" content="ANC Tools 2026-10-19a">
+  <meta name="generator" content="ANC Tools 2026-11-25a">
   <meta name="robots" content="{escape(robots_content)}">
   <meta name="googlebot" content="{escape(googlebot)}">
   <link rel="canonical" href="{escape(url)}">
@@ -371,6 +380,14 @@ def default_product_faqs(p: dict) -> list[dict]:
             "a": f"The live NPR rate for {name} is quoted on WhatsApp. We do not print a catalog price because supplier rates change. You pay the figure in that chat.",
         },
         {
+            "q": f"What is the {name} price in Nepal in 2026?",
+            "a": f"There is no frozen 2026 catalog number. ANC Tools sends today’s NPR quote for {name} on WhatsApp from Kushma. Pay eSewa, Khalti, or connectIPS after you agree.",
+        },
+        {
+            "q": f"Can I buy {name} in Nepal without a dollar card?",
+            "a": f"Yes. You do not need a USD card on this shop. Quote {name} on WhatsApp, then pay eSewa, Khalti, connectIPS, mobile banking, or a Nepal card.",
+        },
+        {
             "q": f"Can I pay for {name} with eSewa or Khalti?",
             "a": "Yes. After you agree the WhatsApp quote, pay eSewa, Khalti, connectIPS, mobile banking, or card — confirmed in the same chat.",
         },
@@ -419,7 +436,7 @@ def product_brand(name: str) -> str:
 
 
 def product_title(name: str) -> str:
-    return f"Buy {name} in Nepal | WhatsApp NPR price | ANC Tools"
+    return f"Buy {name} in Nepal (2026) | WhatsApp NPR price | ANC Tools"
 
 
 def offer_shipping() -> dict:
@@ -449,7 +466,7 @@ def product_desc(p: dict) -> str:
     name = p.get("name") or "this product"
     extra = f" {blurb}" if blurb else ""
     return (
-        f"Buy {name} in Nepal from ANC Tools in Kushma.{extra} "
+        f"Buy {name} in Nepal in 2026 from ANC Tools in Kushma.{extra} "
         "Live NPR quote on WhatsApp. Pay with Khalti, eSewa, connectIPS, or bank. "
         "Delivery after payment — Kathmandu, Pokhara, and all Nepal."
     )
@@ -496,7 +513,7 @@ def prune_dirs(keep: set[str], folder: str) -> None:
 def home_block(items: list[dict]) -> str:
     names = ", ".join(p["name"] for p in featured_products(items))
     copy = seo_copy()
-    title = copy.get("homeTitle") or "Buy ChatGPT, Canva, Adobe & VPN in Nepal | eSewa, Khalti | ANC Tools"
+    title = copy.get("homeTitle") or "Buy ChatGPT, Canva, VPN in Nepal (2026) | eSewa, Khalti | ANC Tools"
     desc = copy.get("homeDescription") or (
         f"Buy {names} and 100+ digital subscriptions in Nepal. "
         "Live NPR quote on WhatsApp from Kushma. Pay Khalti, eSewa, or connectIPS. "
@@ -538,18 +555,26 @@ def home_block(items: list[dict]) -> str:
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": "How do I buy digital subscriptions in Nepal from ANC Tools?",
+                    "name": "How do I buy a subscription in Nepal?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Browse the catalog, tap Get a quote, and we send today’s NPR rate on WhatsApp. Pay after you agree. Access usually follows the same day.",
+                        "text": "Pick a product, tap Get a quote, agree the NPR rate on WhatsApp, pay, then receive access — usually the same day.",
                     },
                 },
                 {
                     "@type": "Question",
-                    "name": "Why is the price not on the website?",
+                    "name": "Do you show prices on the site?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Rates change. ANC Tools quotes live NPR on WhatsApp so you never pay a stale catalog price.",
+                        "text": "No. The catalog is public; the live rate is in chat.",
+                    },
+                },
+                {
+                    "@type": "Question",
+                    "name": "How fast is delivery?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Most items go out after payment is confirmed, during Nepal daytime.",
                     },
                 },
                 {
@@ -558,6 +583,30 @@ def home_block(items: list[dict]) -> str:
                     "acceptedAnswer": {
                         "@type": "Answer",
                         "text": "Khalti, eSewa, connectIPS, mobile banking, and cards, confirmed on WhatsApp for each order.",
+                    },
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I buy ChatGPT Plus in Nepal without a dollar card?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Open ChatGPT Plus on ANC Tools, tap Get a quote, and pay eSewa, Khalti, or connectIPS after you agree the NPR rate. No USD card needed on this shop.",
+                    },
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is the ChatGPT Plus price in Nepal in 2026?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "OpenAI bills Plus in US dollars. ANC Tools does not print a stale rupee list. The 2026 NPR rate you pay is the WhatsApp quote from Kushma that day.",
+                    },
+                },
+                {
+                    "@type": "Question",
+                    "name": "नेपालमा ChatGPT Plus कसरी किन्ने?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "ANC Tools मा ChatGPT Plus खोल्नुहोस्, Get a quote थिच्नुहोस्, WhatsApp मा आजको NPR दर आउँछ। सहमत भएपछि eSewa, Khalti वा connectIPS बाट तिर्नुहोस्।",
                     },
                 },
             ],
@@ -659,7 +708,7 @@ def category_faqs(cat: dict) -> list[dict]:
 def category_block(cat: dict, items: list[dict]) -> str:
     url = f"{SITE}c/{cat['slug']}/"
     intro = (seo_copy().get("categories") or {}).get(cat["slug"]) or cat["blurb"]
-    title = f"Buy {cat['name']} in Nepal | WhatsApp NPR price | ANC Tools"
+    title = f"Buy {cat['name']} in Nepal (2026) | WhatsApp NPR price | ANC Tools"
     desc = (
         f"{intro} {len(items)} products. Live NPR quote on WhatsApp. "
         "Pay Khalti, eSewa, or connectIPS."
@@ -887,8 +936,8 @@ def blog_index_block(items: list[dict]) -> str:
     url = f"{SITE}blog/"
     title = "How to buy digital subscriptions in Nepal | Guides | ANC Tools"
     desc = (
-        "Buy ChatGPT, Claude, Cursor, Lovable, CapCut, Adobe, Microsoft Office, "
-        "Google Workspace, Gmail storage, Coursera, Udemy, Netflix, and iCloud in Nepal. "
+        "Buy ChatGPT, Canva, NordVPN, Grammarly, Microsoft 365, Gemini, LinkedIn Premium, "
+        "YouTube Premium, Adobe, Coursera, Netflix, and iCloud in Nepal. "
         "Live NPR quote on WhatsApp from Kushma."
     )
     extra = [
@@ -992,8 +1041,8 @@ def noscript_html(items: list[dict], cats: list[dict], guides: list[dict] | None
         for p in (guides or [])
     )
     return noscript_wrap(
-        f"""      <h1>Buy digital subscriptions in Nepal</h1>
-      <p>ANC Tools quotes live NPR rates on WhatsApp from Kushma. Catalog is public; price is in chat.</p>
+        f"""      <h1>Buy ChatGPT, Canva and VPN in Nepal</h1>
+      <p>ANC Tools quotes live NPR rates on WhatsApp from Kushma. Catalog is public; price is in chat. Pay eSewa, Khalti, or connectIPS.</p>
       <h2>Why buy from ANC Tools</h2>
       <ul>
         <li>Shop of Aseem and Consulting Pvt Ltd, Kushma 05 Parbat, Gandaki 33400 (Reg. 326626, PAN 620866943).</li>
