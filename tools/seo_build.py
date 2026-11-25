@@ -24,7 +24,7 @@ PAGES = [
     ("refund", "Refund policy", "ANC Tools refund policy for digital subscriptions quoted and agreed on WhatsApp in Nepal."),
     ("terms", "Terms of use", "Terms of use for ANC Tools — digital subscriptions sold by Aseem and Consulting Pvt Ltd in Nepal."),
     ("payment", "Payment", "Pay ANC Tools in Nepal with Khalti, eSewa, connectIPS, mobile banking, Visa, or Mastercard."),
-    ("contact", "Contact us", "Contact ANC Tools in Kushma, Nepal on WhatsApp +977 9802840041 or info@anc.com.np. English and Nepali."),
+    ("contact", "Contact us", "Contact ANC Tools in Kushma, Nepal on WhatsApp +977 9857619999 or info@anc.com.np. English and Nepali."),
     ("partnership", "Partnership", "Reseller, campus, and bulk digital licences in Nepal — partner with ANC Tools."),
 ]
 
@@ -125,13 +125,20 @@ def org_graph() -> dict:
         "url": SITE,
         "logo": {
             "@type": "ImageObject",
-            "url": f"{SITE}assets/og-image.png",
-            "width": 1200,
-            "height": 630,
+            "url": f"{SITE}assets/apple-touch-icon.png",
+            "width": 180,
+            "height": 180,
         },
         "image": f"{SITE}assets/og-image.png",
         "email": "info@anc.com.np",
-        "telephone": "+977-9802840041",
+        "telephone": "+977-9857619999",
+        "taxID": "620866943",
+        "founder": {
+            "@type": "Person",
+            "@id": f"{SITE}#founder",
+            "name": "Aseem Subedi",
+            "jobTitle": "Owner",
+        },
         "foundingLocation": {
             "@type": "Place",
             "name": "Kushma, Gandaki, Nepal",
@@ -153,16 +160,16 @@ def org_graph() -> dict:
         "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer service",
-            "telephone": "+977-9802840041",
+            "telephone": "+977-9857619999",
             "email": "info@anc.com.np",
             "areaServed": "NP",
             "availableLanguage": ["en", "ne"],
-            "url": "https://wa.me/9779802840041",
+            "url": "https://wa.me/9779857619999",
         },
         "sameAs": [
             "https://anc.com.np/",
             "https://github.com/Aseemsubedi/ancweb",
-            "https://wa.me/9779802840041",
+            "https://wa.me/9779857619999",
         ],
         "parentOrganization": {
             "@type": "Organization",
@@ -173,7 +180,7 @@ def org_graph() -> dict:
     }
 
 
-def seo_block(title: str, description: str, url: str, image: str, page_type: str, extra_graph: list | None = None, og_type: str = "website", published: str | None = None, modified: str | None = None) -> str:
+def seo_block(title: str, description: str, url: str, image: str, page_type: str, extra_graph: list | None = None, og_type: str = "website", published: str | None = None, modified: str | None = None, robots: str | None = None) -> str:
     desc = re.sub(r"\s+", " ", description).strip()[:320]
     reviewed = modified or published or content_reviewed()
     webpage = {
@@ -200,6 +207,14 @@ def seo_block(title: str, description: str, url: str, image: str, page_type: str
             "alternateName": "ANC Tools Nepal",
             "inLanguage": ["en-NP", "en"],
             "publisher": {"@id": f"{SITE}#organization"},
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": f"{SITE}search/?q={{search_term_string}}",
+                },
+                "query-input": "required name=search_term_string",
+            },
         },
         webpage,
     ]
@@ -211,13 +226,15 @@ def seo_block(title: str, description: str, url: str, image: str, page_type: str
         article_meta = f"""
   <meta property="article:published_time" content="{iso_nepal(published, 10)}">
   <meta property="article:modified_time" content="{iso_modified(published, reviewed)}">"""
+    robots_content = robots or "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    googlebot = "noindex, follow" if "noindex" in robots_content else "index, follow"
     return f"""  <title>{escape(title)}</title>
   <meta name="title" content="{escape(title)}">
   <meta name="description" content="{escape(desc)}">
   <meta name="author" content="Aseem and Consulting Pvt Ltd">
-  <meta name="generator" content="ANC Tools 2026-09-19e">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow">
+  <meta name="generator" content="ANC Tools 2026-10-19a">
+  <meta name="robots" content="{escape(robots_content)}">
+  <meta name="googlebot" content="{escape(googlebot)}">
   <link rel="canonical" href="{escape(url)}">
   <link rel="alternate" hreflang="en-NP" href="{escape(url)}">
   <link rel="alternate" hreflang="x-default" href="{escape(url)}">
@@ -382,8 +399,49 @@ def render_article_html(sections: list[dict]) -> str:
     return render_sections(sections)
 
 
+def product_brand(name: str) -> str:
+    n = (name or "").lower()
+    if n.startswith(("microsoft", "windows", "office", "visio", "clipchamp")) or "365" in n:
+        return "Microsoft"
+    if n.startswith("google") or n.startswith("gmail"):
+        return "Google"
+    if n.startswith("adobe"):
+        return "Adobe"
+    if "chatgpt" in n or n.startswith("gpt"):
+        return "OpenAI"
+    if n.startswith("claude"):
+        return "Anthropic"
+    if n.startswith("canva"):
+        return "Canva"
+    if "nordvpn" in n or n.startswith("nord"):
+        return "NordVPN"
+    return (name or "ANC Tools").split()[0]
+
+
 def product_title(name: str) -> str:
-    return f"Buy {name} in Nepal — eSewa, Khalti | ANC Tools"
+    return f"Buy {name} in Nepal | WhatsApp NPR price | ANC Tools"
+
+
+def offer_shipping() -> dict:
+    return {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {"@type": "MonetaryAmount", "value": 0, "currency": "NPR"},
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "NP"},
+        "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY"},
+            "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"},
+        },
+    }
+
+
+def return_policy() -> dict:
+    return {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "NP",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnUnspecified",
+        "merchantReturnLink": f"{SITE}refund/",
+    }
 
 
 def product_desc(p: dict) -> str:
@@ -451,7 +509,7 @@ def home_block(items: list[dict]) -> str:
             "name": "ANC Tools",
             "url": SITE,
             "image": f"{SITE}assets/og-image.png",
-            "telephone": "+977-9802840041",
+            "telephone": "+977-9857619999",
             "email": "info@anc.com.np",
             "currenciesAccepted": "NPR",
             "paymentAccepted": "Khalti, eSewa, connectIPS, Mobile banking, Visa, Mastercard",
@@ -472,7 +530,7 @@ def home_block(items: list[dict]) -> str:
                     "url": f"{SITE}p/{p['slug']}/",
                     "name": p["name"],
                 }
-                for i, p in enumerate(items[:40])
+                for i, p in enumerate(items[:24])
             ],
         },
         {
@@ -516,19 +574,25 @@ def product_block(p: dict) -> str:
     extra = [
         {
             "@type": "Product",
+            "@id": f"{url}#product",
             "name": p["name"],
             "description": product_desc(p),
             "image": image,
-            "sku": p.get("code") or p["slug"],
-            "brand": {"@type": "Brand", "name": p["name"].split()[0]},
+            "sku": p["slug"],
+            "mpn": p["slug"],
+            "brand": {"@type": "Brand", "name": product_brand(p["name"])},
             "category": cname,
+            "itemCondition": "https://schema.org/NewCondition",
             "offers": {
                 "@type": "Offer",
                 "url": url,
                 "availability": stock_url(p["slug"]),
                 "priceCurrency": "NPR",
+                "itemCondition": "https://schema.org/NewCondition",
                 "seller": {"@id": f"{SITE}#organization"},
                 "areaServed": {"@type": "Country", "name": "Nepal"},
+                "hasMerchantReturnPolicy": return_policy(),
+                "shippingDetails": offer_shipping(),
             },
         },
         {
@@ -542,6 +606,7 @@ def product_block(p: dict) -> str:
         {
             "@type": "HowTo",
             "name": f"How to buy {p['name']} in Nepal",
+            "totalTime": "PT30M",
             "step": [
                 {"@type": "HowToStep", "position": 1, "name": "Pick duration", "text": "Choose a plan on the order sheet, or leave Not sure."},
                 {"@type": "HowToStep", "position": 2, "name": "Get a quote", "text": "WhatsApp opens with the product, SKU, duration, and quantity."},
@@ -573,10 +638,28 @@ def product_block(p: dict) -> str:
     )
 
 
+def category_faqs(cat: dict) -> list[dict]:
+    name = cat["name"]
+    return [
+        {
+            "q": f"How do I buy {name} in Nepal?",
+            "a": f"Open the {name} list on ANC Tools, pick a product, tap Get a quote, and we send today’s NPR rate on WhatsApp from Kushma.",
+        },
+        {
+            "q": f"What does {name} cost in Nepal?",
+            "a": "The live NPR rate is quoted on WhatsApp. We do not print a catalog price because supplier rates change.",
+        },
+        {
+            "q": f"Can I pay for {name} with eSewa or Khalti?",
+            "a": "Yes. After you agree the WhatsApp quote, pay eSewa, Khalti, connectIPS, mobile banking, or card.",
+        },
+    ]
+
+
 def category_block(cat: dict, items: list[dict]) -> str:
     url = f"{SITE}c/{cat['slug']}/"
     intro = (seo_copy().get("categories") or {}).get(cat["slug"]) or cat["blurb"]
-    title = f"Buy {cat['name']} in Nepal | eSewa, Khalti | ANC Tools"
+    title = f"Buy {cat['name']} in Nepal | WhatsApp NPR price | ANC Tools"
     desc = (
         f"{intro} {len(items)} products. Live NPR quote on WhatsApp. "
         "Pay Khalti, eSewa, or connectIPS."
@@ -584,12 +667,15 @@ def category_block(cat: dict, items: list[dict]) -> str:
     extra = [
         {
             "@type": "CollectionPage",
+            "@id": f"{url}#collection",
             "name": cat["name"],
             "url": url,
             "description": desc,
+            "mainEntity": {"@id": f"{url}#list"},
         },
         {
             "@type": "ItemList",
+            "@id": f"{url}#list",
             "name": f"{cat['name']} in Nepal",
             "numberOfItems": len(items),
             "itemListElement": [
@@ -609,8 +695,76 @@ def category_block(cat: dict, items: list[dict]) -> str:
                 {"@type": "ListItem", "position": 2, "name": cat["name"], "item": url},
             ],
         },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": f["q"],
+                    "acceptedAnswer": {"@type": "Answer", "text": f["a"]},
+                }
+                for f in category_faqs(cat)
+            ],
+        },
     ]
     return seo_block(title, desc, url, f"{SITE}assets/og-image.png", "category", extra, modified=content_reviewed())
+
+
+def products_block(items: list[dict], cats: list[dict]) -> str:
+    url = f"{SITE}products/"
+    title = "All digital subscriptions in Nepal | ANC Tools"
+    desc = (
+        f"Full ANC Tools catalog — {len(items)} digital subscriptions in Nepal. "
+        "ChatGPT, Canva, Adobe, Microsoft, VPN, streaming. Live NPR quote on WhatsApp. Pay eSewa or Khalti."
+    )
+    extra = [
+        {
+            "@type": "CollectionPage",
+            "@id": f"{url}#collection",
+            "name": title,
+            "url": url,
+            "description": desc,
+            "mainEntity": {"@id": f"{url}#list"},
+        },
+        {
+            "@type": "ItemList",
+            "@id": f"{url}#list",
+            "name": "Digital subscriptions in Nepal",
+            "numberOfItems": len(items),
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": i + 1,
+                    "url": f"{SITE}p/{p['slug']}/",
+                    "name": p["name"],
+                }
+                for i, p in enumerate(items)
+            ],
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE},
+                {"@type": "ListItem", "position": 2, "name": "All products", "item": url},
+            ],
+        },
+    ]
+    return seo_block(title, desc, url, f"{SITE}assets/og-image.png", "products", extra, modified=content_reviewed())
+
+
+def search_block() -> str:
+    url = f"{SITE}search/"
+    title = "Search ANC Tools"
+    desc = "Search digital subscriptions on ANC Tools. ChatGPT, Canva, Adobe, Microsoft, VPN, and more in Nepal."
+    return seo_block(
+        title,
+        desc,
+        url,
+        f"{SITE}assets/og-image.png",
+        "search",
+        robots="noindex, follow",
+        modified=content_reviewed(),
+    )
 
 
 def page_block(slug: str, title: str, desc: str) -> str:
@@ -650,7 +804,7 @@ ABOUT_FAQS = [
     },
     {
         "q": "How can I contact ANC Tools?",
-        "a": "WhatsApp +977 9802840041 is fastest. Email info@anc.com.np. We reply in English and Nepali during Nepal daytime.",
+        "a": "WhatsApp +977 9857619999 is fastest. Email info@anc.com.np. We reply in English and Nepali during Nepal daytime.",
     },
 ]
 
@@ -715,7 +869,7 @@ def noscript_about() -> str:
       <h2>Our contact details</h2>
       <ul>
         <li>Address: Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal</li>
-        <li>Phone / WhatsApp: <a href="https://wa.me/9779802840041">+977 9802840041</a></li>
+        <li>Phone / WhatsApp: <a href="https://wa.me/9779857619999">+977 9857619999</a></li>
         <li>Email: <a href="mailto:info@anc.com.np">info@anc.com.np</a></li>
         <li>Website: <a href="./">tools.anc.com.np</a></li>
       </ul>
@@ -882,7 +1036,7 @@ def noscript_product(p: dict, items: list[dict] | None = None) -> str:
       {product_reviewed_html()}
       <p>{escape(product_desc(p))}</p>
 {guide_line}
-      <p><a href="https://wa.me/9779802840041">Get a quote on WhatsApp</a></p>
+      <p><a href="https://wa.me/9779857619999">Get a quote on WhatsApp</a></p>
 {article}
       <h2>FAQ</h2>
 {faq_html}
@@ -896,6 +1050,9 @@ def noscript_product(p: dict, items: list[dict] | None = None) -> str:
 def noscript_category(cat: dict, items: list[dict]) -> str:
     intro = (seo_copy().get("categories") or {}).get(cat["slug"]) or cat["blurb"]
     links = "\n".join(f'      <li><a href="p/{p["slug"]}/">{escape(p["name"])}</a></li>' for p in items)
+    faqs = "\n".join(
+        f"      <h3>{escape(f['q'])}</h3>\n      <p>{escape(f['a'])}</p>" for f in category_faqs(cat)
+    )
     return noscript_wrap(
         f"""      <nav class="crumbs"><a href="./">Home</a> / {escape(cat["name"])}</nav>
       <h1>Buy {escape(cat["name"])} in Nepal</h1>
@@ -903,7 +1060,33 @@ def noscript_category(cat: dict, items: list[dict]) -> str:
       <ul>
 {links}
       </ul>
-      <p><a href="https://wa.me/9779802840041">Quote this category on WhatsApp</a></p>"""
+      <h2>FAQ</h2>
+{faqs}
+      <p><a href="https://wa.me/9779857619999">Quote this category on WhatsApp</a></p>"""
+    )
+
+
+def noscript_products(items: list[dict], cats: list[dict]) -> str:
+    blocks = []
+    for c in cats:
+        group = [p for p in items if p.get("category") == c["slug"]]
+        if not group:
+            continue
+        links = "\n".join(f'        <li><a href="p/{p["slug"]}/">{escape(p["name"])}</a></li>' for p in group)
+        blocks.append(f"      <h2>{escape(c['name'])}</h2>\n      <ul>\n{links}\n      </ul>")
+    return noscript_wrap(
+        f"""      <nav class="crumbs"><a href="./">Home</a> / All products</nav>
+      <h1>All digital subscriptions in Nepal</h1>
+      <p>Full ANC Tools catalog. Live NPR quote on WhatsApp. Pay eSewa, Khalti, or connectIPS.</p>
+{chr(10).join(blocks)}"""
+    )
+
+
+def noscript_search() -> str:
+    return noscript_wrap(
+        """      <h1>Search ANC Tools</h1>
+      <p>Search the catalog for ChatGPT, Canva, Adobe, Microsoft, VPN, and other digital subscriptions in Nepal.</p>
+      <p><a href="./">Browse all products</a></p>"""
     )
 
 
@@ -944,7 +1127,7 @@ def noscript_post(post: dict) -> str:
       <ul>
 {products}
       </ul>
-      <p><a href="blog/">All guides</a> · <a href="https://wa.me/9779802840041">WhatsApp</a></p>"""
+      <p><a href="blog/">All guides</a> · <a href="https://wa.me/9779857619999">WhatsApp</a></p>"""
     )
 
 
@@ -964,6 +1147,7 @@ def write_sitemap(items: list[dict], cats: list[dict], guides: list[dict] | None
     guides = guides if guides is not None else posts()
     urls = [
         (SITE, "1.0", "daily"),
+        (f"{SITE}products/", "0.9", "weekly"),
         (f"{SITE}blog/", "0.7", "weekly"),
     ]
     for slug, *_ in PAGES:
@@ -1069,6 +1253,14 @@ def publish_seo(slug: str | None = None) -> None:
             apply_noscript(apply_seo(home_html, page_block(page_slug, title, desc)), noscript_page(title, desc)),
         )
 
+    write_page(
+        "products",
+        apply_noscript(apply_seo(home_html, products_block(items, cats)), noscript_products(items, cats)),
+    )
+    write_page(
+        "search",
+        apply_noscript(apply_seo(home_html, search_block()), noscript_search()),
+    )
     write_page(
         "blog",
         apply_noscript(apply_seo(home_html, blog_index_block(guides)), noscript_blog_index(guides)),

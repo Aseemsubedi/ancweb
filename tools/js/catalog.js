@@ -1,8 +1,8 @@
 window.ANC_STORE = {
   brand: 'ANC Tools',
   company: 'Aseem and Consulting Pvt Ltd',
-  whatsapp: '9779802840041',
-  phone: '+977 9802840041',
+  whatsapp: '9779857619999',
+  phone: '+977 9857619999',
   email: 'info@anc.com.np',
   address: 'Kushma 05 Parbat, Kushma, Gandaki 33400, Nepal',
   site: 'https://tools.anc.com.np/',

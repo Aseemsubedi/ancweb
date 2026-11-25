@@ -187,6 +187,9 @@
   const hrefPage = (slug) => `${slug}/`;
   const hrefBlog = () => 'blog/';
   const hrefPost = (slug) => `blog/${slug}/`;
+  const hrefProducts = () => 'products/';
+  const hrefSearch = (q) => `search/?q=${encodeURIComponent(q)}`;
+  const searchQuery = () => new URLSearchParams(location.search).get('q') || '';
   const postForProduct = (slug) => posts.find((g) => (g.products || []).includes(slug));
 
   const defaultFaqs = (p) => [
@@ -231,14 +234,15 @@
   };
 
   const goTo = (rel) => {
-    const next = pathAbs(rel);
-    if (location.pathname !== next) history.pushState(null, '', next);
+    const next = new URL(rel, document.baseURI || (window.ANC_BASE || './'));
+    const href = `${next.pathname}${next.search}`;
+    if (`${location.pathname}${location.search}` !== href) history.pushState(null, '', href);
     render();
   };
 
   const route = () => {
     const raw = location.hash || '';
-    if (raw === '#/' || /^#\/((p|c)\/[a-z0-9-]+|blog(\/[a-z0-9-]+)?|how|about(-us)?|delivery|privacy|refund|terms|payment|contact|partnership)\/?$/i.test(raw)) {
+    if (raw === '#/' || /^#\/((p|c)\/[a-z0-9-]+|blog(\/[a-z0-9-]+)?|how|about(-us)?|delivery|privacy|refund|terms|payment|contact|partnership|products|search)\/?$/i.test(raw)) {
       const dest = raw.replace(/^#\/?/, '').replace(/\/$/, '');
       history.replaceState(null, '', pathAbs(dest ? `${dest}/` : './'));
     }
@@ -254,6 +258,8 @@
     if (parts[0] === 'blog') return { name: 'blog' };
     if (parts[0] === 'account') return { name: 'page', slug: 'how' };
     if (parts[0] === 'about-us') return { name: 'page', slug: 'about' };
+    if (parts[0] === 'products') return { name: 'products' };
+    if (parts[0] === 'search') return { name: 'search', q: searchQuery() };
     if (['about', 'delivery', 'privacy', 'refund', 'terms', 'payment', 'contact', 'partnership', 'how'].includes(parts[0])) {
       return { name: 'page', slug: parts[0] };
     }
@@ -321,7 +327,7 @@
           <p>ChatGPT, Claude, Cursor, Adobe, Microsoft, CapCut, Netflix. Quote today’s NPR rate on WhatsApp. Pay with Khalti, eSewa, or connectIPS.</p>
           <div class="home-hero-actions">
             <a class="btn-wa" href="${waLink(defaultQuote)}" target="_blank" rel="noopener noreferrer">Get a quote</a>
-            <a class="btn-navy" href="${hrefCategory('ai-tools')}">Browse products</a>
+            <a class="btn-navy" href="${hrefProducts()}">Browse products</a>
           </div>
           <ul class="trust-chips">
             <li>WhatsApp quote</li>
@@ -499,7 +505,65 @@
       </div>
       <div class="grid-products" id="cat-grid">${items.map(productCard).join('')}</div>
       <p class="empty-state" id="cat-empty" hidden>Nothing in stock in this category right now. <button type="button" class="view-all" data-show="all">Show all</button></p>
+      <div class="faq-block">
+        <h2>FAQ</h2>
+        <details class="faq-item" open>
+          <summary>How do I buy ${cat.name} in Nepal?</summary>
+          <p>Open this list, pick a product, tap Get a quote, and we send today’s NPR rate on WhatsApp from Kushma.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does ${cat.name} cost in Nepal?</summary>
+          <p>The live NPR rate is quoted on WhatsApp. We do not print a catalog price because supplier rates change.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I pay for ${cat.name} with eSewa or Khalti?</summary>
+          <p>Yes. After you agree the WhatsApp quote, pay eSewa, Khalti, connectIPS, mobile banking, or card.</p>
+        </details>
+      </div>
     `;
+  };
+
+  const productsPage = () => {
+    const cats = liveCats();
+    return `
+      <p class="crumbs"><a href="${hrefHome()}">Home</a> / All products</p>
+      <div class="section-head">
+        <div>
+          <h1>All digital subscriptions in Nepal</h1>
+          <p class="muted cat-lead">${liveList().length} products. Catalog is public. Today’s NPR rate is on WhatsApp. Pay eSewa, Khalti, or connectIPS.</p>
+        </div>
+        <a class="view-all" href="${waLink(defaultQuote)}" target="_blank" rel="noopener noreferrer">Get a quote</a>
+      </div>
+      ${cats.map((c) => {
+        const items = productsIn(c.slug);
+        return `
+        <section class="section">
+          <div class="section-head">
+            <h2>${c.name}</h2>
+            <a class="view-all" href="${hrefCategory(c.slug)}">View ${c.nav || c.name}</a>
+          </div>
+          <div class="grid-products">${items.map(productCard).join('')}</div>
+        </section>`;
+      }).join('')}`;
+  };
+
+  const searchPage = (q) => {
+    const query = (q || '').trim();
+    const hits = query
+      ? liveList().filter((p) => `${p.name} ${p.slug} ${p.blurb || ''} ${catName[resolveCat(p.category)] || ''}`.toLowerCase().includes(query.toLowerCase()))
+      : [];
+    return `
+      <p class="crumbs"><a href="${hrefHome()}">Home</a> / Search</p>
+      <div class="section-head">
+        <div>
+          <h1>${query ? `Search results for “${esc(query)}”` : 'Search ANC Tools'}</h1>
+          <p class="muted cat-lead">${query ? `${hits.length} match${hits.length === 1 ? '' : 'es'} in the Nepal catalog.` : 'Type a product name — ChatGPT, Canva, Adobe, VPN — and we will find it.'}</p>
+        </div>
+        <a class="view-all" href="${hrefProducts()}">All products</a>
+      </div>
+      ${hits.length
+        ? `<div class="grid-products">${hits.map(productCard).join('')}</div>`
+        : `<div class="empty-state"><p>${query ? `No products match “${esc(query)}”.` : 'Enter a search to see products.'}</p><p><a class="view-all" href="${waLink(searchSheet(query || 'a product'))}" target="_blank" rel="noopener noreferrer">Ask on WhatsApp</a></p></div>`}`;
   };
 
   const product = (slug) => {
@@ -972,7 +1036,7 @@
     let ogType = 'website';
     if (r.name === 'product' && bySlug[r.slug] && isLive(bySlug[r.slug])) {
       const p = bySlug[r.slug];
-      title = `Buy ${p.name} in Nepal — eSewa, Khalti | ANC Tools`;
+      title = `Buy ${p.name} in Nepal | WhatsApp NPR price | ANC Tools`;
       desc = `Buy ${p.name} in Nepal from ANC Tools in Kushma. ${p.blurb || ''} Live NPR quote on WhatsApp. Pay with Khalti, eSewa, or connectIPS.`.replace(/\s+/g, ' ').trim();
       url = `${SITE_URL}p/${p.slug}/`;
       image = `${SITE_URL}assets/products/${p.slug}.webp`;
@@ -980,9 +1044,18 @@
     } else if (r.name === 'category' && catBySlug[r.slug]) {
       const cat = catBySlug[r.slug];
       const intro = (seoCopy.categories && seoCopy.categories[cat.slug]) || cat.blurb || '';
-      title = `Buy ${cat.name} in Nepal | eSewa, Khalti | ANC Tools`;
+      title = `Buy ${cat.name} in Nepal | WhatsApp NPR price | ANC Tools`;
       desc = `${intro} Quote the live NPR rate on WhatsApp. Pay eSewa, Khalti, or connectIPS.`.replace(/\s+/g, ' ').trim();
       url = `${SITE_URL}c/${cat.slug}/`;
+    } else if (r.name === 'products') {
+      title = 'All digital subscriptions in Nepal | ANC Tools';
+      desc = `Full ANC Tools catalog — ${liveList().length} digital subscriptions in Nepal. Live NPR quote on WhatsApp. Pay eSewa or Khalti.`;
+      url = `${SITE_URL}products/`;
+    } else if (r.name === 'search') {
+      const q = (r.q || searchQuery()).trim();
+      title = q ? `Search “${q}” | ANC Tools` : 'Search ANC Tools';
+      desc = 'Search digital subscriptions on ANC Tools. ChatGPT, Canva, Adobe, Microsoft, VPN, and more in Nepal.';
+      url = q ? `${SITE_URL}search/?q=${encodeURIComponent(q)}` : `${SITE_URL}search/`;
     } else if (r.name === 'page' && pages[r.slug]) {
       title = r.slug === 'about'
         ? 'About ANC Tools | Digital Subscriptions in Nepal'
@@ -1011,6 +1084,10 @@
     setSeoTag('meta[name="title"]', 'content', title);
     setSeoTag('meta[name="description"]', 'content', desc);
     setSeoTag('link[rel="canonical"]', 'href', url);
+    setSeoTag('meta[name="robots"]', 'content', r.name === 'search'
+      ? 'noindex, follow'
+      : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    setSeoTag('meta[name="googlebot"]', 'content', r.name === 'search' ? 'noindex, follow' : 'index, follow');
     setSeoTag('meta[property="og:title"]', 'content', title);
     setSeoTag('meta[property="og:description"]', 'content', desc);
     setSeoTag('meta[property="og:url"]', 'content', url);
@@ -1118,6 +1195,8 @@
     if (r.name === 'home') app.innerHTML = home();
     else if (r.name === 'category') app.innerHTML = category(r.slug);
     else if (r.name === 'product') app.innerHTML = product(r.slug);
+    else if (r.name === 'products') app.innerHTML = productsPage();
+    else if (r.name === 'search') app.innerHTML = searchPage(r.q || searchQuery());
     else if (r.name === 'blog') app.innerHTML = blogIndex();
     else if (r.name === 'post') app.innerHTML = blogPost(r.slug);
     else if (r.name === 'page') app.innerHTML = r.slug === 'how' ? howPage() : r.slug === 'about' ? aboutPage() : pageView(r.slug);
@@ -1130,6 +1209,8 @@
     searchResults.classList.remove('open');
     highlightNav(r);
     bindDynamic(r);
+    if (r.name === 'search') searchInput.value = r.q || searchQuery();
+    else if (r.name !== 'home') searchInput.value = '';
 
     const onProduct = r.name === 'product' && bySlug[r.slug];
     waFloat.classList.toggle('tuck', Boolean(onProduct));
@@ -1318,11 +1399,14 @@
   });
   document.getElementById('search-form').addEventListener('submit', (e) => {
     e.preventDefault();
+    const q = searchInput.value.trim();
     if (searchIndex >= 0 && searchHits[searchIndex]) {
       goTo(hrefProduct(searchHits[searchIndex].slug));
     } else if (searchHits.length === 1) {
       goTo(hrefProduct(searchHits[0].slug));
-    } else renderSearch(searchInput.value);
+    } else if (q) {
+      goTo(hrefSearch(q));
+    } else renderSearch(q);
   });
   searchResults.addEventListener('click', () => {
     searchResults.classList.remove('open');
